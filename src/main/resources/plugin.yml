@@ -1,0 +1,19 @@
+name: RPGLoot
+version: '${version}'
+main: me.coopersully.rpgloot.rpgloot.RPGLoot
+api-version: 1.18
+prefix: RPG Loot
+authors: [ Curse ]
+description: Change up the survival experience by introducing new roleplay-themed items, blocks, and game mechanics!
+website: https://coopersully.me/projects/curses-rp-addon/
+
+commands:
+  meta:
+    description: Get the meta-data of the held treasure item.
+    #aliases: []
+  cleanse:
+    description: Cleanse the held treasure item if applicable.
+    #aliases: []
+  nightmare:
+    description: Infuse the held item with Nightmare Fuel if applicable.
+    aliases: ["nightmarify"]
