@@ -1,11 +1,13 @@
 package me.coopersully.rpgloot.rpgloot;
 
 import org.bukkit.NamespacedKey;
+import org.checkerframework.checker.units.qual.N;
+
+import javax.naming.Name;
 
 public class ItemKeys {
 
     public static NamespacedKey treasureItem = new NamespacedKey(RPGLoot.getPlugin(), "treasure_item");
-
     public static NamespacedKey cleansed = new NamespacedKey(RPGLoot.getPlugin(), "cleansed");
 
     public static NamespacedKey greedTools = new NamespacedKey(RPGLoot.getPlugin(), "greed");
@@ -17,9 +19,7 @@ public class ItemKeys {
     public static NamespacedKey raider = new NamespacedKey(RPGLoot.getPlugin(), "raider");
 
     public static NamespacedKey awakened = new NamespacedKey(RPGLoot.getPlugin(), "awakened");
-
     public static NamespacedKey eternal = new NamespacedKey(RPGLoot.getPlugin(), "eternal");
-
     public static NamespacedKey grimsteel = new NamespacedKey(RPGLoot.getPlugin(), "grimsteel");
     public static NamespacedKey dragonhide = new NamespacedKey(RPGLoot.getPlugin(), "dragonhide");
     public static NamespacedKey heartAmulet = new NamespacedKey(RPGLoot.getPlugin(), "heart_amulet");
@@ -28,5 +28,6 @@ public class ItemKeys {
     public static NamespacedKey enderShield = new NamespacedKey(RPGLoot.getPlugin(), "ender_shield");
     public static NamespacedKey enderSword = new NamespacedKey(RPGLoot.getPlugin(), "ender_sword");
     public static NamespacedKey wolfHead = new NamespacedKey(RPGLoot.getPlugin(), "wolf_head");
+    public static NamespacedKey skulkBoots = new NamespacedKey(RPGLoot.getPlugin(), "skulk_boots");
 
 }

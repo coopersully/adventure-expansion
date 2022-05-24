@@ -19,12 +19,7 @@ public class EquipArmor implements Listener {
     @EventHandler
     public void onArmorEquip(@NotNull PlayerArmorChangeEvent event) {
 
-        Bukkit.getScheduler().runTaskLaterAsynchronously(RPGLoot.getPlugin(), new Runnable() {
-            @Override
-            public void run() {
-                updateArmorTags(event);
-            }
-        }, 20L);
+        Bukkit.getScheduler().runTaskLaterAsynchronously(RPGLoot.getPlugin(), () -> updateArmorTags(event), 20L);
 
         Player player = event.getPlayer();
         ItemStack oldItem = event.getOldItem();
@@ -81,6 +76,18 @@ public class EquipArmor implements Listener {
             player.getPersistentDataContainer().set(ItemKeys.grimsteel, PersistentDataType.STRING, "1");
         } else {
             player.getPersistentDataContainer().remove(ItemKeys.grimsteel);
+        }
+
+        player.getPersistentDataContainer().remove(ItemKeys.skulkBoots);
+
+        ItemStack boots = armor[0];
+        if (boots != null) {
+            ItemMeta bootsMeta = boots.getItemMeta();
+            if (bootsMeta != null) {
+                if (bootsMeta.getPersistentDataContainer().has(ItemKeys.skulkBoots)) {
+                    player.getPersistentDataContainer().set(ItemKeys.skulkBoots, PersistentDataType.STRING, "1");
+                }
+            }
         }
 
     }

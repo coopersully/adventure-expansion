@@ -6,6 +6,7 @@ import me.coopersully.rpgloot.rpgloot.commands.Nightmare;
 import me.coopersully.rpgloot.rpgloot.listeners.EquipArmor;
 import me.coopersully.rpgloot.rpgloot.listeners.RightClick;
 import me.coopersully.rpgloot.rpgloot.listeners.PickupExp;
+import me.coopersully.rpgloot.rpgloot.listeners.SkulkAbility;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -27,6 +28,7 @@ public final class RPGLoot extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new EquipArmor(), this);
         getServer().getPluginManager().registerEvents(new PickupExp(), this);
         getServer().getPluginManager().registerEvents(new RightClick(), this);
+        getServer().getPluginManager().registerEvents(new SkulkAbility(), this);
     }
 
     @Override
