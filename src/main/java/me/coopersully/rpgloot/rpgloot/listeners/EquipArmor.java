@@ -10,18 +10,14 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.Arrays;
-import java.util.concurrent.TimeUnit;
 
 public class EquipArmor implements Listener {
 
     @EventHandler
     public void onArmorEquip(@NotNull PlayerArmorChangeEvent event) {
-
-        event.get
 
         Bukkit.getScheduler().runTaskLaterAsynchronously(RPGLoot.getPlugin(), new Runnable() {
             @Override
@@ -36,15 +32,27 @@ public class EquipArmor implements Listener {
 
         if (item == null) return;
 
-        if (oldItem != null) {
-            if (oldItem.isSimilar(item)) return;
-        }
-
         ItemMeta itemMeta = item.getItemMeta();
 
         if (itemMeta == null) return;
+        PersistentDataContainer itemPDC = itemMeta.getPersistentDataContainer();
 
-        if (itemMeta.getPersistentDataContainer().has(ItemKeys.eternal)) EternalArmor.playEquipEffect(player);
+        // Play eternal equip effect
+        if (itemPDC.has(ItemKeys.eternal)) {
+
+            /* Don't play equip effect on every damage, update,
+            etc. only play it on equip from non-Eternal armor. */
+            if (oldItem != null) {
+                ItemMeta oldItemMeta = oldItem.getItemMeta();
+                if (oldItemMeta != null) {
+
+                    PersistentDataContainer oldItemPDC = oldItemMeta.getPersistentDataContainer();
+                    if (oldItemPDC.has(ItemKeys.eternal)) return;
+                }
+            }
+
+            EternalArmor.playEquipEffect(player);
+        }
 
     }
 
