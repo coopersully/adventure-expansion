@@ -11,7 +11,6 @@ import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.jetbrains.annotations.NotNull;
@@ -20,13 +19,13 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.UUID;
 
-public class SkulkAbility implements Listener {
+public class SculkAbility implements Listener {
 
     @EventHandler
     public void onJump(@NotNull PlayerJumpEvent event) {
 
         Player player = event.getPlayer();
-        if (!player.getPersistentDataContainer().has(ItemKeys.skulkBoots)) return;
+        if (!player.getPersistentDataContainer().has(ItemKeys.sculkBoots)) return;
 
         if (!player.isSneaking()) return;
 

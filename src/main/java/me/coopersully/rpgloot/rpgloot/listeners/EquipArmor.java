@@ -78,14 +78,14 @@ public class EquipArmor implements Listener {
             player.getPersistentDataContainer().remove(ItemKeys.grimsteel);
         }
 
-        player.getPersistentDataContainer().remove(ItemKeys.skulkBoots);
+        player.getPersistentDataContainer().remove(ItemKeys.sculkBoots);
 
         ItemStack boots = armor[0];
         if (boots != null) {
             ItemMeta bootsMeta = boots.getItemMeta();
             if (bootsMeta != null) {
-                if (bootsMeta.getPersistentDataContainer().has(ItemKeys.skulkBoots)) {
-                    player.getPersistentDataContainer().set(ItemKeys.skulkBoots, PersistentDataType.STRING, "1");
+                if (bootsMeta.getPersistentDataContainer().has(ItemKeys.sculkBoots)) {
+                    player.getPersistentDataContainer().set(ItemKeys.sculkBoots, PersistentDataType.STRING, "1");
                 }
             }
         }

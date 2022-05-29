@@ -79,6 +79,8 @@ public class Nightmare {
                 sender.sendMessage(ChatColor.RED + "This item has already been infused with Nightmare Fuel.");
             } else {
                 sender.sendMessage(ChatColor.RED + "Do you want to infuse your corpse with Nightmare Fuel?");
+                sender.sendMessage(ChatColor.RED + "Infusing an item with Nightmare Fuel that already possesses high-level enchantments may cause");
+                sender.sendMessage(ChatColor.RED + "some enchantments to become corrupted or unstable; great power always comes with a risk.");
                 sender.sendMessage(ChatColor.RED + "This will use " + ChatColor.YELLOW + "1x Nightmare Fuel" + ChatColor.RED + " from your inventory.");
                 sender.sendMessage(ChatColor.RED + "If you're sure, type " + ChatColor.YELLOW + "/nightmare confirm" + ChatColor.RED + " to confirm.");
             }

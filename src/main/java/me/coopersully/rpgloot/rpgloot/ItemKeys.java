@@ -1,9 +1,6 @@
 package me.coopersully.rpgloot.rpgloot;
 
 import org.bukkit.NamespacedKey;
-import org.checkerframework.checker.units.qual.N;
-
-import javax.naming.Name;
 
 public class ItemKeys {
 
@@ -28,6 +25,6 @@ public class ItemKeys {
     public static NamespacedKey enderShield = new NamespacedKey(RPGLoot.getPlugin(), "ender_shield");
     public static NamespacedKey enderSword = new NamespacedKey(RPGLoot.getPlugin(), "ender_sword");
     public static NamespacedKey wolfHead = new NamespacedKey(RPGLoot.getPlugin(), "wolf_head");
-    public static NamespacedKey skulkBoots = new NamespacedKey(RPGLoot.getPlugin(), "skulk_boots");
+    public static NamespacedKey sculkBoots = new NamespacedKey(RPGLoot.getPlugin(), "sculk_boots");
 
 }
