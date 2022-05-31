@@ -51,18 +51,14 @@ public class CaveTraders {
             return;
         }
 
-        Random random = new Random();
-        Player player = cavePlayers.get(random.nextInt(cavePlayers.size()));
-
-        spawnVillager(player.getLocation());
-
-        int runtime = (20 * (60 * 20)) / cavePlayers.size();
-        if (runtime <= 1200) runtime = 1200;
-        Bukkit.getServer().getScheduler().runTaskLaterAsynchronously(RPGLoot.getPlugin(), CaveTraders::randomlySpawnVillager, runtime);
-        Bukkit.getLogger().log(Level.INFO, "A cave trader spawned near " + player.displayName() + ". Another one will spawn in " + (runtime / 20) + " seconds near a random cave player.");
+        Bukkit.getServer().getScheduler().runTask(RPGLoot.getPlugin(), CaveTraders::spawnVillager);
     }
 
-    public static void spawnVillager(@NotNull Location location) {
+    public static void spawnVillager() {
+
+        Random random = new Random();
+        Player player = cavePlayers.get(random.nextInt(cavePlayers.size()));
+        Location location = player.getLocation();
 
         World world = location.getWorld();
         WanderingTrader wanderingTrader = world.spawn(location, WanderingTrader.class);
@@ -93,7 +89,6 @@ public class CaveTraders {
         recipe6.addIngredient(new ItemStack(Material.ROTTEN_FLESH, 4));
         recipes.add(recipe6);
 
-        Random random = new Random();
         Material randomDisc;
         randomDisc = switch (random.nextInt(13)) {
             case 0 -> Material.MUSIC_DISC_11;
@@ -141,6 +136,12 @@ public class CaveTraders {
         recipes.add(recipe8);
 
         wanderingTrader.setRecipes(recipes);
+
+        // Schedule next spawn
+        int runtime = (20 * (60 * 20)) / cavePlayers.size();
+        if (runtime <= 1200) runtime = 1200;
+        Bukkit.getServer().getScheduler().runTaskLaterAsynchronously(RPGLoot.getPlugin(), CaveTraders::randomlySpawnVillager, runtime);
+        Bukkit.getLogger().log(Level.INFO, "A cave trader spawned near " + player.getName() + ". Another one will spawn in " + (runtime / 20) + " seconds near a random cave player.");
     }
 
 }

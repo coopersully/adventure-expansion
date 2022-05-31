@@ -3,7 +3,6 @@ package me.coopersully.rpgloot.rpgloot;
 import me.coopersully.rpgloot.rpgloot.commands.Cleanse;
 import me.coopersully.rpgloot.rpgloot.commands.Meta;
 import me.coopersully.rpgloot.rpgloot.commands.Nightmare;
-import me.coopersully.rpgloot.rpgloot.commands.SpawnTrader;
 import me.coopersully.rpgloot.rpgloot.entities.CaveTraders;
 import me.coopersully.rpgloot.rpgloot.listeners.*;
 import org.bukkit.command.Command;
@@ -53,10 +52,6 @@ public final class RPGLoot extends JavaPlugin {
             }
             case "nightmare", "nightmarify" -> {
                 Nightmare.command(sender, args);
-                return true;
-            }
-            case "spawntrader" -> {
-                SpawnTrader.command(sender);
                 return true;
             }
         }
