@@ -22,11 +22,12 @@ public final class RPGLoot extends JavaPlugin {
     public void onEnable() {
         // Plugin startup logic
         plugin = this;
-        getServer().getPluginManager().registerEvents(new EquipArmor(), this);
+        getServer().getPluginManager().registerEvents(new Armor(), this);
         getServer().getPluginManager().registerEvents(new PickupExp(), this);
         getServer().getPluginManager().registerEvents(new RightClick(), this);
         getServer().getPluginManager().registerEvents(new SculkAbility(), this);
-        getServer().getPluginManager().registerEvents(new Magnet(), this);
+        getServer().getPluginManager().registerEvents(new Magnets(), this);
+        getServer().getPluginManager().registerEvents(new Bows(), this);
     }
 
     @Override

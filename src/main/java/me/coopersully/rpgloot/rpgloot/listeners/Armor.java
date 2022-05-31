@@ -14,7 +14,7 @@ import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
 import org.jetbrains.annotations.NotNull;
 
-public class EquipArmor implements Listener {
+public class Armor implements Listener {
 
     @EventHandler
     public void onArmorEquip(@NotNull PlayerArmorChangeEvent event) {

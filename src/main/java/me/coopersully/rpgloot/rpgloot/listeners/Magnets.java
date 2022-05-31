@@ -18,13 +18,13 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Magnet implements Listener {
+public class Magnets implements Listener {
 
     private static List<Player> expMagnetWielders = new ArrayList<>();
     private static List<Player> itemMagnetWielders = new ArrayList<>();
 
     static {
-        Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(RPGLoot.getPlugin(), Magnet::performAbilities, 0, 20);
+        Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(RPGLoot.getPlugin(), Magnets::performAbilities, 0, 20);
     }
 
     @EventHandler
