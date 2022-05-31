@@ -17,3 +17,6 @@ commands:
   nightmare:
     description: Infuse the held item with Nightmare Fuel if applicable.
     aliases: ["nightmarify"]
+  spawntrader:
+    description: Spawn a cave trader at your current position.
+    #aliases: []

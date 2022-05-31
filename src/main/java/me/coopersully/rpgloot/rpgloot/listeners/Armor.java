@@ -5,6 +5,7 @@ import me.coopersully.rpgloot.rpgloot.ItemKeys;
 import me.coopersully.rpgloot.rpgloot.RPGLoot;
 import me.coopersully.rpgloot.rpgloot.items.EternalArmor;
 import org.bukkit.Bukkit;
+import org.bukkit.NamespacedKey;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -78,16 +79,30 @@ public class Armor implements Listener {
             player.getPersistentDataContainer().remove(ItemKeys.grimsteel);
         }
 
-        player.getPersistentDataContainer().remove(ItemKeys.sculkBoots);
+        giveIfEquippedArmor(player, ItemKeys.sculkBoots, 0);
+        giveIfEquippedArmor(player, ItemKeys.minersHat, 3);
 
-        ItemStack boots = armor[0];
-        if (boots != null) {
-            ItemMeta bootsMeta = boots.getItemMeta();
-            if (bootsMeta != null) {
-                if (bootsMeta.getPersistentDataContainer().has(ItemKeys.sculkBoots)) {
-                    player.getPersistentDataContainer().set(ItemKeys.sculkBoots, PersistentDataType.STRING, "1");
-                }
-            }
+    }
+
+    private void giveIfEquippedArmor(@NotNull Player player, NamespacedKey key, int slot) {
+
+        var playerPDC = player.getPersistentDataContainer();
+        var playerArmor = player.getInventory().getArmorContents();
+        var item = playerArmor[slot];
+
+        // Remove the given NamespacedKey from the player
+        playerPDC.remove(ItemKeys.minersHat);
+
+        if (item == null) return;
+
+        ItemMeta itemMeta = item.getItemMeta();
+
+        if (itemMeta == null) return;
+
+        // If the player's worn item contains the NamespacedKey specified
+        if (itemMeta.getPersistentDataContainer().has(key)) {
+            // Give the player the corresponding NamespacedKey
+            playerPDC.set(key, PersistentDataType.STRING, "1");
         }
 
     }
