@@ -26,5 +26,7 @@ public class ItemKeys {
     public static NamespacedKey enderSword = new NamespacedKey(RPGLoot.getPlugin(), "ender_sword");
     public static NamespacedKey wolfHead = new NamespacedKey(RPGLoot.getPlugin(), "wolf_head");
     public static NamespacedKey sculkBoots = new NamespacedKey(RPGLoot.getPlugin(), "sculk_boots");
+    public static NamespacedKey itemMagnet = new NamespacedKey(RPGLoot.getPlugin(), "item_magnet");
+    public static NamespacedKey expMagnet = new NamespacedKey(RPGLoot.getPlugin(), "exp_magnet");
 
 }

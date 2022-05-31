@@ -11,7 +11,7 @@ import org.bukkit.persistence.PersistentDataContainer;
 
 public class Meta {
 
-    public static void command(CommandSender sender) {
+    public static void command(CommandSender sender, String[] args) {
 
         Player player = PlayerCommand.getPlayerFromSender(sender);
         if (player == null) return;
@@ -21,23 +21,29 @@ public class Meta {
             return;
         }
 
+        StringBuilder arg = new StringBuilder();
+        for (var line : args) arg.append(line);
+
         ItemStack mainItem = player.getInventory().getItemInMainHand();
         ItemMeta mainItemMeta = mainItem.getItemMeta();
 
-        if (mainItemMeta == null) {
-            alertEmpty(sender, "You must hold an item to scan it's meta.");
-            return;
+        PersistentDataContainer PDC;
+        String object;
+        if (mainItemMeta == null || arg.toString().contains("p")) {
+            object = "player";
+            PDC = player.getPersistentDataContainer();
+        } else {
+            object = "item";
+            PDC = mainItemMeta.getPersistentDataContainer();
         }
 
-        PersistentDataContainer persistentDataContainer = mainItemMeta.getPersistentDataContainer();
-
-        if (persistentDataContainer.getKeys().isEmpty()) {
-            alertEmpty(sender, "No data is attached to this item.");
+        if (PDC.getKeys().isEmpty()) {
+            sender.sendMessage(ChatColor.RED + "No data is attached to this " + object + ".");
             return;
         }
 
         StringBuilder metaKeys = new StringBuilder();
-        for (NamespacedKey key : persistentDataContainer.getKeys()) {
+        for (NamespacedKey key : PDC.getKeys()) {
             if (key == null) {
                 sender.sendMessage(ChatColor.YELLOW + "? = " + ChatColor.AQUA + "?");
                 continue;
@@ -49,12 +55,7 @@ public class Meta {
         }
         metaKeys.deleteCharAt(metaKeys.length() - 1);
         metaKeys.deleteCharAt(metaKeys.length() - 1);
-        sender.sendMessage(ChatColor.YELLOW + "The current item has the following meta: " + metaKeys);
-    }
-
-    public static void alertEmpty(CommandSender sender, String text) {
-
-        sender.sendMessage(ChatColor.RED + text);
+        sender.sendMessage(ChatColor.YELLOW + "The current " + ChatColor.AQUA + object + ChatColor.YELLOW + " has the following meta: " + metaKeys);
     }
 
 }

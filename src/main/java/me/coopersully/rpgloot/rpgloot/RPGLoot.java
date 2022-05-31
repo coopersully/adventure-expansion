@@ -3,10 +3,7 @@ package me.coopersully.rpgloot.rpgloot;
 import me.coopersully.rpgloot.rpgloot.commands.Cleanse;
 import me.coopersully.rpgloot.rpgloot.commands.Meta;
 import me.coopersully.rpgloot.rpgloot.commands.Nightmare;
-import me.coopersully.rpgloot.rpgloot.listeners.EquipArmor;
-import me.coopersully.rpgloot.rpgloot.listeners.RightClick;
-import me.coopersully.rpgloot.rpgloot.listeners.PickupExp;
-import me.coopersully.rpgloot.rpgloot.listeners.SculkAbility;
+import me.coopersully.rpgloot.rpgloot.listeners.*;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -29,6 +26,7 @@ public final class RPGLoot extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new PickupExp(), this);
         getServer().getPluginManager().registerEvents(new RightClick(), this);
         getServer().getPluginManager().registerEvents(new SculkAbility(), this);
+        getServer().getPluginManager().registerEvents(new Magnet(), this);
     }
 
     @Override
@@ -41,7 +39,7 @@ public final class RPGLoot extends JavaPlugin {
 
         switch (label) {
             case "meta" -> {
-                Meta.command(sender);
+                Meta.command(sender, args);
                 return true;
             }
             case "cleanse" -> {
