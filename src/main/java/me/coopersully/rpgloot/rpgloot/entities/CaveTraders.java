@@ -31,7 +31,11 @@ public class CaveTraders {
     public static List<Player> cavePlayers = new ArrayList<>();
 
     private static void refreshCavePlayers() {
+
+        cavePlayers.clear();
         var players = Bukkit.getServer().getOnlinePlayers();
+        if (players.isEmpty()) return;
+        
         for (var player : players) {
             World world = player.getWorld();
             // If the player is not in the overworld, ignore them.
