@@ -1,0 +1,12 @@
+# Insert all trades for Overworld cave traders here!
+trades:
+  item-001:
+    sell:
+      id:
+      data:
+    buy-1:
+      id:
+      data:
+    buy-2:
+      id:
+      data:

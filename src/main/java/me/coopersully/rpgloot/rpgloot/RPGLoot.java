@@ -7,13 +7,21 @@ import me.coopersully.rpgloot.rpgloot.entities.CaveTraders;
 import me.coopersully.rpgloot.rpgloot.listeners.*;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.InvalidConfigurationException;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
+
+import java.io.File;
+import java.io.IOException;
 
 public final class RPGLoot extends JavaPlugin {
 
     private static RPGLoot plugin;
     public static final String permissionPrefix = "crpg.";
+    private File trades;
+    private FileConfiguration tradesConfig;
 
     public static RPGLoot getPlugin() {
         return plugin;
@@ -21,8 +29,13 @@ public final class RPGLoot extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        // Plugin startup logic
+        // Instance for accessing main class
         plugin = this;
+
+        // Configuration files
+        createTradesConfiguration();
+
+        // Register all event listeners
         getServer().getPluginManager().registerEvents(new Armor(), this);
         getServer().getPluginManager().registerEvents(new PickupExp(), this);
         getServer().getPluginManager().registerEvents(new RightClick(), this);
@@ -30,6 +43,8 @@ public final class RPGLoot extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new Magnets(), this);
         getServer().getPluginManager().registerEvents(new Bows(), this);
         getServer().getPluginManager().registerEvents(new MinersHat(), this);
+
+        // Entity spawn controllers
         new CaveTraders();
     }
 
@@ -56,5 +71,24 @@ public final class RPGLoot extends JavaPlugin {
             }
         }
         return false;
+    }
+
+    public FileConfiguration getTradesConfig() {
+        return this.tradesConfig;
+    }
+
+    private void createTradesConfiguration() {
+        trades = new File(getDataFolder(), "trades/overworld.yml");
+        if (!trades.exists()) {
+            trades.getParentFile().mkdirs();
+            saveResource("trades/overworld.yml", false);
+        }
+
+        tradesConfig = new YamlConfiguration();
+        try {
+            tradesConfig.load(trades);
+        } catch (IOException | InvalidConfigurationException e) {
+            e.printStackTrace();
+        }
     }
 }

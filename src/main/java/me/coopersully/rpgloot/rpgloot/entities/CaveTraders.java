@@ -2,6 +2,7 @@ package me.coopersully.rpgloot.rpgloot.entities;
 
 import me.coopersully.rpgloot.rpgloot.ItemKeys;
 import me.coopersully.rpgloot.rpgloot.RPGLoot;
+import me.coopersully.rpgloot.rpgloot.config.BetterMerchantRecipe;
 import net.kyori.adventure.text.format.TextColor;
 import net.md_5.bungee.api.ChatColor;
 import net.kyori.adventure.text.Component;
@@ -16,6 +17,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.awt.Color;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 import java.util.logging.Level;
@@ -63,30 +65,24 @@ public class CaveTraders {
         World world = location.getWorld();
         WanderingTrader wanderingTrader = world.spawn(location, WanderingTrader.class);
 
-        List<MerchantRecipe> recipes = new ArrayList<>();
+        List<BetterMerchantRecipe> recipes = new ArrayList<>();
 
-        var recipe2 = new MerchantRecipe(new ItemStack(Material.IRON_INGOT, 2), 5);
-        recipe2.addIngredient(new ItemStack(Material.RAW_IRON, 1));
+        var recipe2 = new BetterMerchantRecipe(new ItemStack(Material.IRON_INGOT, 2), new ItemStack(Material.RAW_IRON, 1), 5);
         recipes.add(recipe2);
 
-        var recipe1 = new MerchantRecipe(new ItemStack(Material.GOLD_INGOT, 3), 7);
-        recipe1.addIngredient(new ItemStack(Material.RAW_GOLD, 2));
+        var recipe1 = new BetterMerchantRecipe(new ItemStack(Material.GOLD_INGOT, 3), new ItemStack(Material.RAW_GOLD, 2), 7);
         recipes.add(recipe1);
 
-        var recipe3 = new MerchantRecipe(new ItemStack(Material.COPPER_INGOT, 4), 9);
-        recipe3.addIngredient(new ItemStack(Material.RAW_COPPER, 3));
+        var recipe3 = new BetterMerchantRecipe(new ItemStack(Material.COPPER_INGOT, 4), new ItemStack(Material.RAW_COPPER, 3), 9);
         recipes.add(recipe3);
 
-        var recipe4 = new MerchantRecipe(new ItemStack(Material.EMERALD, 1), 11);
-        recipe4.addIngredient(new ItemStack(Material.COBBLESTONE, 48));
+        var recipe4 = new BetterMerchantRecipe(new ItemStack(Material.EMERALD, 1), new ItemStack(Material.COBBLESTONE, 48), 11);
         recipes.add(recipe4);
 
-        var recipe5 = new MerchantRecipe(new ItemStack(Material.EMERALD, 1), 13);
-        recipe5.addIngredient(new ItemStack(Material.COBBLED_DEEPSLATE, 32));
+        var recipe5 = new BetterMerchantRecipe(new ItemStack(Material.EMERALD, 1), new ItemStack(Material.COBBLED_DEEPSLATE, 32), 13);
         recipes.add(recipe5);
 
-        var recipe6 = new MerchantRecipe(new ItemStack(Material.COAL, 1), 16);
-        recipe6.addIngredient(new ItemStack(Material.ROTTEN_FLESH, 4));
+        var recipe6 = new BetterMerchantRecipe(new ItemStack(Material.COAL, 1), new ItemStack(Material.ROTTEN_FLESH, 4), 16);
         recipes.add(recipe6);
 
         Material randomDisc;
@@ -108,8 +104,7 @@ public class CaveTraders {
             default -> throw new RuntimeException("Music disc incorrectly selected in CaveDetector class");
         };
 
-        var recipe7 = new MerchantRecipe(new ItemStack(randomDisc, 1), 1);
-        recipe7.addIngredient(new ItemStack(Material.EMERALD, 32));
+        var recipe7 = new BetterMerchantRecipe(new ItemStack(randomDisc, 1), new ItemStack(Material.EMERALD, 32), 1);
         recipes.add(recipe7);
 
         ItemStack minersHelmet = new ItemStack(Material.IRON_HELMET, 1);
@@ -117,6 +112,7 @@ public class CaveTraders {
         minersHelmetMeta.displayName(
                 Component.text(ChatColor.LIGHT_PURPLE + "Miner's Hard Hat" + ChatColor.RESET)
         );
+
         minersHelmetMeta.lore(List.of(
                 Component.text( ChatColor.ITALIC + "Your guide into the depths." + ChatColor.RESET).color(TextColor.color(196, 164, 132)),
                 Component.text(""),
@@ -131,11 +127,10 @@ public class CaveTraders {
         minersHelmetMeta.getPersistentDataContainer().set(ItemKeys.minersHat, PersistentDataType.STRING, "1");
         minersHelmet.setItemMeta(minersHelmetMeta);
 
-        var recipe8 = new MerchantRecipe(minersHelmet, 1);
-        recipe8.addIngredient(new ItemStack(Material.EMERALD, 16));
+        var recipe8 = new BetterMerchantRecipe(minersHelmet, new ItemStack(Material.EMERALD, 16), 1);
         recipes.add(recipe8);
 
-        wanderingTrader.setRecipes(recipes);
+        wanderingTrader.setRecipes(Collections.unmodifiableList(recipes));
 
         // Schedule next spawn
         int runtime = (20 * (60 * 20)) / cavePlayers.size();
