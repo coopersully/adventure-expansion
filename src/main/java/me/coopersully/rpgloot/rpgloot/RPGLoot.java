@@ -3,6 +3,8 @@ package me.coopersully.rpgloot.rpgloot;
 import me.coopersully.rpgloot.rpgloot.commands.Cleanse;
 import me.coopersully.rpgloot.rpgloot.commands.Meta;
 import me.coopersully.rpgloot.rpgloot.commands.Nightmare;
+import me.coopersully.rpgloot.rpgloot.commands.TradesCommand;
+import me.coopersully.rpgloot.rpgloot.config.Trades;
 import me.coopersully.rpgloot.rpgloot.entities.CaveTraders;
 import me.coopersully.rpgloot.rpgloot.listeners.*;
 import org.bukkit.command.Command;
@@ -34,6 +36,7 @@ public final class RPGLoot extends JavaPlugin {
 
         // Configuration files
         createTradesConfiguration();
+        Trades.load();
 
         // Register all event listeners
         getServer().getPluginManager().registerEvents(new Armor(), this);
@@ -42,6 +45,7 @@ public final class RPGLoot extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new SculkAbility(), this);
         getServer().getPluginManager().registerEvents(new Magnets(), this);
         getServer().getPluginManager().registerEvents(new Bows(), this);
+        getServer().getPluginManager().registerEvents(new ArrowLand(), this);
         getServer().getPluginManager().registerEvents(new MinersHat(), this);
 
         // Entity spawn controllers
@@ -67,6 +71,10 @@ public final class RPGLoot extends JavaPlugin {
             }
             case "nightmare", "nightmarify" -> {
                 Nightmare.command(sender, args);
+                return true;
+            }
+            case "trades" -> {
+                TradesCommand.command(sender, args);
                 return true;
             }
         }

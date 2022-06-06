@@ -20,3 +20,6 @@ commands:
   spawntrader:
     description: Spawn a cave trader at your current position.
     #aliases: []
+  trades:
+    description: Access all trades-related data.
+    #aliases: []

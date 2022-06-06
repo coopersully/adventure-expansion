@@ -1,13 +1,17 @@
 package me.coopersully.rpgloot.rpgloot.listeners;
 
+import me.coopersully.rpgloot.rpgloot.CoreUtils;
 import me.coopersully.rpgloot.rpgloot.ItemKeys;
-import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityShootBowEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.persistence.PersistentDataType;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 import org.jetbrains.annotations.NotNull;
 
 public class Bows implements Listener {
@@ -24,12 +28,18 @@ public class Bows implements Listener {
         if (bowMeta == null) return;
 
         if (bowMeta.getPersistentDataContainer().has(ItemKeys.witherBow)) {
-            Entity oldProjectile = event.getProjectile();
-            Location killArea = oldProjectile.getLocation().clone();
-            killArea.setY(-500);
-            oldProjectile.teleportAsync(killArea);
+            CoreUtils.killProjectile(event.getProjectile());
             entity.launchProjectile(WitherSkull.class).setVelocity(event.getProjectile().getVelocity().multiply(0.45));
         }
+
+        if (bowMeta.getPersistentDataContainer().has(ItemKeys.evokerBow)) {
+            CoreUtils.killProjectile(event.getProjectile());
+            Snowball projectile = entity.launchProjectile(Snowball.class);
+            projectile.setVelocity(event.getProjectile().getVelocity());
+            projectile.setItem(new ItemStack(Material.GHAST_TEAR, 1));
+            projectile.getPersistentDataContainer().set(ItemKeys.evokerBow, PersistentDataType.STRING, "1");
+        }
+
     }
 
 }

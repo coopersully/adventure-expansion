@@ -3,7 +3,7 @@ plugins {
 }
 
 group = 'me.coopersully.rpgloot'
-version = '1.4'
+version = '1.5'
 
 repositories {
     mavenCentral()
@@ -19,6 +19,9 @@ repositories {
 
 dependencies {
     compileOnly 'io.papermc.paper:paper-api:1.18.1-R0.1-SNAPSHOT'
+    // https://mvnrepository.com/artifact/org.json/json
+    implementation group: 'org.json', name: 'json', version: '20220320'
+    implementation 'net.kyori:adventure-text-minimessage:4.11.0'
 }
 
 def targetJavaVersion = 17
