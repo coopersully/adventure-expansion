@@ -1,40 +1,45 @@
 package me.coopersully.rpgloot.rpgloot.commands;
 
 import me.coopersully.rpgloot.rpgloot.ItemKeys;
-import me.coopersully.rpgloot.rpgloot.RPGLoot;
+import me.coopersully.rpgloot.rpgloot.HalaraRPG;
 import me.coopersully.rpgloot.rpgloot.items.NightmareItem;
 import org.bukkit.*;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataType;
+import org.jetbrains.annotations.NotNull;
 
-public class Nightmare {
+public class CommandNightmare implements CommandExecutor {
 
-    public static void command(CommandSender sender, String[] args) {
+    @Override
+    public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         if (args.length <= 0) {
             commandMain(sender);
-        } else {
-            switch (args[0].toLowerCase().strip())  {
-                case "confirm", "c", "yes" -> commandConfirmed(sender);
-                default -> sender.sendMessage(ChatColor.RED + "Usage: /nightmare [confirm]");
-            }
+            return false;
         }
-    }
 
+        switch (args[0].toLowerCase().strip())  {
+            case "confirm", "c", "yes" -> commandConfirmed(sender);
+            default -> sender.sendMessage(ChatColor.RED + "Usage: /nightmare [confirm]");
+        }
+        return true;
+    }
 
     public static void commandMain(CommandSender sender) {
 
         /* Check if the CommandSender is a player and stop
         the command if it is not (if sender is Console or other). */
-        Player player = PlayerCommand.getPlayerFromSender(sender);
+        Player player = CoreUtils.getPlayerFromSender(sender);
         if (player == null) return;
 
         // Check if sender has the required permissions
-        if (!player.hasPermission(RPGLoot.permissionPrefix + "nightmare")) {
+        if (!player.hasPermission(HalaraRPG.permissionPrefix + "nightmare")) {
             sender.sendMessage(ChatColor.RED + "You don't have permission to infuse items with Nightmare Fuel.");
             return;
         }
@@ -93,11 +98,11 @@ public class Nightmare {
 
         /* Check if the CommandSender is a player and stop
         the command if it is not (if sender is Console or other). */
-        Player player = PlayerCommand.getPlayerFromSender(sender);
+        Player player = CoreUtils.getPlayerFromSender(sender);
         if (player == null) return;
 
         // Check if sender has the required permissions
-        if (!player.hasPermission(RPGLoot.permissionPrefix + "nightmare")) {
+        if (!player.hasPermission(HalaraRPG.permissionPrefix + "nightmare")) {
             sender.sendMessage(ChatColor.RED + "You don't have permission to infuse items with Nightmare Fuel.");
             return;
         }
@@ -175,5 +180,4 @@ public class Nightmare {
         if (amount > 20) amount = 20;
         return amount;
     }
-
 }

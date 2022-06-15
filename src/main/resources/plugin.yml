@@ -1,10 +1,10 @@
-name: RPGLoot
+name: HalaraRPG
 version: '${version}'
-main: me.coopersully.rpgloot.rpgloot.RPGLoot
+main: me.coopersully.rpgloot.rpgloot.HalaraRPG
 api-version: 1.18
-prefix: RPG Loot
-authors: [ Curse ]
-description: Change up the survival experience by introducing new roleplay-themed items, blocks, and game mechanics!
+prefix: RPG
+authors: [ coopersully ]
+description: A plugin that adds roleplay-themed items, blocks, and game mechanics.
 website: https://coopersully.me/projects/curses-rp-addon/
 
 commands:
@@ -17,9 +17,6 @@ commands:
   nightmare:
     description: Infuse the held item with Nightmare Fuel if applicable.
     aliases: ["nightmarify"]
-  spawntrader:
-    description: Spawn a cave trader at your current position.
-    #aliases: []
   trades:
     description: Access all trades-related data.
     #aliases: []

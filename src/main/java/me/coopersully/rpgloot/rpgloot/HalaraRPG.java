@@ -1,32 +1,29 @@
 package me.coopersully.rpgloot.rpgloot;
 
-import me.coopersully.rpgloot.rpgloot.commands.Cleanse;
-import me.coopersully.rpgloot.rpgloot.commands.Meta;
-import me.coopersully.rpgloot.rpgloot.commands.Nightmare;
-import me.coopersully.rpgloot.rpgloot.commands.TradesCommand;
+import me.coopersully.rpgloot.rpgloot.commands.CommandCleanse;
+import me.coopersully.rpgloot.rpgloot.commands.CommandMeta;
+import me.coopersully.rpgloot.rpgloot.commands.CommandNightmare;
+import me.coopersully.rpgloot.rpgloot.commands.CommandTrades;
 import me.coopersully.rpgloot.rpgloot.config.Trades;
 import me.coopersully.rpgloot.rpgloot.entities.CaveTraders;
 import me.coopersully.rpgloot.rpgloot.listeners.*;
 import org.bukkit.ChatColor;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.io.IOException;
 
-public final class RPGLoot extends JavaPlugin {
+public final class HalaraRPG extends JavaPlugin {
 
-    private static RPGLoot plugin;
+    private static HalaraRPG plugin;
     public static final String permissionPrefix = "crpg.";
     private File trades;
     private FileConfiguration tradesConfig;
 
-    public static RPGLoot getPlugin() {
+    public static HalaraRPG getPlugin() {
         return plugin;
     }
 
@@ -49,9 +46,16 @@ public final class RPGLoot extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new ArrowLand(), this);
         getServer().getPluginManager().registerEvents(new MinersHat(), this);
 
+        // Register all commands
+        getCommand("cleanse").setExecutor(new CommandCleanse());
+        getCommand("meta").setExecutor(new CommandMeta());
+        getCommand("nightmare").setExecutor(new CommandNightmare());
+        getCommand("trades").setExecutor(new CommandTrades());
+
         // Entity spawn controllers
         new CaveTraders();
 
+        // Send plugin loaded ASCII-art message
         System.out.println(ChatColor.GREEN + " __        __   __   ___ .  __      __   __   __           __   __  ___ " + ChatColor.RESET);
         System.out.println(ChatColor.GREEN + "/  ` |  | |__) /__` |__  ' /__`    |__) |__) / _`    |    /  \\ /  \\  |"  + ChatColor.RESET);
         System.out.println(ChatColor.GREEN + "\\__, \\__/ |  \\ .__/ |___   .__/    |  \\ |    \\__>    |___ \\__/ \\__/  |"  + ChatColor.RESET);
@@ -60,30 +64,6 @@ public final class RPGLoot extends JavaPlugin {
     @Override
     public void onDisable() {
         // Plugin shutdown logic
-    }
-
-
-    public boolean onCommand(@NotNull CommandSender sender, @NotNull Command cmd, String label, String[] args) {
-
-        switch (label) {
-            case "meta" -> {
-                Meta.command(sender, args);
-                return true;
-            }
-            case "cleanse" -> {
-                Cleanse.command(sender);
-                return true;
-            }
-            case "nightmare", "nightmarify" -> {
-                Nightmare.command(sender, args);
-                return true;
-            }
-            case "trades" -> {
-                TradesCommand.command(sender, args);
-                return true;
-            }
-        }
-        return false;
     }
 
     public FileConfiguration getTradesConfig() {

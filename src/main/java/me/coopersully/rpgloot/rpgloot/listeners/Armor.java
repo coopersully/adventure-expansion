@@ -2,7 +2,7 @@ package me.coopersully.rpgloot.rpgloot.listeners;
 
 import com.destroystokyo.paper.event.player.PlayerArmorChangeEvent;
 import me.coopersully.rpgloot.rpgloot.ItemKeys;
-import me.coopersully.rpgloot.rpgloot.RPGLoot;
+import me.coopersully.rpgloot.rpgloot.HalaraRPG;
 import me.coopersully.rpgloot.rpgloot.items.EternalArmor;
 import org.bukkit.Bukkit;
 import org.bukkit.NamespacedKey;
@@ -20,7 +20,7 @@ public class Armor implements Listener {
     @EventHandler
     public void onArmorEquip(@NotNull PlayerArmorChangeEvent event) {
 
-        Bukkit.getScheduler().runTaskLaterAsynchronously(RPGLoot.getPlugin(), () -> updateArmorTags(event), 20L);
+        Bukkit.getScheduler().runTaskLaterAsynchronously(HalaraRPG.getPlugin(), () -> updateArmorTags(event), 20L);
 
         Player player = event.getPlayer();
         ItemStack oldItem = event.getOldItem();

@@ -1,7 +1,7 @@
 package me.coopersully.rpgloot.rpgloot.listeners;
 
 import me.coopersully.rpgloot.rpgloot.ItemKeys;
-import me.coopersully.rpgloot.rpgloot.RPGLoot;
+import me.coopersully.rpgloot.rpgloot.HalaraRPG;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.*;
@@ -24,12 +24,12 @@ public class Magnets implements Listener {
     private static List<Player> itemMagnetWielders = new ArrayList<>();
 
     static {
-        Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(RPGLoot.getPlugin(), Magnets::performAbilities, 0, 20);
+        Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(HalaraRPG.getPlugin(), Magnets::performAbilities, 0, 20);
     }
 
     @EventHandler
     public void onHoldItem(@NotNull PlayerItemHeldEvent event) {
-        Bukkit.getScheduler().runTaskLaterAsynchronously(RPGLoot.getPlugin(), () -> updatePlayerWithItemTags(event.getPlayer()), 20L);
+        Bukkit.getScheduler().runTaskLaterAsynchronously(HalaraRPG.getPlugin(), () -> updatePlayerWithItemTags(event.getPlayer()), 20L);
     }
 
     public void updatePlayerWithItemTags(@NotNull Player player) {

@@ -1,11 +1,8 @@
 package me.coopersully.rpgloot.rpgloot.config;
 
 import me.coopersully.rpgloot.rpgloot.CoreUtils;
-import me.coopersully.rpgloot.rpgloot.RPGLoot;
+import me.coopersully.rpgloot.rpgloot.HalaraRPG;
 import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.TextComponent;
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.configuration.ConfigurationSection;
@@ -20,7 +17,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
-import java.util.logging.Level;
 
 public class Trades {
 
@@ -28,7 +24,7 @@ public class Trades {
 
     public static void load() {
 
-        var trades = RPGLoot.getPlugin().getTradesConfig().getConfigurationSection("trades");
+        var trades = HalaraRPG.getPlugin().getTradesConfig().getConfigurationSection("trades");
 
         if (trades == null) {
             System.out.println("No trades were provided in overworld.yml for RPG Loot.");
@@ -125,7 +121,7 @@ public class Trades {
             var persistents = data.getStringList("persistents");
             if (!persistents.isEmpty()) {
                 for (var line : persistents) {
-                    NamespacedKey key = new NamespacedKey(RPGLoot.getPlugin(), line);
+                    NamespacedKey key = new NamespacedKey(HalaraRPG.getPlugin(), line);
                     itemMeta.getPersistentDataContainer().set(key, PersistentDataType.STRING, "1");
                 }
             }

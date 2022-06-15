@@ -1,24 +1,27 @@
 package me.coopersully.rpgloot.rpgloot.commands;
 
-import me.coopersully.rpgloot.rpgloot.RPGLoot;
+import me.coopersully.rpgloot.rpgloot.HalaraRPG;
 import org.bukkit.ChatColor;
 import org.bukkit.NamespacedKey;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataContainer;
+import org.jetbrains.annotations.NotNull;
 
-public class Meta {
+public class CommandMeta implements CommandExecutor {
 
-    public static void command(CommandSender sender, String[] args) {
+    @Override
+    public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
+        Player player = CoreUtils.getPlayerFromSender(sender);
+        if (player == null) return false;
 
-        Player player = PlayerCommand.getPlayerFromSender(sender);
-        if (player == null) return;
-
-        if (!player.hasPermission(RPGLoot.permissionPrefix + "meta")) {
+        if (!player.hasPermission(HalaraRPG.permissionPrefix + "meta")) {
             sender.sendMessage(ChatColor.RED + "You don't have permission to check item meta.");
-            return;
+            return false;
         }
 
         StringBuilder arg = new StringBuilder();
@@ -39,7 +42,7 @@ public class Meta {
 
         if (PDC.getKeys().isEmpty()) {
             sender.sendMessage(ChatColor.RED + "No data is attached to this " + object + ".");
-            return;
+            return false;
         }
 
         StringBuilder metaKeys = new StringBuilder();
@@ -56,6 +59,7 @@ public class Meta {
         metaKeys.deleteCharAt(metaKeys.length() - 1);
         metaKeys.deleteCharAt(metaKeys.length() - 1);
         sender.sendMessage(ChatColor.YELLOW + "The current " + ChatColor.AQUA + object + ChatColor.YELLOW + " has the following meta: " + metaKeys);
+        return true;
     }
 
 }
