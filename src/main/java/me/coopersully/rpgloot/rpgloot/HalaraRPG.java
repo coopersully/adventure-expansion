@@ -20,8 +20,10 @@ public final class HalaraRPG extends JavaPlugin {
 
     private static HalaraRPG plugin;
     public static final String permissionPrefix = "crpg.";
-    private File trades;
     private FileConfiguration tradesConfig;
+
+    // Configuration variables
+    public static boolean debug;
 
     public static HalaraRPG getPlugin() {
         return plugin;
@@ -35,6 +37,9 @@ public final class HalaraRPG extends JavaPlugin {
         // Configuration files
         createTradesConfiguration();
         Trades.load();
+
+        saveDefaultConfig();
+        reloadDefaultConfig();
 
         // Register all event listeners
         getServer().getPluginManager().registerEvents(new Armor(), this);
@@ -71,7 +76,7 @@ public final class HalaraRPG extends JavaPlugin {
     }
 
     private void createTradesConfiguration() {
-        trades = new File(getDataFolder(), "trades/overworld.yml");
+        File trades = new File(getDataFolder(), "trades/overworld.yml");
         if (!trades.exists()) {
             trades.getParentFile().mkdirs();
             saveResource("trades/overworld.yml", false);
@@ -83,5 +88,13 @@ public final class HalaraRPG extends JavaPlugin {
         } catch (IOException | InvalidConfigurationException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void reloadDefaultConfig() {
+        getPlugin().reloadConfig();
+        getPlugin().saveDefaultConfig();
+
+        // Settings section
+        debug = getPlugin().getConfig().getBoolean("debug");
     }
 }

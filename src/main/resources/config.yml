@@ -1,0 +1,4 @@
+# If something is going wrong or any unknown errors are occurring,
+# you may want to enable debug mode to better diagnose the issue.
+# !! WARNING !! This will most-likely spam the console with messages.
+debug: false

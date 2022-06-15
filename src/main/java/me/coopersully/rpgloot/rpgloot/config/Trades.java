@@ -37,7 +37,7 @@ public class Trades {
 
             var trade = trades.getConfigurationSection(tradeKey);
             if (trade == null) {
-                System.out.println("Invalid");
+                if (HalaraRPG.debug) System.out.println("Invalid trade for " + tradeKey);
                 continue;
             }
 
@@ -85,19 +85,21 @@ public class Trades {
 
     }
 
-    private static @NotNull ItemStack getItemStack(Object id, int amount, ConfigurationSection data) {
+    private static @NotNull ItemStack getItemStack(@NotNull Object id, int amount, ConfigurationSection data) {
+
+        if (HalaraRPG.debug) System.out.println("Attempting to parse " + id.getClass().getSimpleName() + " as an item...");
 
         Material material = null;
-        if (id instanceof String) {
-            material = Material.getMaterial(id.toString());
-        } else if (id instanceof List) {
+        if (id instanceof ArrayList) {
             Random random = new Random();
             String mat = (String) ((List<?>) id).get(random.nextInt(((List<?>) id).size()));
             material = Material.getMaterial(mat);
+        } else if (id instanceof String) {
+            material = Material.getMaterial(id.toString());
         }
 
         if (material == null) {
-            throw new RuntimeException("Could not parse \"" + id + "\" as an item from trades yaml file.");
+            throw new RuntimeException("Could not parse \"" + id + "\" as an item.");
         }
 
         ItemStack itemStack = new ItemStack(material, amount);
