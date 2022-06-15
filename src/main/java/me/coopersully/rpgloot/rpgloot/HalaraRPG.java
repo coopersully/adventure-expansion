@@ -4,7 +4,7 @@ import me.coopersully.rpgloot.rpgloot.commands.CommandCleanse;
 import me.coopersully.rpgloot.rpgloot.commands.CommandMeta;
 import me.coopersully.rpgloot.rpgloot.commands.CommandNightmare;
 import me.coopersully.rpgloot.rpgloot.commands.CommandTrades;
-import me.coopersully.rpgloot.rpgloot.config.Trades;
+import me.coopersully.rpgloot.rpgloot.config.ConfigTrades;
 import me.coopersully.rpgloot.rpgloot.entities.CaveTraders;
 import me.coopersully.rpgloot.rpgloot.listeners.*;
 import org.bukkit.ChatColor;
@@ -36,7 +36,7 @@ public final class HalaraRPG extends JavaPlugin {
 
         // Configuration files
         createTradesConfiguration();
-        Trades.load();
+        ConfigTrades.load();
 
         saveDefaultConfig();
         reloadDefaultConfig();
@@ -52,10 +52,14 @@ public final class HalaraRPG extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new MinersHat(), this);
 
         // Register all commands
-        getCommand("cleanse").setExecutor(new CommandCleanse());
-        getCommand("meta").setExecutor(new CommandMeta());
-        getCommand("nightmare").setExecutor(new CommandNightmare());
-        getCommand("trades").setExecutor(new CommandTrades());
+        try {
+            getCommand("cleanse").setExecutor(new CommandCleanse());
+            getCommand("meta").setExecutor(new CommandMeta());
+            getCommand("nightmare").setExecutor(new CommandNightmare());
+            getCommand("trades").setExecutor(new CommandTrades());
+        } catch (NullPointerException e) {
+            System.out.println(ChatColor.RED + "Failed to register command(s); please contact the developer.");
+        }
 
         // Entity spawn controllers
         new CaveTraders();

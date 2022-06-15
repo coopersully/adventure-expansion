@@ -1,7 +1,8 @@
 package me.coopersully.rpgloot.rpgloot.commands;
 
+import me.coopersully.rpgloot.rpgloot.CoreUtils;
 import me.coopersully.rpgloot.rpgloot.HalaraRPG;
-import me.coopersully.rpgloot.rpgloot.config.Trades;
+import me.coopersully.rpgloot.rpgloot.config.ConfigTrades;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.World;
@@ -31,7 +32,7 @@ public class CommandTrades implements CommandExecutor {
         switch (operation) {
             case "reload", "rel":
                 sender.sendMessage(ChatColor.YELLOW + "All trades reloaded from config file(s).");
-                Trades.load();
+                ConfigTrades.load();
                 return true;
             case "spawn":
                 Player player = CoreUtils.getPlayerFromSender(sender);
@@ -42,7 +43,7 @@ public class CommandTrades implements CommandExecutor {
 
                 sender.sendMessage(ChatColor.YELLOW + "Spawned a cave trader at your current position.");
                 WanderingTrader wanderingTrader = world.spawn(location, WanderingTrader.class);
-                Trades.giveTrades(wanderingTrader);
+                ConfigTrades.giveTrades(wanderingTrader);
                 return true;
             default:
                 sender.sendMessage(ChatColor.RED + "Usage: /trades <reload|spawn>");

@@ -1,5 +1,6 @@
 package me.coopersully.rpgloot.rpgloot.commands;
 
+import me.coopersully.rpgloot.rpgloot.CoreUtils;
 import me.coopersully.rpgloot.rpgloot.ItemKeys;
 import me.coopersully.rpgloot.rpgloot.HalaraRPG;
 import org.bukkit.ChatColor;

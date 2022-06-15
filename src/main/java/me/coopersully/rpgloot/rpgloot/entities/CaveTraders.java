@@ -1,7 +1,8 @@
 package me.coopersully.rpgloot.rpgloot.entities;
 
+import me.coopersully.rpgloot.rpgloot.CoreUtils;
 import me.coopersully.rpgloot.rpgloot.HalaraRPG;
-import me.coopersully.rpgloot.rpgloot.config.Trades;
+import me.coopersully.rpgloot.rpgloot.config.ConfigTrades;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
@@ -42,8 +43,9 @@ public class CaveTraders {
     private static void randomlySpawnVillager() {
         refreshCavePlayers();
         if (cavePlayers.isEmpty()) {
-            System.out.println("A cave trader attempted to spawn but no players were found in caves; trying again in 60 seconds.");
-            Bukkit.getServer().getScheduler().runTaskLaterAsynchronously(HalaraRPG.getPlugin(), CaveTraders::randomlySpawnVillager, 1200);
+            var tryAgainTime = 20 * (60 * 10);
+            if (HalaraRPG.debug) System.out.println("A cave trader attempted to spawn but no players were found in caves; trying again in " + CoreUtils.getPrettyTimeFromTicks(1200));
+            Bukkit.getServer().getScheduler().runTaskLaterAsynchronously(HalaraRPG.getPlugin(), CaveTraders::randomlySpawnVillager, tryAgainTime);
             return;
         }
 
@@ -58,13 +60,13 @@ public class CaveTraders {
 
         World world = location.getWorld();
         WanderingTrader wanderingTrader = world.spawn(location, WanderingTrader.class);
-        Trades.giveTrades(wanderingTrader);
+        ConfigTrades.giveTrades(wanderingTrader);
 
         // Schedule next spawn
-        int runtime = (20 * (60 * 20)) / cavePlayers.size();
+        int runtime = (20 * (60 * 60)) / (cavePlayers.size() / 2);
         if (runtime <= 1200) runtime = 1200;
         Bukkit.getServer().getScheduler().runTaskLaterAsynchronously(HalaraRPG.getPlugin(), CaveTraders::randomlySpawnVillager, runtime);
-        System.out.println("A cave trader spawned near " + player.getName() + ". Another one will spawn in " + (runtime / 20) + " seconds near a random cave player.");
+        if (HalaraRPG.debug) System.out.println("A cave trader spawned near " + player.getName() + ". Another one will spawn in " + CoreUtils.getPrettyTimeFromTicks(runtime) + " seconds near a random cave player.");
     }
 
 }

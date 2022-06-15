@@ -18,7 +18,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
-public class Trades {
+public class ConfigTrades {
 
     private static List<MerchantRecipe> merchantTrades = new ArrayList<>();
 
