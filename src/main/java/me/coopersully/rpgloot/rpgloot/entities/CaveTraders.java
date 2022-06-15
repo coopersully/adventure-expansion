@@ -43,7 +43,7 @@ public class CaveTraders {
     private static void randomlySpawnVillager() {
         refreshCavePlayers();
         if (cavePlayers.isEmpty()) {
-            Bukkit.getLogger().log(Level.INFO, "A cave trader attempted to spawn but no players were found in caves; trying again in 60 seconds.");
+            System.out.println("A cave trader attempted to spawn but no players were found in caves; trying again in 60 seconds.");
             Bukkit.getServer().getScheduler().runTaskLaterAsynchronously(RPGLoot.getPlugin(), CaveTraders::randomlySpawnVillager, 1200);
             return;
         }
@@ -65,7 +65,7 @@ public class CaveTraders {
         int runtime = (20 * (60 * 20)) / cavePlayers.size();
         if (runtime <= 1200) runtime = 1200;
         Bukkit.getServer().getScheduler().runTaskLaterAsynchronously(RPGLoot.getPlugin(), CaveTraders::randomlySpawnVillager, runtime);
-        Bukkit.getLogger().log(Level.INFO, "A cave trader spawned near " + player.getName() + ". Another one will spawn in " + (runtime / 20) + " seconds near a random cave player.");
+        System.out.println("A cave trader spawned near " + player.getName() + ". Another one will spawn in " + (runtime / 20) + " seconds near a random cave player.");
     }
 
 }

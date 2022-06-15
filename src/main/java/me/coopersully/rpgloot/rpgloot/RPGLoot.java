@@ -7,6 +7,7 @@ import me.coopersully.rpgloot.rpgloot.commands.TradesCommand;
 import me.coopersully.rpgloot.rpgloot.config.Trades;
 import me.coopersully.rpgloot.rpgloot.entities.CaveTraders;
 import me.coopersully.rpgloot.rpgloot.listeners.*;
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.InvalidConfigurationException;
@@ -50,6 +51,10 @@ public final class RPGLoot extends JavaPlugin {
 
         // Entity spawn controllers
         new CaveTraders();
+
+        System.out.println(ChatColor.GREEN + " __        __   __   ___ .  __      __   __   __           __   __  ___ " + ChatColor.RESET);
+        System.out.println(ChatColor.GREEN + "/  ` |  | |__) /__` |__  ' /__`    |__) |__) / _`    |    /  \\ /  \\  |"  + ChatColor.RESET);
+        System.out.println(ChatColor.GREEN + "\\__, \\__/ |  \\ .__/ |___   .__/    |  \\ |    \\__>    |___ \\__/ \\__/  |"  + ChatColor.RESET);
     }
 
     @Override

@@ -31,7 +31,7 @@ public class Trades {
         var trades = RPGLoot.getPlugin().getTradesConfig().getConfigurationSection("trades");
 
         if (trades == null) {
-            Bukkit.getLogger().log(Level.WARNING, "No trades were provided in overworld.yml for RPG Loot.");
+            System.out.println("No trades were provided in overworld.yml for RPG Loot.");
             return;
         }
 
