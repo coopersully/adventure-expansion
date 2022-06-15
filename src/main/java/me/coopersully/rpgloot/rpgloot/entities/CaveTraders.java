@@ -63,10 +63,26 @@ public class CaveTraders {
         ConfigTrades.giveTrades(wanderingTrader);
 
         // Schedule next spawn
-        int runtime = (20 * (60 * 60)) / (cavePlayers.size() / 2);
-        if (runtime <= 1200) runtime = 1200;
+        var runtime = calculateRuntime();
         Bukkit.getServer().getScheduler().runTaskLaterAsynchronously(HalaraRPG.getPlugin(), CaveTraders::randomlySpawnVillager, runtime);
         if (HalaraRPG.debug) System.out.println("A cave trader spawned near " + player.getName() + ". Another one will spawn in " + CoreUtils.getPrettyTimeFromTicks(runtime) + " seconds near a random cave player.");
+    }
+
+    private static int calculateRuntime() {
+        // Initialize runtime to 60 minutes in ticks
+        int runtime = (20 * (60 * 60));
+
+        // Calculate divisor for players
+        int divisor = (cavePlayers.size() / 2);
+        if (divisor <= 0) divisor = 1;
+
+        // Divide runtime by divisor
+        runtime = runtime / divisor;
+
+        /* If the remaining runtime is less than
+        1200 ticks, or 1 minute, default it to 1 minute. */
+        if (runtime <= 1200) runtime = 1200;
+        return runtime;
     }
 
 }
