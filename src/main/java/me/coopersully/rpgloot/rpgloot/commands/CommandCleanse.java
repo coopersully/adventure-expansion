@@ -2,7 +2,7 @@ package me.coopersully.rpgloot.rpgloot.commands;
 
 import me.coopersully.rpgloot.rpgloot.CoreUtils;
 import me.coopersully.rpgloot.rpgloot.ItemKeys;
-import me.coopersully.rpgloot.rpgloot.HalaraRPG;
+import me.coopersully.rpgloot.rpgloot.AdventureExpansion;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -21,7 +21,7 @@ public class CommandCleanse implements CommandExecutor {
         Player player = CoreUtils.getPlayerFromSender(sender);
         if (player == null) return false;
 
-        if (!player.hasPermission(HalaraRPG.permissionPrefix + "cleanse")) {
+        if (!player.hasPermission(AdventureExpansion.permissionPrefix + "cleanse")) {
             sender.sendMessage(ChatColor.RED + "You don't have permission to cleanse items.");
             return false;
         }

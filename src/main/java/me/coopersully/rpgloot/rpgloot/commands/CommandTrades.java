@@ -1,7 +1,7 @@
 package me.coopersully.rpgloot.rpgloot.commands;
 
 import me.coopersully.rpgloot.rpgloot.CoreUtils;
-import me.coopersully.rpgloot.rpgloot.HalaraRPG;
+import me.coopersully.rpgloot.rpgloot.AdventureExpansion;
 import me.coopersully.rpgloot.rpgloot.config.ConfigTrades;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
@@ -18,7 +18,7 @@ public class CommandTrades implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
 
-        if (!sender.hasPermission(HalaraRPG.permissionPrefix + "trades")) {
+        if (!sender.hasPermission(AdventureExpansion.permissionPrefix + "trades")) {
             sender.sendMessage(ChatColor.RED + "You don't have permission to configure trades.");
             return false;
         }

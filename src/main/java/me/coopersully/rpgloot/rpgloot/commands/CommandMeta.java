@@ -1,7 +1,7 @@
 package me.coopersully.rpgloot.rpgloot.commands;
 
 import me.coopersully.rpgloot.rpgloot.CoreUtils;
-import me.coopersully.rpgloot.rpgloot.HalaraRPG;
+import me.coopersully.rpgloot.rpgloot.AdventureExpansion;
 import org.bukkit.ChatColor;
 import org.bukkit.NamespacedKey;
 import org.bukkit.command.Command;
@@ -20,7 +20,7 @@ public class CommandMeta implements CommandExecutor {
         Player player = CoreUtils.getPlayerFromSender(sender);
         if (player == null) return false;
 
-        if (!player.hasPermission(HalaraRPG.permissionPrefix + "meta")) {
+        if (!player.hasPermission(AdventureExpansion.permissionPrefix + "meta")) {
             sender.sendMessage(ChatColor.RED + "You don't have permission to check item meta.");
             return false;
         }

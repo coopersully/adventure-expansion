@@ -1,7 +1,7 @@
 package me.coopersully.rpgloot.rpgloot.config;
 
 import me.coopersully.rpgloot.rpgloot.CoreUtils;
-import me.coopersully.rpgloot.rpgloot.HalaraRPG;
+import me.coopersully.rpgloot.rpgloot.AdventureExpansion;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
@@ -24,7 +24,7 @@ public class ConfigTrades {
 
     public static void load() {
 
-        var trades = HalaraRPG.getPlugin().getTradesConfig().getConfigurationSection("trades");
+        var trades = AdventureExpansion.getPlugin().getTradesConfig().getConfigurationSection("trades");
 
         if (trades == null) {
             System.out.println("No trades were provided in overworld.yml for RPG Loot.");
@@ -37,7 +37,7 @@ public class ConfigTrades {
 
             var trade = trades.getConfigurationSection(tradeKey);
             if (trade == null) {
-                if (HalaraRPG.debug) System.out.println("Invalid trade for " + tradeKey);
+                if (AdventureExpansion.debug) System.out.println("Invalid trade for " + tradeKey);
                 continue;
             }
 
@@ -87,7 +87,7 @@ public class ConfigTrades {
 
     private static @NotNull ItemStack getItemStack(@NotNull Object id, int amount, ConfigurationSection data) {
 
-        if (HalaraRPG.debug) System.out.println("Attempting to parse " + id.getClass().getSimpleName() + " as an item...");
+        if (AdventureExpansion.debug) System.out.println("Attempting to parse " + id.getClass().getSimpleName() + " as an item...");
 
         Material material = null;
         if (id instanceof ArrayList) {
@@ -123,7 +123,7 @@ public class ConfigTrades {
             var persistents = data.getStringList("persistents");
             if (!persistents.isEmpty()) {
                 for (var line : persistents) {
-                    NamespacedKey key = new NamespacedKey(HalaraRPG.getPlugin(), line);
+                    NamespacedKey key = new NamespacedKey(AdventureExpansion.getPlugin(), line);
                     itemMeta.getPersistentDataContainer().set(key, PersistentDataType.STRING, "1");
                 }
             }

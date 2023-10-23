@@ -2,7 +2,7 @@ package me.coopersully.rpgloot.rpgloot.commands;
 
 import me.coopersully.rpgloot.rpgloot.CoreUtils;
 import me.coopersully.rpgloot.rpgloot.ItemKeys;
-import me.coopersully.rpgloot.rpgloot.HalaraRPG;
+import me.coopersully.rpgloot.rpgloot.AdventureExpansion;
 import me.coopersully.rpgloot.rpgloot.items.NightmareItem;
 import org.bukkit.*;
 import org.bukkit.attribute.Attribute;
@@ -40,7 +40,7 @@ public class CommandNightmare implements CommandExecutor {
         if (player == null) return;
 
         // Check if sender has the required permissions
-        if (!player.hasPermission(HalaraRPG.permissionPrefix + "nightmare")) {
+        if (!player.hasPermission(AdventureExpansion.permissionPrefix + "nightmare")) {
             sender.sendMessage(ChatColor.RED + "You don't have permission to infuse items with Nightmare Fuel.");
             return;
         }
@@ -103,7 +103,7 @@ public class CommandNightmare implements CommandExecutor {
         if (player == null) return;
 
         // Check if sender has the required permissions
-        if (!player.hasPermission(HalaraRPG.permissionPrefix + "nightmare")) {
+        if (!player.hasPermission(AdventureExpansion.permissionPrefix + "nightmare")) {
             sender.sendMessage(ChatColor.RED + "You don't have permission to infuse items with Nightmare Fuel.");
             return;
         }
@@ -120,6 +120,7 @@ public class CommandNightmare implements CommandExecutor {
                 break;
             }
         }
+
         if (nightmareFuel == null) {
             sender.sendMessage(ChatColor.RED + "You don't have Nightmare Fuel to infuse this item with.");
             return;
