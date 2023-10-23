@@ -1,11 +1,12 @@
 <p align="center">
-  <img src="https://i.imgur.com/2wY27We.png">
+  <img src="https://i.imgur.com/SX9O7el.png">
 </p>
 
 # About the project
-**Curse's RPG Loot is a spigot plugin/datapack duo that aims to change up the survival experience by adding roleplay-themed weapons, armor, and mobs to the game.**
+**Adventure Expansion is a spigot plugin/datapack duo that aims to change up the survival experience by adding roleplay-themed weapons, armor, and mobs to the game.**
 It modifies loot pools of the generic Minecraft experience to better immerse the player in an open world, roleplay-ready environment. **By installing the plugin, it
-will automatically install all necessary dependencies & datapacks for the project to work properly, making the setup as easy as drag & drop.** There are several changesand additions to the loot found in structures throughout all worlds, as well as a few new variations of mobs to encounter along the way.
+will automatically install all necessary dependencies & datapacks for the project to work properly, making the setup as easy as drag & drop.** There are several changes 
+and additions to the loot found in structures throughout all worlds, as well as a few new variations of mobs to encounter along the way.
 
 ## Treasure Items
 The project adds several new items and item variants that players can find via exploration; these items are labeled **Treasure Items** and can be identified by their uniquely colored names, item descriptions, and **Statistics** tabs. Each treasure item has its own rarity value, indiciating how commonly it appears in the natural world; the rarities in this project are an adaptation of Minecraft's own color-based rarities (with a few additions) and are as follows:
