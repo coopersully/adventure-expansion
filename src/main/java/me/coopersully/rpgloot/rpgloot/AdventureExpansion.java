@@ -5,8 +5,6 @@ import me.coopersully.rpgloot.rpgloot.commands.CommandMeta;
 import me.coopersully.rpgloot.rpgloot.commands.CommandNightmare;
 import me.coopersully.rpgloot.rpgloot.commands.CommandTrades;
 import me.coopersully.rpgloot.rpgloot.config.ConfigTrades;
-import me.coopersully.rpgloot.rpgloot.datapacks.CRPGDatapack;
-import me.coopersully.rpgloot.rpgloot.datapacks.CRPGPackManager;
 import me.coopersully.rpgloot.rpgloot.entities.CaveTraders;
 import me.coopersully.rpgloot.rpgloot.listeners.*;
 import org.bukkit.ChatColor;
@@ -65,12 +63,6 @@ public final class AdventureExpansion extends JavaPlugin {
 
         // Entity spawn controllers
         new CaveTraders();
-
-        // Install datapack
-        CRPGPackManager packManager = new CRPGPackManager();
-        CRPGDatapack crpgDatapack = packManager.getBestFit();
-        System.out.println(ChatColor.GREEN + "Best fit identified as: " + crpgDatapack);
-
 
         // Send plugin loaded ASCII-art message
         System.out.println(ChatColor.GREEN + " __        __   __   ___ .  __      __   __   __           __   __  ___ " + ChatColor.RESET);
