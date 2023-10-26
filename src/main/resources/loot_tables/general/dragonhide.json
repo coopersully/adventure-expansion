@@ -1,0 +1,332 @@
+{
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:leather_helmet",
+					"functions": [
+						{
+							"function": "minecraft:set_lore",
+							"lore": [
+								{
+									"text": "Created from the skin of a dragon.",
+									"color": "#C4A484",
+									"italic": true
+								},
+								{
+									"text": ""
+								},
+								{
+									"text": "Statistics:",
+									"color": "gray",
+									"italic": false
+								},
+								{
+									"text": " Magic Source",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": " Epic Treasure Item",
+									"color": "dark_green",
+									"italic": false
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Dragonhide Battle Helm",
+								"color": "light_purple",
+								"italic": false
+							}
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Dragonhide Helmet",
+								"color": "light_purple",
+								"italic": false
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.25
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{display:{color:1911385},dragonhideSet:1b,PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\", \"rpgloot:dragonhide\": \"1\"},Enchantments:[{id:\"minecraft:protection\",lvl:5},{id:\"minecraft:unbreaking\",lvl:5}]}"
+						},
+						{
+							"function": "minecraft:set_attributes",
+							"modifiers": [
+								{
+									"attribute": "minecraft:generic.armor",
+									"name": "",
+									"amount": 2,
+									"operation": "addition",
+									"slot": "head"
+								}
+							]
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:leather_chestplate",
+					"functions": [
+						{
+							"function": "minecraft:set_lore",
+							"lore": [
+								{
+									"text": "Created from the skin of a dragon.",
+									"color": "#C4A484",
+									"italic": true
+								},
+								{
+									"text": ""
+								},
+								{
+									"text": "Statistics:",
+									"color": "gray",
+									"italic": false
+								},
+								{
+									"text": " Magic Source",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": " Epic Treasure Item",
+									"color": "dark_green",
+									"italic": false
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Dragonhide Vest",
+								"color": "light_purple",
+								"italic": false
+							}
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Dragonhide Breastplate",
+								"color": "light_purple",
+								"italic": false
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.25
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Reinforced Dragonhide Chestplate",
+								"color": "light_purple",
+								"italic": false
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.25
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{display:{color:1911385},dragonhideSet:1b,PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\", \"rpgloot:dragonhide\": \"1\"},Enchantments:[{id:\"minecraft:protection\",lvl:5},{id:\"minecraft:unbreaking\",lvl:5}]}"
+						},
+						{
+							"function": "minecraft:set_attributes",
+							"modifiers": [
+								{
+									"attribute": "minecraft:generic.armor",
+									"name": "",
+									"amount": 6,
+									"operation": "addition",
+									"slot": "chest"
+								}
+							]
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:leather_leggings",
+					"functions": [
+						{
+							"function": "minecraft:set_lore",
+							"lore": [
+								{
+									"text": "Created from the skin of a dragon.",
+									"color": "#C4A484",
+									"italic": true
+								},
+								{
+									"text": ""
+								},
+								{
+									"text": "Statistics:",
+									"color": "gray",
+									"italic": false
+								},
+								{
+									"text": " Magic Source",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": " Epic Treasure Item",
+									"color": "dark_green",
+									"italic": false
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Dragonhide Battle Leggings",
+								"color": "light_purple",
+								"italic": false
+							}
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Dragonhide Leggings",
+								"color": "light_purple",
+								"italic": false
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.25
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Torn Dragonhide Leggings",
+								"color": "light_purple",
+								"italic": false
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.25
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{display:{color:1911385},dragonhideSet:1b,PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\", \"rpgloot:dragonhide\": \"1\"},Enchantments:[{id:\"minecraft:protection\",lvl:5},{id:\"minecraft:unbreaking\",lvl:5}]}"
+						},
+						{
+							"function": "minecraft:set_attributes",
+							"modifiers": [
+								{
+									"attribute": "minecraft:generic.armor",
+									"name": "",
+									"amount": 5,
+									"operation": "addition",
+									"slot": "legs"
+								}
+							]
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:leather_boots",
+					"functions": [
+						{
+							"function": "minecraft:set_lore",
+							"lore": [
+								{
+									"text": "Created from the skin of a dragon.",
+									"color": "#C4A484",
+									"italic": true
+								},
+								{
+									"text": ""
+								},
+								{
+									"text": "Statistics:",
+									"color": "gray",
+									"italic": false
+								},
+								{
+									"text": " Magic Source",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": " Epic Treasure Item",
+									"color": "dark_green",
+									"italic": false
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Dragonhide Boots",
+								"color": "light_purple",
+								"italic": false
+							}
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Dragonhide Boots",
+								"color": "light_purple",
+								"italic": false
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.25
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{display:{color:1911385},dragonhideSet:1b,PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\", \"rpgloot:dragonhide\": \"1\"},Enchantments:[{id:\"minecraft:protection\",lvl:5},{id:\"minecraft:unbreaking\",lvl:5}]}"
+						},
+						{
+							"function": "minecraft:set_attributes",
+							"modifiers": [
+								{
+									"attribute": "minecraft:generic.armor",
+									"name": "",
+									"amount": 2,
+									"operation": "addition",
+									"slot": "feet"
+								},
+								{
+									"attribute": "minecraft:generic.movement_speed",
+									"name": "",
+									"amount": 0.25,
+									"operation": "multiply_base",
+									"slot": "feet"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

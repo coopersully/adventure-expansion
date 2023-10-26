@@ -1,0 +1,790 @@
+{
+	"type": "minecraft:generic",
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:cow_spawn_egg",
+					"functions": [
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\"},EntityTag:{CustomName:\"\"}}"
+						},
+						{
+							"function": "minecraft:set_lore",
+							"lore": [
+								{
+									"text": "Astoundingly scientifically inaccurate.",
+									"color": "#C4A484",
+									"italic": true
+								},
+								{
+									"text": ""
+								},
+								{
+									"text": "Statistics:",
+									"color": "gray",
+									"italic": false
+								},
+								{
+									"text": " Unknown Source",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": " Epic Treasure Item",
+									"color": "dark_green",
+									"italic": false
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Spotted Cow Egg",
+								"color": "light_purple",
+								"italic": false
+							}
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Milky Spotted Cow Egg",
+								"color": "light_purple",
+								"italic": false
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.25
+								}
+							]
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:pig_spawn_egg",
+					"functions": [
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\"},EntityTag:{CustomName:\"\"}}"
+						},
+						{
+							"function": "minecraft:set_lore",
+							"lore": [
+								{
+									"text": "Absolutely not how a pig works.",
+									"color": "#C4A484",
+									"italic": true
+								},
+								{
+									"text": ""
+								},
+								{
+									"text": "Statistics:",
+									"color": "gray",
+									"italic": false
+								},
+								{
+									"text": " Unknown Source",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": " Epic Treasure Item",
+									"color": "dark_green",
+									"italic": false
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Pig Egg",
+								"color": "light_purple",
+								"italic": false
+							}
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Dirty Pig Egg",
+								"color": "light_purple",
+								"italic": false
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.25
+								}
+							]
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:sheep_spawn_egg",
+					"functions": [
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\"},EntityTag:{CustomName:\"\"}}"
+						},
+						{
+							"function": "minecraft:set_lore",
+							"lore": [
+								{
+									"text": "A malformed and ugly creation.",
+									"color": "#C4A484",
+									"italic": true
+								},
+								{
+									"text": ""
+								},
+								{
+									"text": "Statistics:",
+									"color": "gray",
+									"italic": false
+								},
+								{
+									"text": " Unknown Source",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": " Epic Treasure Item",
+									"color": "dark_green",
+									"italic": false
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Wooly Sheep Egg",
+								"color": "light_purple",
+								"italic": false
+							}
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Blood-soaked Wooly Sheep Egg",
+								"color": "light_purple",
+								"italic": false
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.25
+								}
+							]
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:bat_spawn_egg",
+					"functions": [
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\"},EntityTag:{CustomName:\"\"}}"
+						},
+						{
+							"function": "minecraft:set_lore",
+							"lore": [
+								{
+									"text": "It seems so cold and empty inside.",
+									"color": "#C4A484",
+									"italic": true
+								},
+								{
+									"text": ""
+								},
+								{
+									"text": "Statistics:",
+									"color": "gray",
+									"italic": false
+								},
+								{
+									"text": " Unknown Source",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": " Epic Treasure Item",
+									"color": "dark_green",
+									"italic": false
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Squeaky Bat Egg",
+								"color": "light_purple",
+								"italic": false
+							}
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Cracked Bat Egg",
+								"color": "light_purple",
+								"italic": false
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.25
+								}
+							]
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:chicken_spawn_egg",
+					"functions": [
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\"},EntityTag:{CustomName:\"\"}}"
+						},
+						{
+							"function": "minecraft:set_lore",
+							"lore": [
+								{
+									"text": "A spotted little protochicken.",
+									"color": "#C4A484",
+									"italic": true
+								},
+								{
+									"text": ""
+								},
+								{
+									"text": "Statistics:",
+									"color": "gray",
+									"italic": false
+								},
+								{
+									"text": " Unknown Source",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": " Epic Treasure Item",
+									"color": "dark_green",
+									"italic": false
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Feather-covered Chicken Egg",
+								"color": "light_purple",
+								"italic": false
+							}
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Unusually Large Chicken Egg",
+								"color": "light_purple",
+								"italic": false
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.25
+								}
+							]
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:wolf_spawn_egg",
+					"functions": [
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\"},EntityTag:{CustomName:\"\"}}"
+						},
+						{
+							"function": "minecraft:set_lore",
+							"lore": [
+								{
+									"text": "A necromaniac's wildest nightmare.",
+									"color": "#C4A484",
+									"italic": true
+								},
+								{
+									"text": ""
+								},
+								{
+									"text": "Statistics:",
+									"color": "gray",
+									"italic": false
+								},
+								{
+									"text": " Unknown Source",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": " Epic Treasure Item",
+									"color": "dark_green",
+									"italic": false
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Rattling Wolf Egg",
+								"color": "light_purple",
+								"italic": false
+							}
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Crystalized Wolf Egg",
+								"color": "light_purple",
+								"italic": false
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.25
+								}
+							]
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:spider_spawn_egg",
+					"functions": [
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\"},EntityTag:{CustomName:\"\"}}"
+						},
+						{
+							"function": "minecraft:set_lore",
+							"lore": [
+								{
+									"text": "A mysterious, squirmy little vessel.",
+									"color": "#C4A484",
+									"italic": true
+								},
+								{
+									"text": ""
+								},
+								{
+									"text": "Statistics:",
+									"color": "gray",
+									"italic": false
+								},
+								{
+									"text": " Unknown Source",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": " Epic Treasure Item",
+									"color": "dark_green",
+									"italic": false
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Spider Egg",
+								"color": "light_purple",
+								"italic": false
+							}
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Web-covered Spider Egg",
+								"color": "light_purple",
+								"italic": false
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.25
+								}
+							]
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:cave_spider_spawn_egg",
+					"functions": [
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\"},EntityTag:{CustomName:\"\"}}"
+						},
+						{
+							"function": "minecraft:set_lore",
+							"lore": [
+								{
+									"text": "It's smaller than a usual spider's egg.",
+									"color": "#C4A484",
+									"italic": true
+								},
+								{
+									"text": ""
+								},
+								{
+									"text": "Statistics:",
+									"color": "gray",
+									"italic": false
+								},
+								{
+									"text": " Unknown Source",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": " Epic Treasure Item",
+									"color": "dark_green",
+									"italic": false
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Cave Spider Egg",
+								"color": "light_purple",
+								"italic": false
+							}
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Hardened Cave Spider Egg",
+								"color": "light_purple",
+								"italic": false
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.25
+								}
+							]
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:zombie_spawn_egg",
+					"functions": [
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\"},EntityTag:{CustomName:\"\"}}"
+						},
+						{
+							"function": "minecraft:set_lore",
+							"lore": [
+								{
+									"text": "A ravenous and disturbing creation.",
+									"color": "#C4A484",
+									"italic": true
+								},
+								{
+									"text": ""
+								},
+								{
+									"text": "Statistics:",
+									"color": "gray",
+									"italic": false
+								},
+								{
+									"text": " Unknown Source",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": " Epic Treasure Item",
+									"color": "dark_green",
+									"italic": false
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Zombie Egg",
+								"color": "light_purple",
+								"italic": false
+							}
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Radioactive Zombie Egg",
+								"color": "light_purple",
+								"italic": false
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.25
+								}
+							]
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:skeleton_spawn_egg",
+					"functions": [
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\"},EntityTag:{CustomName:\"\"}}"
+						},
+						{
+							"function": "minecraft:set_lore",
+							"lore": [
+								{
+									"text": "A bone-rattling bringer of the dead.",
+									"color": "#C4A484",
+									"italic": true
+								},
+								{
+									"text": ""
+								},
+								{
+									"text": "Statistics:",
+									"color": "gray",
+									"italic": false
+								},
+								{
+									"text": " Unknown Source",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": " Epic Treasure Item",
+									"color": "dark_green",
+									"italic": false
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Skeleton Egg",
+								"color": "light_purple",
+								"italic": false
+							}
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Bloody Skeleton Egg",
+								"color": "light_purple",
+								"italic": false
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.25
+								}
+							]
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:drowned_spawn_egg",
+					"functions": [
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\"},EntityTag:{CustomName:\"\"}}"
+						},
+						{
+							"function": "minecraft:set_lore",
+							"lore": [
+								{
+									"text": "It screams out in pain of what it once was.",
+									"color": "#C4A484",
+									"italic": true
+								},
+								{
+									"text": ""
+								},
+								{
+									"text": "Statistics:",
+									"color": "gray",
+									"italic": false
+								},
+								{
+									"text": " Unknown Source",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": " Epic Treasure Item",
+									"color": "dark_green",
+									"italic": false
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Drowned Egg",
+								"color": "light_purple",
+								"italic": false
+							}
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Wet Drowned Egg",
+								"color": "light_purple",
+								"italic": false
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.25
+								}
+							]
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:ocelot_spawn_egg",
+					"functions": [
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\"},EntityTag:{CustomName:\"\"}}"
+						},
+						{
+							"function": "minecraft:set_lore",
+							"lore": [
+								{
+									"text": "A leopard-printed malformation.",
+									"color": "#C4A484",
+									"italic": true
+								},
+								{
+									"text": ""
+								},
+								{
+									"text": "Statistics:",
+									"color": "gray",
+									"italic": false
+								},
+								{
+									"text": " Unknown Source",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": " Epic Treasure Item",
+									"color": "dark_green",
+									"italic": false
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Ocelot Egg",
+								"color": "light_purple",
+								"italic": false
+							}
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Whiskered Ocelot Egg",
+								"color": "light_purple",
+								"italic": false
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.25
+								}
+							]
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:bee_spawn_egg",
+					"functions": [
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\"},EntityTag:{CustomName:\"\"}}"
+						},
+						{
+							"function": "minecraft:set_lore",
+							"lore": [
+								{
+									"text": "It rattles with excitement.",
+									"color": "#C4A484",
+									"italic": true
+								},
+								{
+									"text": ""
+								},
+								{
+									"text": "Statistics:",
+									"color": "gray",
+									"italic": false
+								},
+								{
+									"text": " Unknown Source",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": " Epic Treasure Item",
+									"color": "dark_green",
+									"italic": false
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Bee Egg",
+								"color": "light_purple",
+								"italic": false
+							}
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Buzzing Bee Egg",
+								"color": "light_purple",
+								"italic": false
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.25
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

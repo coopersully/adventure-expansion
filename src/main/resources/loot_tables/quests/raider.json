@@ -1,0 +1,286 @@
+{
+  "type": "minecraft:generic",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_helmet",
+          "functions": [
+            {
+              "function": "minecraft:set_name",
+              "name": {
+                "text": "Raider Helmet",
+                "color": "light_purple",
+                "italic": false
+              }
+            },
+            {
+              "function": "minecraft:set_lore",
+              "lore": [
+                {
+                  "text": "It consumes the rage of the wearer.",
+                  "color": "#C4A484",
+                  "italic": true
+                },
+                {
+                  "text": ""
+                },
+                {
+                  "text": "Statistics:",
+                  "color": "gray",
+                  "italic": false
+                },
+                {
+                  "text": " Magic Source",
+                  "color": "dark_green",
+                  "italic": false
+                },
+                {
+                  "text": " Epic Treasure Item",
+                  "color": "dark_green",
+                  "italic": false
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{repairCost:100,raiderSet:1b,PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\", \"rpgloot:raider\": \"1\"},Enchantments:[{id:\"unbreaking\",lvl:4},{id:\"protection\",lvl:4}]}"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_chestplate",
+          "functions": [
+            {
+              "function": "minecraft:set_name",
+              "name": {
+                "text": "Raider Chestplate",
+                "color": "light_purple",
+                "italic": false
+              }
+            },
+            {
+              "function": "minecraft:set_lore",
+              "lore": [
+                {
+                  "text": "It consumes the rage of the wearer.",
+                  "color": "#C4A484",
+                  "italic": true
+                },
+                {
+                  "text": ""
+                },
+                {
+                  "text": "Statistics:",
+                  "color": "gray",
+                  "italic": false
+                },
+                {
+                  "text": " Magic Source",
+                  "color": "dark_green",
+                  "italic": false
+                },
+                {
+                  "text": " Epic Treasure Item",
+                  "color": "dark_green",
+                  "italic": false
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{repairCost:100,raiderSet:1b,PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\", \"rpgloot:raider\": \"1\"},Enchantments:[{id:\"unbreaking\",lvl:4},{id:\"protection\",lvl:4}]}"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_leggings",
+          "functions": [
+            {
+              "function": "minecraft:set_name",
+              "name": {
+                "text": "Raider Leggings",
+                "color": "light_purple",
+                "italic": false
+              }
+            },
+            {
+              "function": "minecraft:set_lore",
+              "lore": [
+                {
+                  "text": "It consumes the rage of the wearer.",
+                  "color": "#C4A484",
+                  "italic": true
+                },
+                {
+                  "text": ""
+                },
+                {
+                  "text": "Statistics:",
+                  "color": "gray",
+                  "italic": false
+                },
+                {
+                  "text": " Magic Source",
+                  "color": "dark_green",
+                  "italic": false
+                },
+                {
+                  "text": " Epic Treasure Item",
+                  "color": "dark_green",
+                  "italic": false
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{repairCost:100,raiderSet:1b,PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\", \"rpgloot:raider\": \"1\"},Enchantments:[{id:\"unbreaking\",lvl:4},{id:\"protection\",lvl:4}]}"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_boots",
+          "functions": [
+            {
+              "function": "minecraft:set_name",
+              "name": {
+                "text": "Raider Boots",
+                "color": "light_purple",
+                "italic": false
+              }
+            },
+            {
+              "function": "minecraft:set_lore",
+              "lore": [
+                {
+                  "text": "It consumes the rage of the wearer.",
+                  "color": "#C4A484",
+                  "italic": true
+                },
+                {
+                  "text": ""
+                },
+                {
+                  "text": "Statistics:",
+                  "color": "gray",
+                  "italic": false
+                },
+                {
+                  "text": " Magic Source",
+                  "color": "dark_green",
+                  "italic": false
+                },
+                {
+                  "text": " Epic Treasure Item",
+                  "color": "dark_green",
+                  "italic": false
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{repairCost:100,raiderSet:1b,PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\", \"rpgloot:raider\": \"1\"},Enchantments:[{id:\"unbreaking\",lvl:4},{id:\"protection\",lvl:4}]}"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_sword",
+          "functions": [
+            {
+              "function": "minecraft:set_name",
+              "name": {
+                "text": "Raider Sword",
+                "color": "light_purple",
+                "italic": false
+              }
+            },
+            {
+              "function": "minecraft:set_lore",
+              "lore": [
+                {
+                  "text": "It consumes the rage of the wielder.",
+                  "color": "#C4A484",
+                  "italic": true
+                },
+                {
+                  "text": ""
+                },
+                {
+                  "text": "Statistics:",
+                  "color": "gray",
+                  "italic": false
+                },
+                {
+                  "text": " Magic Source",
+                  "color": "dark_green",
+                  "italic": false
+                },
+                {
+                  "text": " Epic Treasure Item",
+                  "color": "dark_green",
+                  "italic": false
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{repairCost:100,raiderSet:1b,PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\", \"rpgloot:raider\": \"1\"},Enchantments:[{id:\"unbreaking\",lvl:4},{id:\"sharpness\",lvl:5},{id:\"fire_aspect\",lvl:2},{id:\"looting\",lvl:3},{id:\"sweeping\",lvl:3},{id:\"knockback\",lvl:3}]}"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_pickaxe",
+          "functions": [
+            {
+              "function": "minecraft:set_name",
+              "name": {
+                "text": "Raider Pickaxe",
+                "color": "light_purple",
+                "italic": false
+              }
+            },
+            {
+              "function": "minecraft:set_lore",
+              "lore": [
+                {
+                  "text": "It consumes the rage of the wielder.",
+                  "color": "#C4A484",
+                  "italic": true
+                },
+                {
+                  "text": ""
+                },
+                {
+                  "text": "Statistics:",
+                  "color": "gray",
+                  "italic": false
+                },
+                {
+                  "text": " Magic Source",
+                  "color": "dark_green",
+                  "italic": false
+                },
+                {
+                  "text": " Epic Treasure Item",
+                  "color": "dark_green",
+                  "italic": false
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{repairCost:100,raiderSet:1b,PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\", \"rpgloot:raider\": \"1\"},Enchantments:[{id:\"unbreaking\",lvl:4},{id:\"efficiency\",lvl:5},{id:\"silk_touch\",lvl:1}]}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

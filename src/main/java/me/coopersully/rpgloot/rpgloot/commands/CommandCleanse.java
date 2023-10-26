@@ -1,9 +1,8 @@
 package me.coopersully.rpgloot.rpgloot.commands;
 
+import me.coopersully.rpgloot.rpgloot.AdventureExpansion;
 import me.coopersully.rpgloot.rpgloot.CoreUtils;
 import me.coopersully.rpgloot.rpgloot.ItemKeys;
-import me.coopersully.rpgloot.rpgloot.AdventureExpansion;
-import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -14,6 +13,9 @@ import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
 import org.jetbrains.annotations.NotNull;
 
+import static me.coopersully.rpgloot.rpgloot.CoreUtils.noteError;
+import static me.coopersully.rpgloot.rpgloot.CoreUtils.noteSuccess;
+
 public class CommandCleanse implements CommandExecutor {
 
     @Override
@@ -22,7 +24,7 @@ public class CommandCleanse implements CommandExecutor {
         if (player == null) return false;
 
         if (!player.hasPermission(AdventureExpansion.permissionPrefix + "cleanse")) {
-            sender.sendMessage(ChatColor.RED + "You don't have permission to cleanse items.");
+            noteError(sender, "You don't have permission to cleanse items.");
             return false;
         }
 
@@ -30,7 +32,7 @@ public class CommandCleanse implements CommandExecutor {
         ItemMeta mainItemItemMeta = mainItem.getItemMeta();
 
         if (mainItemItemMeta == null) {
-            sender.sendMessage(ChatColor.RED + "You must hold an item in your hand.");
+            noteError(sender, "You must hold an item in your hand.");
             return false;
         }
 
@@ -38,14 +40,14 @@ public class CommandCleanse implements CommandExecutor {
         var attributeModifiers = mainItem.getItemMeta().getAttributeModifiers();
 
         if (persistentDataContainer.has(ItemKeys.cleansed) || attributeModifiers == null) {
-            sender.sendMessage(ChatColor.RED + "You cannot cleanse this item.");
+            noteError(sender, "You cannot cleanse this item.");
             return false;
         }
 
         mainItemItemMeta.getAttributeModifiers().forEach((attribute, attributeModifier) -> mainItemItemMeta.removeAttributeModifier(attribute));
         persistentDataContainer.set(ItemKeys.cleansed, PersistentDataType.STRING, "1");
         mainItem.setItemMeta(mainItemItemMeta);
-        sender.sendMessage(ChatColor.GREEN + "You cleansed this item.");
+        noteSuccess(sender, "You cleansed this item.");
         return true;
     }
 

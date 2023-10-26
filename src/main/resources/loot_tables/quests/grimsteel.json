@@ -1,0 +1,294 @@
+{
+	"type": "minecraft:generic",
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:netherite_helmet",
+					"functions": [
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Grimsteel Helmet",
+								"color": "red",
+								"italic": false
+							}
+						},
+						{
+							"function": "minecraft:set_lore",
+							"lore": [
+								{
+									"text": "It is better to be feared than loved.",
+									"color": "#C4A484",
+									"italic": true
+								},
+								{
+									"text": ""
+								},
+								{
+									"text": "Statistics:",
+									"color": "gray",
+									"italic": false
+								},
+								{
+									"text": " Magic Source",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": " Mythical Treasure Item",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": ""
+								},
+								{
+									"text": "Abilities:",
+									"color": "gray",
+									"italic": false
+								},
+								{
+									"text": " PASSIVE - Distorts collected experience",
+									"color": "dark_green",
+									"italic": false
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{repairCost:100,grimsteelSet:1b,PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\", \"rpgloot:grimsteel\": \"1\"},Enchantments:[{id:\"unbreaking\",lvl:10},{id:\"thorns\",lvl:5}]}"
+						},
+						{
+							"function": "minecraft:set_attributes",
+							"modifiers": [
+								{
+									"attribute": "minecraft:generic.attack_damage",
+									"name": "",
+									"amount": 0.125,
+									"operation": "multiply_total",
+									"slot": "head"
+								}
+							]
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:netherite_chestplate",
+					"functions": [
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Grimsteel Chestplate",
+								"color": "red",
+								"italic": false
+							}
+						},
+						{
+							"function": "minecraft:set_lore",
+							"lore": [
+								{
+									"text": "It is better to be feared than loved.",
+									"color": "#C4A484",
+									"italic": true
+								},
+								{
+									"text": ""
+								},
+								{
+									"text": "Statistics:",
+									"color": "gray",
+									"italic": false
+								},
+								{
+									"text": " Magic Source",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": " Mythical Treasure Item",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": ""
+								},
+								{
+									"text": "Abilities:",
+									"color": "gray",
+									"italic": false
+								},
+								{
+									"text": " PASSIVE - Distorts collected experience",
+									"color": "dark_green",
+									"italic": false
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{repairCost:100,grimsteelSet:1b,PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\", \"rpgloot:grimsteel\": \"1\"},Enchantments:[{id:\"unbreaking\",lvl:10},{id:\"thorns\",lvl:5}]}"
+						},
+						{
+							"function": "minecraft:set_attributes",
+							"modifiers": [
+								{
+									"attribute": "minecraft:generic.attack_damage",
+									"name": "",
+									"amount": 0.125,
+									"operation": "multiply_total",
+									"slot": "chest"
+								}
+							]
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:netherite_leggings",
+					"functions": [
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Grimsteel Leggings",
+								"color": "red",
+								"italic": false
+							}
+						},
+						{
+							"function": "minecraft:set_lore",
+							"lore": [
+								{
+									"text": "It is better to be feared than loved.",
+									"color": "#C4A484",
+									"italic": true
+								},
+								{
+									"text": ""
+								},
+								{
+									"text": "Statistics:",
+									"color": "gray",
+									"italic": false
+								},
+								{
+									"text": " Magic Source",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": " Mythical Treasure Item",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": ""
+								},
+								{
+									"text": "Abilities:",
+									"color": "gray",
+									"italic": false
+								},
+								{
+									"text": " PASSIVE - Distorts collected experience",
+									"color": "dark_green",
+									"italic": false
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{repairCost:100,grimsteelSet:1b,PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\", \"rpgloot:grimsteel\": \"1\"},Enchantments:[{id:\"unbreaking\",lvl:10},{id:\"thorns\",lvl:5}]}"
+						},
+						{
+							"function": "minecraft:set_attributes",
+							"modifiers": [
+								{
+									"attribute": "minecraft:generic.attack_damage",
+									"name": "",
+									"amount": 0.125,
+									"operation": "multiply_total",
+									"slot": "legs"
+								}
+							]
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:netherite_boots",
+					"functions": [
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Grimsteel Boots",
+								"color": "red",
+								"italic": false
+							}
+						},
+						{
+							"function": "minecraft:set_lore",
+							"lore": [
+								{
+									"text": "It is better to be feared than loved.",
+									"color": "#C4A484",
+									"italic": true
+								},
+								{
+									"text": ""
+								},
+								{
+									"text": "Statistics:",
+									"color": "gray",
+									"italic": false
+								},
+								{
+									"text": " Magic Source",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": " Mythical Treasure Item",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": ""
+								},
+								{
+									"text": "Abilities:",
+									"color": "gray",
+									"italic": false
+								},
+								{
+									"text": " PASSIVE - Distorts collected experience",
+									"color": "dark_green",
+									"italic": false
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{repairCost:100,grimsteelSet:1b,PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\", \"rpgloot:grimsteel\": \"1\"},Enchantments:[{id:\"unbreaking\",lvl:10},{id:\"thorns\",lvl:5}]}"
+						},
+						{
+							"function": "minecraft:set_attributes",
+							"modifiers": [
+								{
+									"attribute": "minecraft:generic.attack_damage",
+									"name": "",
+									"amount": 0.125,
+									"operation": "multiply_total",
+									"slot": "feet"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

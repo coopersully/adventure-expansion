@@ -13,25 +13,28 @@ import org.bukkit.entity.Player;
 import org.bukkit.entity.WanderingTrader;
 import org.jetbrains.annotations.NotNull;
 
+import static me.coopersully.rpgloot.rpgloot.CoreUtils.noteError;
+import static me.coopersully.rpgloot.rpgloot.CoreUtils.noteSuccess;
+
 public class CommandTrades implements CommandExecutor {
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
 
         if (!sender.hasPermission(AdventureExpansion.permissionPrefix + "trades")) {
-            sender.sendMessage(ChatColor.RED + "You don't have permission to configure trades.");
+            noteError(sender, "You don't have permission to configure trades.");
             return false;
         }
 
         if (args.length <= 0) {
-            sender.sendMessage(ChatColor.RED + "Usage: /trades <reload|spawn>");
+            noteError(sender, "Usage: /trades <reload|spawn>");
             return false;
         }
 
         String operation = args[0].toLowerCase().strip();
         switch (operation) {
             case "reload", "rel":
-                sender.sendMessage(ChatColor.YELLOW + "All trades reloaded from config file(s).");
+                noteSuccess(sender, "All trades reloaded from config file(s).");
                 ConfigTrades.load();
                 return true;
             case "spawn":
@@ -41,12 +44,12 @@ public class CommandTrades implements CommandExecutor {
                 World world = player.getWorld();
                 Location location = player.getLocation();
 
-                sender.sendMessage(ChatColor.YELLOW + "Spawned a cave trader at your current position.");
+                noteSuccess(sender, "Spawned a cave trader at your current position.");
                 WanderingTrader wanderingTrader = world.spawn(location, WanderingTrader.class);
                 ConfigTrades.giveTrades(wanderingTrader);
                 return true;
             default:
-                sender.sendMessage(ChatColor.RED + "Usage: /trades <reload|spawn>");
+                noteError(sender, "Usage: /trades <reload|spawn>");
                 return false;
         }
 

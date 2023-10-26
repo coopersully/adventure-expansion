@@ -1,0 +1,286 @@
+{
+  "type": "minecraft:generic",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_helmet",
+          "functions": [
+            {
+              "function": "minecraft:set_name",
+              "name": {
+                "text": "Traveler's Helmet",
+                "color": "light_purple",
+                "italic": false
+              }
+            },
+            {
+              "function": "minecraft:set_lore",
+              "lore": [
+                {
+                  "text": "A potential beyond compare lies within.",
+                  "color": "#C4A484",
+                  "italic": true
+                },
+                {
+                  "text": ""
+                },
+                {
+                  "text": "Statistics:",
+                  "color": "gray",
+                  "italic": false
+                },
+                {
+                  "text": " Magic Source",
+                  "color": "dark_green",
+                  "italic": false
+                },
+                {
+                  "text": " Epic Treasure Item",
+                  "color": "dark_green",
+                  "italic": false
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{repairCost:100,travelerSet:1b,PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\", \"rpgloot:traveler\": \"1\"},Enchantments:[{id:\"unbreaking\",lvl:4}]}"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_chestplate",
+          "functions": [
+            {
+              "function": "minecraft:set_name",
+              "name": {
+                "text": "Traveler's Chestplate",
+                "color": "light_purple",
+                "italic": false
+              }
+            },
+            {
+              "function": "minecraft:set_lore",
+              "lore": [
+                {
+                  "text": "A potential beyond compare lies within.",
+                  "color": "#C4A484",
+                  "italic": true
+                },
+                {
+                  "text": ""
+                },
+                {
+                  "text": "Statistics:",
+                  "color": "gray",
+                  "italic": false
+                },
+                {
+                  "text": " Magic Source",
+                  "color": "dark_green",
+                  "italic": false
+                },
+                {
+                  "text": " Epic Treasure Item",
+                  "color": "dark_green",
+                  "italic": false
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{repairCost:100,travelerSet:1b,PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\", \"rpgloot:traveler\": \"1\"},Enchantments:[{id:\"unbreaking\",lvl:4}]}"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_leggings",
+          "functions": [
+            {
+              "function": "minecraft:set_name",
+              "name": {
+                "text": "Traveler's Leggings",
+                "color": "light_purple",
+                "italic": false
+              }
+            },
+            {
+              "function": "minecraft:set_lore",
+              "lore": [
+                {
+                  "text": "A potential beyond compare lies within.",
+                  "color": "#C4A484",
+                  "italic": true
+                },
+                {
+                  "text": ""
+                },
+                {
+                  "text": "Statistics:",
+                  "color": "gray",
+                  "italic": false
+                },
+                {
+                  "text": " Magic Source",
+                  "color": "dark_green",
+                  "italic": false
+                },
+                {
+                  "text": " Epic Treasure Item",
+                  "color": "dark_green",
+                  "italic": false
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{repairCost:100,travelerSet:1b,PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\", \"rpgloot:traveler\": \"1\"},Enchantments:[{id:\"unbreaking\",lvl:4}]}"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_boots",
+          "functions": [
+            {
+              "function": "minecraft:set_name",
+              "name": {
+                "text": "Traveler's Boots",
+                "color": "light_purple",
+                "italic": false
+              }
+            },
+            {
+              "function": "minecraft:set_lore",
+              "lore": [
+                {
+                  "text": "A potential beyond compare lies within.",
+                  "color": "#C4A484",
+                  "italic": true
+                },
+                {
+                  "text": ""
+                },
+                {
+                  "text": "Statistics:",
+                  "color": "gray",
+                  "italic": false
+                },
+                {
+                  "text": " Magic Source",
+                  "color": "dark_green",
+                  "italic": false
+                },
+                {
+                  "text": " Epic Treasure Item",
+                  "color": "dark_green",
+                  "italic": false
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{repairCost:100,travelerSet:1b,PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\", \"rpgloot:traveler\": \"1\"},Enchantments:[{id:\"unbreaking\",lvl:4}]}"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_sword",
+          "functions": [
+            {
+              "function": "minecraft:set_name",
+              "name": {
+                "text": "Traveler's Sword",
+                "color": "light_purple",
+                "italic": false
+              }
+            },
+            {
+              "function": "minecraft:set_lore",
+              "lore": [
+                {
+                  "text": "A potential beyond compare lies within.",
+                  "color": "#C4A484",
+                  "italic": true
+                },
+                {
+                  "text": ""
+                },
+                {
+                  "text": "Statistics:",
+                  "color": "gray",
+                  "italic": false
+                },
+                {
+                  "text": " Magic Source",
+                  "color": "dark_green",
+                  "italic": false
+                },
+                {
+                  "text": " Epic Treasure Item",
+                  "color": "dark_green",
+                  "italic": false
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{repairCost:100,travelerSet:1b,PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\", \"rpgloot:traveler\": \"1\"},Enchantments:[{id:\"unbreaking\",lvl:4}]}"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_pickaxe",
+          "functions": [
+            {
+              "function": "minecraft:set_name",
+              "name": {
+                "text": "Traveler's Pickaxe",
+                "color": "light_purple",
+                "italic": false
+              }
+            },
+            {
+              "function": "minecraft:set_lore",
+              "lore": [
+                {
+                  "text": "A potential beyond compare lies within.",
+                  "color": "#C4A484",
+                  "italic": true
+                },
+                {
+                  "text": ""
+                },
+                {
+                  "text": "Statistics:",
+                  "color": "gray",
+                  "italic": false
+                },
+                {
+                  "text": " Magic Source",
+                  "color": "dark_green",
+                  "italic": false
+                },
+                {
+                  "text": " Epic Treasure Item",
+                  "color": "dark_green",
+                  "italic": false
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{repairCost:100,travelerSet:1b,PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\", \"rpgloot:traveler\": \"1\"},Enchantments:[{id:\"unbreaking\",lvl:4}]}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

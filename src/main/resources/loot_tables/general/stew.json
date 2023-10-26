@@ -1,0 +1,868 @@
+{
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:mushroom_stew"
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:beetroot_soup"
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:suspicious_stew",
+					"functions": [
+						{
+							"function": "minecraft:set_lore",
+							"lore": [
+								{
+									"text": "A snack for the road.",
+									"color": "#C4A484",
+									"italic": true
+								},
+								{
+									"text": ""
+								},
+								{
+									"text": "Statistics:",
+									"color": "gray",
+									"italic": false
+								},
+								{
+									"text": " Unknown Source",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": " Uncommon Treasure Item",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": ""
+								},
+								{
+									"text": "Possibilities:",
+									"color": "gray",
+									"italic": false
+								},
+								{
+									"text": " Absorption",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": " Health Boost",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": " Unluck",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": " Instant Damage",
+									"color": "dark_green",
+									"italic": false
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Volcanic Broth",
+								"color": "yellow",
+								"italic": false
+							}
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Berry-apple Bowl",
+								"color": "yellow",
+								"italic": false
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.25
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Moldy-looking Stew",
+								"color": "yellow",
+								"italic": false
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.25
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Bowl o' Oats",
+								"color": "yellow",
+								"italic": false
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.25
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_stew_effect",
+							"effects": [
+								{
+									"type": "minecraft:absorption",
+									"duration": {
+										"min": 20,
+										"max": 120
+									}
+								},
+								{
+									"type": "minecraft:health_boost",
+									"duration": {
+										"min": 20,
+										"max": 300
+									}
+								},
+								{
+									"type": "minecraft:unluck",
+									"duration": {
+										"min": 60,
+										"max": 600
+									}
+								},
+								{
+									"type": "minecraft:instant_damage",
+									"duration": 1
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\", \"rpgloot:stew\": \"1\"}}"
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:suspicious_stew",
+					"functions": [
+						{
+							"function": "minecraft:set_lore",
+							"lore": [
+								{
+									"text": "A good start for picky eaters.",
+									"color": "#C4A484",
+									"italic": true
+								},
+								{
+									"text": ""
+								},
+								{
+									"text": "Statistics:",
+									"color": "gray",
+									"italic": false
+								},
+								{
+									"text": " Unknown Source",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": " Uncommon Treasure Item",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": ""
+								},
+								{
+									"text": "Possibilities:",
+									"color": "gray",
+									"italic": false
+								},
+								{
+									"text": " Absorption",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": " Health Boost",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": " Unluck",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": " Instant Damage",
+									"color": "dark_green",
+									"italic": false
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Volcanic Broth",
+								"color": "yellow",
+								"italic": false
+							}
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Dried Kelp Stew",
+								"color": "yellow",
+								"italic": false
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.25
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Average-looking Stew",
+								"color": "yellow",
+								"italic": false
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.25
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Bowl o' Oats",
+								"color": "yellow",
+								"italic": false
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.25
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_stew_effect",
+							"effects": [
+								{
+									"type": "minecraft:absorption",
+									"duration": {
+										"min": 20,
+										"max": 120
+									}
+								},
+								{
+									"type": "minecraft:health_boost",
+									"duration": {
+										"min": 20,
+										"max": 300
+									}
+								},
+								{
+									"type": "minecraft:unluck",
+									"duration": {
+										"min": 60,
+										"max": 600
+									}
+								},
+								{
+									"type": "minecraft:instant_damage",
+									"duration": 1
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\", \"rpgloot:stew\": \"1\"}}"
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:suspicious_stew",
+					"functions": [
+						{
+							"function": "minecraft:set_lore",
+							"lore": [
+								{
+									"text": "A bad start for picky eaters.",
+									"color": "#C4A484",
+									"italic": true
+								},
+								{
+									"text": ""
+								},
+								{
+									"text": "Statistics:",
+									"color": "gray",
+									"italic": false
+								},
+								{
+									"text": " Unknown Source",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": " Uncommon Treasure Item",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": ""
+								},
+								{
+									"text": "Possibilities:",
+									"color": "gray",
+									"italic": false
+								},
+								{
+									"text": " Health Boost",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": " Unluck",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": " Instant Damage",
+									"color": "dark_green",
+									"italic": false
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Volcanic Broth",
+								"color": "yellow",
+								"italic": false
+							}
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Expired Dried Kelp Stew",
+								"color": "yellow",
+								"italic": false
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.25
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Not-so-tasty Cereal",
+								"color": "yellow",
+								"italic": false
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.25
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Bowl o' Goat Parts",
+								"color": "yellow",
+								"italic": false
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.25
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_stew_effect",
+							"effects": [
+								{
+									"type": "minecraft:health_boost",
+									"duration": {
+										"min": 40,
+										"max": 600
+									}
+								},
+								{
+									"type": "minecraft:unluck",
+									"duration": {
+										"min": 60,
+										"max": 600
+									}
+								},
+								{
+									"type": "minecraft:instant_damage",
+									"duration": 1
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\", \"rpgloot:stew\": \"1\"}}"
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:suspicious_stew",
+					"functions": [
+						{
+							"function": "minecraft:set_lore",
+							"lore": [
+								{
+									"text": "A dangerous mix of chemicals.",
+									"color": "#C4A484",
+									"italic": true
+								},
+								{
+									"text": ""
+								},
+								{
+									"text": "Statistics:",
+									"color": "gray",
+									"italic": false
+								},
+								{
+									"text": " Unknown Source",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": " Rare Treasure Item",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": ""
+								},
+								{
+									"text": "Possibilities:",
+									"color": "gray",
+									"italic": false
+								},
+								{
+									"text": " Weakness",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": " Poison",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": " Regeneration",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": " Luck",
+									"color": "dark_green",
+									"italic": false
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Mysterious Broth",
+								"color": "aqua",
+								"italic": false
+							}
+						},
+						{
+							"function": "minecraft:set_stew_effect",
+							"effects": [
+								{
+									"type": "minecraft:unluck",
+									"duration": {
+										"min": 60,
+										"max": 600
+									}
+								},
+								{
+									"type": "minecraft:luck",
+									"duration": {
+										"min": 60,
+										"max": 600
+									}
+								},
+								{
+									"type": "minecraft:regeneration",
+									"duration": {
+										"min": 5,
+										"max": 60
+									}
+								},
+								{
+									"type": "minecraft:weakness",
+									"duration": {
+										"min": 10,
+										"max": 120
+									}
+								},
+								{
+									"type": "minecraft:poison",
+									"duration": {
+										"min": 5,
+										"max": 15
+									}
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\", \"rpgloot:stew\": \"1\"}}"
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:suspicious_stew",
+					"functions": [
+						{
+							"function": "minecraft:set_lore",
+							"lore": [
+								{
+									"text": "A hearty mix of health.",
+									"color": "#C4A484",
+									"italic": true
+								},
+								{
+									"text": ""
+								},
+								{
+									"text": "Statistics:",
+									"color": "gray",
+									"italic": false
+								},
+								{
+									"text": " Unknown Source",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": " Rare Treasure Item",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": ""
+								},
+								{
+									"text": "Possibilities:",
+									"color": "gray",
+									"italic": false
+								},
+								{
+									"text": " Instant Health",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": " Absorption",
+									"color": "dark_green",
+									"italic": false
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Regenerative Concoction",
+								"color": "aqua",
+								"italic": false
+							}
+						},
+						{
+							"function": "minecraft:set_stew_effect",
+							"effects": [
+								{
+									"type": "minecraft:absorption",
+									"duration": {
+										"min": 15,
+										"max": 600
+									}
+								},
+								{
+									"type": "minecraft:instant_health",
+									"duration": 1
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\", \"rpgloot:stew\": \"1\"}}"
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:suspicious_stew",
+					"functions": [
+						{
+							"function": "minecraft:set_lore",
+							"lore": [
+								{
+									"text": "Satisfy your hunger or die trying.",
+									"color": "#C4A484",
+									"italic": true
+								},
+								{
+									"text": ""
+								},
+								{
+									"text": "Statistics:",
+									"color": "gray",
+									"italic": false
+								},
+								{
+									"text": " Unknown Source",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": " Epic Treasure Item",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": ""
+								},
+								{
+									"text": "Possibilities:",
+									"color": "gray",
+									"italic": false
+								},
+								{
+									"text": " Saturation",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": " Hunger",
+									"color": "dark_green",
+									"italic": false
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Gardener's Gamble",
+								"color": "light_purple",
+								"italic": false
+							}
+						},
+						{
+							"function": "minecraft:set_stew_effect",
+							"effects": [
+								{
+									"type": "minecraft:hunger",
+									"duration": 600
+								},
+								{
+									"type": "minecraft:saturation",
+									"duration": 300
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\", \"rpgloot:stew\": \"1\"}}"
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:suspicious_stew",
+					"functions": [
+						{
+							"function": "minecraft:set_lore",
+							"lore": [
+								{
+									"text": "A shulker's personal favorite.",
+									"color": "#C4A484",
+									"italic": true
+								},
+								{
+									"text": ""
+								},
+								{
+									"text": "Statistics:",
+									"color": "gray",
+									"italic": false
+								},
+								{
+									"text": " Unknown Source",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": " Rare Treasure Item",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": ""
+								},
+								{
+									"text": "Possibilities:",
+									"color": "gray",
+									"italic": false
+								},
+								{
+									"text": " Levitation",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": " Slowness",
+									"color": "dark_green",
+									"italic": false
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Gravitational Serum",
+								"color": "aqua",
+								"italic": false
+							}
+						},
+						{
+							"function": "minecraft:set_stew_effect",
+							"effects": [
+								{
+									"type": "minecraft:levitation",
+									"duration": {
+										"min": 5,
+										"max": 10
+									}
+								},
+								{
+									"type": "minecraft:slowness",
+									"duration": {
+										"min": 5,
+										"max": 30
+									}
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\", \"rpgloot:stew\": \"1\"}}"
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:suspicious_stew",
+					"functions": [
+						{
+							"function": "minecraft:set_lore",
+							"lore": [
+								{
+									"text": "Unleash the greed within.",
+									"color": "#C4A484",
+									"italic": true
+								},
+								{
+									"text": ""
+								},
+								{
+									"text": "Statistics:",
+									"color": "gray",
+									"italic": false
+								},
+								{
+									"text": " Unknown Source",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": " Epic Treasure Item",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": ""
+								},
+								{
+									"text": "Possibilities:",
+									"color": "gray",
+									"italic": false
+								},
+								{
+									"text": " Luck",
+									"color": "dark_green",
+									"italic": false
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Gulp of the Goblin",
+								"color": "light_purple",
+								"italic": false
+							}
+						},
+						{
+							"function": "minecraft:set_stew_effect",
+							"effects": [
+								{
+									"type": "minecraft:luck",
+									"duration": {
+										"min": 120,
+										"max": 300
+									}
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\", \"rpgloot:stew\": \"1\"}}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

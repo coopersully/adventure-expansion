@@ -1,0 +1,690 @@
+{
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:shield",
+					"functions": [
+						{
+							"function": "minecraft:set_lore",
+							"lore": [
+								{
+									"text": "A protective plank when you need it most.",
+									"color": "#C4A484",
+									"italic": true
+								},
+								{
+									"text": ""
+								},
+								{
+									"text": "Statistics:",
+									"color": "gray",
+									"italic": false
+								},
+								{
+									"text": " Unknown Source",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": " Uncommon Treasure Item",
+									"color": "dark_green",
+									"italic": false
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Noble Shield",
+								"color": "yellow",
+								"italic": false
+							}
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Worn Noble Pavise",
+								"color": "yellow",
+								"italic": false
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.25
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Fortified Noble Scutum",
+								"color": "yellow",
+								"italic": false
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.25
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_attributes",
+							"modifiers": [
+								{
+									"attribute": "minecraft:generic.knockback_resistance",
+									"name": "",
+									"amount": {
+										"min": 0.05,
+										"max": 0.15
+									},
+									"operation": "multiply_base",
+									"slot": "offhand"
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_attributes",
+							"modifiers": [
+								{
+									"attribute": "minecraft:generic.armor",
+									"name": "",
+									"amount": {
+										"min": 0,
+										"max": 4
+									},
+									"operation": "addition",
+									"slot": "offhand"
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{BlockEntityTag:{Base:12,Patterns:[{Pattern:flo,Color:4},{Pattern:mr,Color:1},{Pattern:mc,Color:12},{Pattern:sc,Color:12}]},PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\", \"rpgloot:noble\": \"1\"}}"
+						},
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{BlockEntityTag:{Base:12,Patterns:[{Pattern:ss,Color:1},{Pattern:cbo,Color:12},{Pattern:bs,Color:12},{Pattern:ts,Color:12},{Pattern:bo,Color:12}]}}",
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.25
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{BlockEntityTag:{Base:11,Patterns:[{Pattern:glb,Color:13},{Pattern:bts,Color:3},{Pattern:tts,Color:3}]}}",
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.25
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{BlockEntityTag:{Base:0,Patterns:[{Pattern:bt,Color:8},{Pattern:tt,Color:8},{Pattern:mr,Color:0},{Pattern:flo,Color:8},{Pattern:mc,Color:8}]}}",
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.25
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{BlockEntityTag:{Base:3,Patterns:[{Pattern:cs,Color:13},{Pattern:hh,Color:3},{Pattern:flo,Color:4},{Pattern:mc,Color:12}]}}",
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.25
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_damage",
+							"damage": {
+								"min": 0,
+								"max": 1
+							}
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:stone_sword",
+					"functions": [
+						{
+							"function": "minecraft:set_lore",
+							"lore": [
+								{
+									"text": "A rock-made blade of conquest.",
+									"color": "#C4A484",
+									"italic": true
+								},
+								{
+									"text": ""
+								},
+								{
+									"text": "Statistics:",
+									"color": "gray",
+									"italic": false
+								},
+								{
+									"text": " Unknown Source",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": " Uncommon Treasure Item",
+									"color": "dark_green",
+									"italic": false
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Noble Sword",
+								"color": "yellow",
+								"italic": false
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 1
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Rusty Noble Longsword",
+								"color": "yellow",
+								"italic": false
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.25
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Enhanced Noble Nandao",
+								"color": "yellow",
+								"italic": false
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.15
+								}
+							]
+						},
+						{
+							"function": "minecraft:enchant_with_levels",
+							"levels": {
+								"min": 5,
+								"max": 15
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.75
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_damage",
+							"damage": {
+								"min": 0,
+								"max": 1
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.75
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\", \"rpgloot:noble\": \"1\"}}"
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:stone_pickaxe",
+					"functions": [
+						{
+							"function": "minecraft:set_lore",
+							"lore": [
+								{
+									"text": "A layman's trusty pickaxe.",
+									"color": "#C4A484",
+									"italic": true
+								},
+								{
+									"text": ""
+								},
+								{
+									"text": "Statistics:",
+									"color": "gray",
+									"italic": false
+								},
+								{
+									"text": " Unknown Source",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": " Uncommon Treasure Item",
+									"color": "dark_green",
+									"italic": false
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Noble Pickaxe",
+								"color": "yellow",
+								"italic": false
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 1
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Polished Noble Mandrill",
+								"color": "yellow",
+								"italic": false
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.25
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Cracked Noble Railroad Pickaxe",
+								"color": "yellow",
+								"italic": false
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.15
+								}
+							]
+						},
+						{
+							"function": "minecraft:enchant_with_levels",
+							"levels": {
+								"min": 5,
+								"max": 15
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.75
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_damage",
+							"damage": {
+								"min": 0,
+								"max": 1
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.75
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\", \"rpgloot:noble\": \"1\"}}"
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:stone_axe",
+					"functions": [
+						{
+							"function": "minecraft:set_lore",
+							"lore": [
+								{
+									"text": "A hard-hitting lumber axe.",
+									"color": "#C4A484",
+									"italic": true
+								},
+								{
+									"text": ""
+								},
+								{
+									"text": "Statistics:",
+									"color": "gray",
+									"italic": false
+								},
+								{
+									"text": " Unknown Source",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": " Uncommon Treasure Item",
+									"color": "dark_green",
+									"italic": false
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Noble Axe",
+								"color": "yellow",
+								"italic": false
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 1
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Rusty Noble Hatchet",
+								"color": "yellow",
+								"italic": false
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.25
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Longlasting Noble Felling Axe",
+								"color": "yellow",
+								"italic": false
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.15
+								}
+							]
+						},
+						{
+							"function": "minecraft:enchant_with_levels",
+							"levels": {
+								"min": 0,
+								"max": 15
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.75
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_damage",
+							"damage": {
+								"min": 0,
+								"max": 1
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.75
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\", \"rpgloot:noble\": \"1\"}}"
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:stone_shovel",
+					"functions": [
+						{
+							"function": "minecraft:set_lore",
+							"lore": [
+								{
+									"text": "A master excavator.",
+									"color": "#C4A484",
+									"italic": true
+								},
+								{
+									"text": ""
+								},
+								{
+									"text": "Statistics:",
+									"color": "gray",
+									"italic": false
+								},
+								{
+									"text": " Unknown Source",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": " Uncommon Treasure Item",
+									"color": "dark_green",
+									"italic": false
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Noble Shovel",
+								"color": "yellow",
+								"italic": false
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 1
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Noble Spade",
+								"color": "yellow",
+								"italic": false
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.25
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Short-handled Noble Trowel",
+								"color": "yellow",
+								"italic": false
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.15
+								}
+							]
+						},
+						{
+							"function": "minecraft:enchant_with_levels",
+							"levels": {
+								"min": 5,
+								"max": 15
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.75
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_damage",
+							"damage": {
+								"min": 0,
+								"max": 1
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.75
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\", \"rpgloot:noble\": \"1\"}}"
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:stone_hoe",
+					"functions": [
+						{
+							"function": "minecraft:set_lore",
+							"lore": [
+								{
+									"text": "It tills the cold earth's soil.",
+									"color": "#C4A484",
+									"italic": true
+								},
+								{
+									"text": ""
+								},
+								{
+									"text": "Statistics:",
+									"color": "gray",
+									"italic": false
+								},
+								{
+									"text": " Unknown Source",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": " Uncommon Treasure Item",
+									"color": "dark_green",
+									"italic": false
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Noble Hoe",
+								"color": "yellow",
+								"italic": false
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 1
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Grassy Noble Scuffler",
+								"color": "yellow",
+								"italic": false
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.25
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Iron-covered Noble Cultivator",
+								"color": "yellow",
+								"italic": false
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.15
+								}
+							]
+						},
+						{
+							"function": "minecraft:enchant_with_levels",
+							"levels": {
+								"min": 5,
+								"max": 15
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.75
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_damage",
+							"damage": {
+								"min": 0,
+								"max": 1
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.75
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\", \"rpgloot:noble\": \"1\"}}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

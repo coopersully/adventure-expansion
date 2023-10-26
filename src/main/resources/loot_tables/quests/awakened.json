@@ -1,0 +1,286 @@
+{
+  "type": "minecraft:generic",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_helmet",
+          "functions": [
+            {
+              "function": "minecraft:set_name",
+              "name": {
+                "text": "Awakened Helmet",
+                "color": "light_purple",
+                "italic": false
+              }
+            },
+            {
+              "function": "minecraft:set_lore",
+              "lore": [
+                {
+                  "text": "Cast by darkness, poured in starlight.",
+                  "color": "#C4A484",
+                  "italic": true
+                },
+                {
+                  "text": ""
+                },
+                {
+                  "text": "Statistics:",
+                  "color": "gray",
+                  "italic": false
+                },
+                {
+                  "text": " Magic Source",
+                  "color": "dark_green",
+                  "italic": false
+                },
+                {
+                  "text": " Epic Treasure Item",
+                  "color": "dark_green",
+                  "italic": false
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{repairCost:100,awakenedSet:1b,PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\", \"rpgloot:awakened\": \"1\"},Enchantments:[{id:\"unbreaking\",lvl:4},{id:\"protection\",lvl:4},{id:\"aqua_affinity\",lvl:1},{id:\"respiration\",lvl:3}]}"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_chestplate",
+          "functions": [
+            {
+              "function": "minecraft:set_name",
+              "name": {
+                "text": "Awakened Chestplate",
+                "color": "light_purple",
+                "italic": false
+              }
+            },
+            {
+              "function": "minecraft:set_lore",
+              "lore": [
+                {
+                  "text": "Cast by darkness, poured in starlight.",
+                  "color": "#C4A484",
+                  "italic": true
+                },
+                {
+                  "text": ""
+                },
+                {
+                  "text": "Statistics:",
+                  "color": "gray",
+                  "italic": false
+                },
+                {
+                  "text": " Magic Source",
+                  "color": "dark_green",
+                  "italic": false
+                },
+                {
+                  "text": " Epic Treasure Item",
+                  "color": "dark_green",
+                  "italic": false
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{repairCost:100,awakenedSet:1b,PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\", \"rpgloot:awakened\": \"1\"},Enchantments:[{id:\"unbreaking\",lvl:4},{id:\"protection\",lvl:4}]}"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_leggings",
+          "functions": [
+            {
+              "function": "minecraft:set_name",
+              "name": {
+                "text": "Awakened Leggings",
+                "color": "light_purple",
+                "italic": false
+              }
+            },
+            {
+              "function": "minecraft:set_lore",
+              "lore": [
+                {
+                  "text": "Cast by darkness, poured in starlight.",
+                  "color": "#C4A484",
+                  "italic": true
+                },
+                {
+                  "text": ""
+                },
+                {
+                  "text": "Statistics:",
+                  "color": "gray",
+                  "italic": false
+                },
+                {
+                  "text": " Magic Source",
+                  "color": "dark_green",
+                  "italic": false
+                },
+                {
+                  "text": " Epic Treasure Item",
+                  "color": "dark_green",
+                  "italic": false
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{repairCost:100,awakenedSet:1b,PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\", \"rpgloot:awakened\": \"1\"},Enchantments:[{id:\"unbreaking\",lvl:4},{id:\"protection\",lvl:4}]}"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_boots",
+          "functions": [
+            {
+              "function": "minecraft:set_name",
+              "name": {
+                "text": "Awakened Boots",
+                "color": "light_purple",
+                "italic": false
+              }
+            },
+            {
+              "function": "minecraft:set_lore",
+              "lore": [
+                {
+                  "text": "Cast by darkness, poured in starlight.",
+                  "color": "#C4A484",
+                  "italic": true
+                },
+                {
+                  "text": ""
+                },
+                {
+                  "text": "Statistics:",
+                  "color": "gray",
+                  "italic": false
+                },
+                {
+                  "text": " Magic Source",
+                  "color": "dark_green",
+                  "italic": false
+                },
+                {
+                  "text": " Epic Treasure Item",
+                  "color": "dark_green",
+                  "italic": false
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{repairCost:100,awakenedSet:1b,PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\", \"rpgloot:awakened\": \"1\"},Enchantments:[{id:\"unbreaking\",lvl:4},{id:\"protection\",lvl:4},{id:\"feather_falling\",lvl:4},{id:\"depth_strider\",lvl:3}]}"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_sword",
+          "functions": [
+            {
+              "function": "minecraft:set_name",
+              "name": {
+                "text": "Awakened Sword",
+                "color": "red",
+                "italic": false
+              }
+            },
+            {
+              "function": "minecraft:set_lore",
+              "lore": [
+                {
+                  "text": "Cast by darkness, poured in starlight.",
+                  "color": "#C4A484",
+                  "italic": true
+                },
+                {
+                  "text": ""
+                },
+                {
+                  "text": "Statistics:",
+                  "color": "gray",
+                  "italic": false
+                },
+                {
+                  "text": " Magic Source",
+                  "color": "dark_green",
+                  "italic": false
+                },
+                {
+                  "text": " Mythical Treasure Item",
+                  "color": "dark_green",
+                  "italic": false
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{repairCost:100,awakenedSet:1b,PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\", \"rpgloot:awakened\": \"1\"},Enchantments:[{id:\"unbreaking\",lvl:4},{id:\"sharpness\",lvl:9},{id:\"fire_aspect\",lvl:3},{id:\"looting\",lvl:3},{id:\"sweeping\",lvl:5},{id:\"knockback\",lvl:3},{id:\"mending\",lvl:1}]}"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_pickaxe",
+          "functions": [
+            {
+              "function": "minecraft:set_name",
+              "name": {
+                "text": "Awakened Pickaxe",
+                "color": "red",
+                "italic": false
+              }
+            },
+            {
+              "function": "minecraft:set_lore",
+              "lore": [
+                {
+                  "text": "Cast by darkness, poured in starlight.",
+                  "color": "#C4A484",
+                  "italic": true
+                },
+                {
+                  "text": ""
+                },
+                {
+                  "text": "Statistics:",
+                  "color": "gray",
+                  "italic": false
+                },
+                {
+                  "text": " Magic Source",
+                  "color": "dark_green",
+                  "italic": false
+                },
+                {
+                  "text": " Mythical Treasure Item",
+                  "color": "dark_green",
+                  "italic": false
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{repairCost:100,awakenedSet:1b,PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\", \"rpgloot:awakened\": \"1\"},Enchantments:[{id:\"unbreaking\",lvl:4},{id:\"efficiency\",lvl:5},{id:\"silk_touch\",lvl:2},{id:\"mending\",lvl:1}]}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "type": "minecraft:generic",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:netherite_helmet",
+          "functions": [
+            {
+              "function": "minecraft:set_name",
+              "name": {
+                "text": "Crown of Shadows",
+                "color": "dark_gray",
+                "italic": false
+              }
+            },
+            {
+              "function": "minecraft:set_lore",
+              "lore": [
+                {
+                  "text": "Elegance infused with chaotic evil.",
+                  "color": "#C4A484",
+                  "italic": true
+                },
+                {
+                  "text": ""
+                },
+                {
+                  "text": "Statistics:",
+                  "color": "gray",
+                  "italic": false
+                },
+                {
+                  "text": " Magic Source",
+                  "color": "dark_green",
+                  "italic": false
+                },
+                {
+                  "text": " Dark Treasure Item",
+                  "color": "dark_green",
+                  "italic": false
+                },
+                {
+                  "text": " Nightmare Infused",
+                  "color": "dark_green",
+                  "italic": false
+                },
+                {
+                  "text": ""
+                },
+                {
+                  "text": "Abilities:",
+                  "color": "gray",
+                  "italic": false
+                },
+                {
+                  "text": " DEATH - Temporarily weakens the wearer",
+                  "color": "dark_green",
+                  "italic": false
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{Unbreakable:1b,repairCost:100,crownOfShadows:1b,PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\", \"rpgloot:dark\": \"1\", \"rpgloot:crown_of_shadows\": \"1\", \"rpgloot:nightmare\": \"1\"},Enchantments:[{id:\"protection\",lvl:20},{id:\"aqua_affinity\",lvl:20},{id:\"respiration\",lvl:20}]}"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:netherite_sword",
+          "functions": [
+            {
+              "function": "minecraft:set_name",
+              "name": {
+                "text": "Shadowspear",
+                "color": "dark_gray",
+                "italic": false
+              }
+            },
+            {
+              "function": "minecraft:set_lore",
+              "lore": [
+                {
+                  "text": "Elegance infused with chaotic evil.",
+                  "color": "#C4A484",
+                  "italic": true
+                },
+                {
+                  "text": ""
+                },
+                {
+                  "text": "Statistics:",
+                  "color": "gray",
+                  "italic": false
+                },
+                {
+                  "text": " Magic Source",
+                  "color": "dark_green",
+                  "italic": false
+                },
+                {
+                  "text": " Dark Treasure Item",
+                  "color": "dark_green",
+                  "italic": false
+                },
+                {
+                  "text": " Nightmare Infused",
+                  "color": "dark_green",
+                  "italic": false
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{Unbreakable:1b,CustomModelData:6601,crownOfShadows:1b,PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\", \"rpgloot:dark\": \"1\", \"rpgloot:spear_of_shadows\": \"1\", \"rpgloot:nightmare\": \"1\"}}"
+            },
+			            {
+              "function": "minecraft:set_attributes",
+              "modifiers": [
+                {
+                  "attribute": "minecraft:generic.attack_damage",
+                  "name": "",
+                  "amount": 11,
+                  "operation": "addition",
+                  "slot": "mainhand"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

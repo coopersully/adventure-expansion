@@ -1,6 +1,8 @@
 package me.coopersully.rpgloot.rpgloot;
 
 import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.NamedTextColor;
+import net.kyori.adventure.text.format.TextColor;
 import net.kyori.adventure.text.format.TextDecoration;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.Location;
@@ -12,14 +14,30 @@ import org.jetbrains.annotations.Nullable;
 
 public class CoreUtils {
 
+    public static void noteInfo(@NotNull CommandSender sender, String message) {
+        sender.sendMessage(Component.text(message, NamedTextColor.GRAY));
+    }
+
+    public static void noteWarning(@NotNull CommandSender sender, String message) {
+        sender.sendMessage(Component.text(message, NamedTextColor.GOLD));
+    }
+
+    public static void noteError(@NotNull CommandSender sender, String message) {
+        sender.sendMessage(Component.text(message, NamedTextColor.RED));
+    }
+
+    public static void noteSuccess(@NotNull CommandSender sender, String message) {
+        sender.sendMessage(Component.text(message, NamedTextColor.GREEN));
+    }
+
     public static @Nullable Player getPlayerFromSender(CommandSender sender) {
         if (!(sender instanceof Player player)) {
-            sender.sendMessage(org.bukkit.ChatColor.RED + "This command must be executed via a player.");
+            noteError(sender, "Only players can execute this command.");
             return null;
         }
         return player;
     }
-    
+
     public static @NotNull Component translateXMLCodes(String message) {
         return Component.empty().decoration(TextDecoration.ITALIC, false).append(MiniMessage.miniMessage().deserialize(message));
     }

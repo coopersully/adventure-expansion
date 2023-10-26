@@ -2,6 +2,8 @@ package me.coopersully.rpgloot.rpgloot.commands;
 
 import me.coopersully.rpgloot.rpgloot.CoreUtils;
 import me.coopersully.rpgloot.rpgloot.AdventureExpansion;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.ChatColor;
 import org.bukkit.NamespacedKey;
 import org.bukkit.command.Command;
@@ -13,6 +15,8 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.jetbrains.annotations.NotNull;
 
+import static me.coopersully.rpgloot.rpgloot.CoreUtils.noteError;
+
 public class CommandMeta implements CommandExecutor {
 
     @Override
@@ -21,7 +25,7 @@ public class CommandMeta implements CommandExecutor {
         if (player == null) return false;
 
         if (!player.hasPermission(AdventureExpansion.permissionPrefix + "meta")) {
-            sender.sendMessage(ChatColor.RED + "You don't have permission to check item meta.");
+            noteError(player, "You don't have permission to check item meta.");
             return false;
         }
 
@@ -42,24 +46,30 @@ public class CommandMeta implements CommandExecutor {
         }
 
         if (PDC.getKeys().isEmpty()) {
-            sender.sendMessage(ChatColor.RED + "No data is attached to this " + object + ".");
+            noteError(player, "No data is attached to this " + object + ".");
             return false;
         }
 
         StringBuilder metaKeys = new StringBuilder();
         for (NamespacedKey key : PDC.getKeys()) {
             if (key == null) {
-                sender.sendMessage(ChatColor.YELLOW + "? = " + ChatColor.AQUA + "?");
+                sender.sendMessage(Component.text("? = ", NamedTextColor.YELLOW)
+                        .append(Component.text("?", NamedTextColor.AQUA)));
                 continue;
             }
-            metaKeys.append(ChatColor.AQUA);
-            metaKeys.append(key.value());
-            metaKeys.append(ChatColor.YELLOW);
-            metaKeys.append(", ");
+            metaKeys.append(key.value()).append(", ");
         }
-        metaKeys.deleteCharAt(metaKeys.length() - 1);
-        metaKeys.deleteCharAt(metaKeys.length() - 1);
-        sender.sendMessage(ChatColor.YELLOW + "The current " + ChatColor.AQUA + object + ChatColor.YELLOW + " has the following meta: " + metaKeys);
+        if (metaKeys.length() > 2) {
+            metaKeys.deleteCharAt(metaKeys.length() - 1);
+            metaKeys.deleteCharAt(metaKeys.length() - 1);
+        }
+
+        Component message = Component.text("The current ", NamedTextColor.YELLOW)
+                .append(Component.text(object, NamedTextColor.AQUA))
+                .append(Component.text(" has the following meta: ", NamedTextColor.YELLOW))
+                .append(Component.text(metaKeys.toString(), NamedTextColor.AQUA));
+
+        sender.sendMessage(message);
         return true;
     }
 

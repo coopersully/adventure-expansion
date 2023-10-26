@@ -1,0 +1,298 @@
+{
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"weight": 10,
+					"name": "minecraft:diamond_sword",
+					"functions": [
+						{
+							"function": "minecraft:set_lore",
+							"lore": [
+								{
+									"text": "Life is a fortune, fortune is a life.",
+									"color": "#C4A484",
+									"italic": true
+								},
+								{
+									"text": ""
+								},
+								{
+									"text": "Statistics:",
+									"color": "gray",
+									"italic": false
+								},
+								{
+									"text": " Illager Source",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": " Epic Treasure Item",
+									"color": "dark_green",
+									"italic": false
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Nandao of Greed",
+								"color": "light_purple",
+								"italic": false
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 1
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Chaos Infused Knightly Sword",
+								"color": "light_purple",
+								"italic": false
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.25
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Greed-seeking Nandao",
+								"color": "light_purple",
+								"italic": false
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.15
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{greedSet:1b,PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\", \"rpgloot:greed_tools\": \"1\"},Enchantments:[{id:\"minecraft:looting\",lvl:3}]}"
+						},
+						{
+							"function": "minecraft:enchant_randomly",
+							"enchantments": [
+								"minecraft:unbreaking"
+							]
+						},
+						{
+							"function": "minecraft:set_attributes",
+							"modifiers": [
+								{
+									"attribute": "minecraft:generic.luck",
+									"name": "",
+									"amount": 0.45,
+									"operation": "multiply_base",
+									"slot": "mainhand"
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_attributes",
+							"modifiers": [
+								{
+									"attribute": "minecraft:generic.attack_damage",
+									"name": "",
+									"amount": 6.25,
+									"operation": "addition",
+									"slot": "mainhand"
+								}
+							]
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"weight": 10,
+					"name": "minecraft:diamond_pickaxe",
+					"functions": [
+						{
+							"function": "minecraft:set_lore",
+							"lore": [
+								{
+									"text": "A man's wealth is his treasure.",
+									"color": "#C4A484",
+									"italic": true
+								},
+								{
+									"text": ""
+								},
+								{
+									"text": "Statistics:",
+									"color": "gray",
+									"italic": false
+								},
+								{
+									"text": " Illager Source",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": " Epic Treasure Item",
+									"color": "dark_green",
+									"italic": false
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Lucky Diamond Pickaxe",
+								"color": "light_purple",
+								"italic": false
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 1
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Gilded Diamond Mandrill of Greed",
+								"color": "light_purple",
+								"italic": false
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.25
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Tool of the Clover",
+								"color": "light_purple",
+								"italic": false
+							},
+							"conditions": [
+								{
+									"condition": "minecraft:random_chance",
+									"chance": 0.15
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{greedSet:1b,PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\", \"rpgloot:greed_tools\": \"1\"},Enchantments:[{id:\"minecraft:fortune\",lvl:3}]}"
+						},
+						{
+							"function": "minecraft:enchant_randomly",
+							"enchantments": [
+								"minecraft:unbreaking",
+								"minecraft:efficiency"
+							]
+						},
+						{
+							"function": "minecraft:set_attributes",
+							"modifiers": [
+								{
+									"attribute": "minecraft:generic.luck",
+									"name": "",
+									"amount": 0.15,
+									"operation": "multiply_base",
+									"slot": "mainhand"
+								}
+							]
+						}
+					]
+				},
+				{
+					"type": "minecraft:item",
+					"weight": 1,
+					"name": "minecraft:crossbow",
+					"functions": [
+						{
+							"function": "minecraft:set_lore",
+							"lore": [
+								{
+									"text": "Created in clover-covered fields.",
+									"color": "#C4A484",
+									"italic": true
+								},
+								{
+									"text": ""
+								},
+								{
+									"text": "Statistics:",
+									"color": "gray",
+									"italic": false
+								},
+								{
+									"text": " Illager Source",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": " Mythical Treasure Item",
+									"color": "dark_green",
+									"italic": false
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Luck of the Draw",
+								"color": "red",
+								"italic": false
+							}
+						},
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{greedSet:1b,PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\", \"rpgloot:greed_tools\": \"1\"},Enchantments:[{id:\"minecraft:quick_charge\",lvl:4},{id:\"minecraft:unbreaking\",lvl:3}]}"
+						},
+						{
+							"function": "minecraft:enchant_randomly",
+							"enchantments": [
+								"minecraft:piercing",
+								"minecraft:multishot"
+							]
+						},
+						{
+							"function": "minecraft:set_attributes",
+							"modifiers": [
+								{
+									"attribute": "minecraft:generic.luck",
+									"name": "",
+									"amount": 1,
+									"operation": "multiply_base",
+									"slot": "mainhand"
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_attributes",
+							"modifiers": [
+								{
+									"attribute": "minecraft:generic.movement_speed",
+									"name": "",
+									"amount": 0.15,
+									"operation": "multiply_base",
+									"slot": "mainhand"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

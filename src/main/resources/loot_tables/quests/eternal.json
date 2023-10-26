@@ -1,0 +1,194 @@
+{
+  "type": "minecraft:generic",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_helmet",
+          "functions": [
+            {
+              "function": "minecraft:set_name",
+              "name": {
+                "text": "Eternal Helmet",
+                "color": "red",
+                "italic": false
+              }
+            },
+            {
+              "function": "minecraft:set_lore",
+              "lore": [
+                {
+                  "text": "Flectere si nequeo superos, Acheronta movebo.",
+                  "color": "#C4A484",
+                  "italic": true
+                },
+                {
+                  "text": ""
+                },
+                {
+                  "text": "Statistics:",
+                  "color": "gray",
+                  "italic": false
+                },
+                {
+                  "text": " Magic Source",
+                  "color": "dark_green",
+                  "italic": false
+                },
+                {
+                  "text": " Mythical Treasure Item",
+                  "color": "dark_green",
+                  "italic": false
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{repairCost:100,eternalSet:1b,PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\", \"rpgloot:eternal\": \"1\"},Enchantments:[{id:\"unbreaking\",lvl:4},{id:\"protection\",lvl:8},{id:\"aqua_affinity\",lvl:2},{id:\"respiration\",lvl:3},{id:\"mending\",lvl:1}]}"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_chestplate",
+          "functions": [
+            {
+              "function": "minecraft:set_name",
+              "name": {
+                "text": "Eternal Chestplate",
+                "color": "red",
+                "italic": false
+              }
+            },
+            {
+              "function": "minecraft:set_lore",
+              "lore": [
+                {
+                  "text": "Flectere si nequeo superos, Acheronta movebo.",
+                  "color": "#C4A484",
+                  "italic": true
+                },
+                {
+                  "text": ""
+                },
+                {
+                  "text": "Statistics:",
+                  "color": "gray",
+                  "italic": false
+                },
+                {
+                  "text": " Magic Source",
+                  "color": "dark_green",
+                  "italic": false
+                },
+                {
+                  "text": " Mythical Treasure Item",
+                  "color": "dark_green",
+                  "italic": false
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{repairCost:100,eternalSet:1b,PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\", \"rpgloot:eternal\": \"1\"},Enchantments:[{id:\"unbreaking\",lvl:4},{id:\"protection\",lvl:8},{id:\"mending\",lvl:1}]}"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_leggings",
+          "functions": [
+            {
+              "function": "minecraft:set_name",
+              "name": {
+                "text": "Eternal Leggings",
+                "color": "red",
+                "italic": false
+              }
+            },
+            {
+              "function": "minecraft:set_lore",
+              "lore": [
+                {
+                  "text": "Flectere si nequeo superos, Acheronta movebo.",
+                  "color": "#C4A484",
+                  "italic": true
+                },
+                {
+                  "text": ""
+                },
+                {
+                  "text": "Statistics:",
+                  "color": "gray",
+                  "italic": false
+                },
+                {
+                  "text": " Magic Source",
+                  "color": "dark_green",
+                  "italic": false
+                },
+                {
+                  "text": " Mythical Treasure Item",
+                  "color": "dark_green",
+                  "italic": false
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{repairCost:100,eternalSet:1b,PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\", \"rpgloot:eternal\": \"1\"},Enchantments:[{id:\"unbreaking\",lvl:4},{id:\"protection\",lvl:8},{id:\"mending\",lvl:1}]}"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_boots",
+          "functions": [
+            {
+              "function": "minecraft:set_name",
+              "name": {
+                "text": "Eternal Boots",
+                "color": "red",
+                "italic": false
+              }
+            },
+            {
+              "function": "minecraft:set_lore",
+              "lore": [
+                {
+                  "text": "Flectere si nequeo superos, Acheronta movebo.",
+                  "color": "#C4A484",
+                  "italic": true
+                },
+                {
+                  "text": ""
+                },
+                {
+                  "text": "Statistics:",
+                  "color": "gray",
+                  "italic": false
+                },
+                {
+                  "text": " Magic Source",
+                  "color": "dark_green",
+                  "italic": false
+                },
+                {
+                  "text": " Mythical Treasure Item",
+                  "color": "dark_green",
+                  "italic": false
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{repairCost:100,eternalSet:1b,PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\", \"rpgloot:eternal\": \"1\"},Enchantments:[{id:\"unbreaking\",lvl:4},{id:\"protection\",lvl:8},{id:\"feather_falling\",lvl:4},{id:\"depth_strider\",lvl:3},{id:\"soul_speed\",lvl:3},{id:\"mending\",lvl:1}]}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

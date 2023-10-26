@@ -1,0 +1,68 @@
+{
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:clock",
+					"functions": [
+						{
+							"function": "minecraft:set_lore",
+							"lore": [
+								{
+									"text": "Soothe the mind, ease the soul.",
+									"color": "#C4A484",
+									"italic": true
+								},
+								{
+									"text": ""
+								},
+								{
+									"text": "Statistics:",
+									"color": "gray",
+									"italic": false
+								},
+								{
+									"text": " Magic Source",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": " Epic Treasure Item",
+									"color": "dark_green",
+									"italic": false
+								},
+								{
+									"text": ""
+								},
+								{
+									"text": "When in Inventory:",
+									"color": "gray",
+									"italic": false
+								},
+								{
+									"text": "+10 Max Health",
+									"color": "blue",
+									"italic": false
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_name",
+							"name": {
+								"text": "Amulet of the Heart",
+								"color": "light_purple",
+								"italic": false
+							}
+						},
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{heartAmulet:1b,PublicBukkitValues:{\"rpgloot:treasure_item\": \"1\", \"rpgloot:heart_amulet\": \"1\"}}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -7,6 +7,8 @@ import me.coopersully.rpgloot.rpgloot.commands.CommandTrades;
 import me.coopersully.rpgloot.rpgloot.config.ConfigTrades;
 import me.coopersully.rpgloot.rpgloot.entities.CaveTraders;
 import me.coopersully.rpgloot.rpgloot.listeners.*;
+import me.coopersully.rpgloot.rpgloot.loot_tables.LootGenerated;
+import me.coopersully.rpgloot.rpgloot.loot_tables.LootTableLoader;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -50,6 +52,8 @@ public final class AdventureExpansion extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new Bows(), this);
         getServer().getPluginManager().registerEvents(new ArrowLand(), this);
         getServer().getPluginManager().registerEvents(new MinersHat(), this);
+        getServer().getPluginManager().registerEvents(new LootGenerated(), this);
+        getServer().getPluginManager().registerEvents(new AttachLeadToVillager(), this);
 
         // Register all commands
         try {
@@ -64,10 +68,8 @@ public final class AdventureExpansion extends JavaPlugin {
         // Entity spawn controllers
         new CaveTraders();
 
-        // Send plugin loaded ASCII-art message
-        System.out.println(ChatColor.GREEN + " __        __   __   ___ .  __      __   __   __           __   __  ___ " + ChatColor.RESET);
-        System.out.println(ChatColor.GREEN + "/  ` |  | |__) /__` |__  ' /__`    |__) |__) / _`    |    /  \\ /  \\  |"  + ChatColor.RESET);
-        System.out.println(ChatColor.GREEN + "\\__, \\__/ |  \\ .__/ |___   .__/    |  \\ |    \\__>    |___ \\__/ \\__/  |"  + ChatColor.RESET);
+        //
+        new LootTableLoader(getPlugin());
     }
 
     @Override

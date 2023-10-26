@@ -16,6 +16,9 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataType;
 import org.jetbrains.annotations.NotNull;
 
+import static me.coopersully.rpgloot.rpgloot.CoreUtils.*;
+import static me.coopersully.rpgloot.rpgloot.CoreUtils.noteSuccess;
+
 public class CommandNightmare implements CommandExecutor {
 
     @Override
@@ -25,9 +28,9 @@ public class CommandNightmare implements CommandExecutor {
             return false;
         }
 
-        switch (args[0].toLowerCase().strip())  {
+        switch (args[0].toLowerCase().strip()) {
             case "confirm", "c", "yes" -> commandConfirmed(sender);
-            default -> sender.sendMessage(ChatColor.RED + "Usage: /nightmare [confirm]");
+            default -> noteError(sender, "Usage: /nightmare [confirm]");
         }
         return true;
     }
@@ -41,7 +44,7 @@ public class CommandNightmare implements CommandExecutor {
 
         // Check if sender has the required permissions
         if (!player.hasPermission(AdventureExpansion.permissionPrefix + "nightmare")) {
-            sender.sendMessage(ChatColor.RED + "You don't have permission to infuse items with Nightmare Fuel.");
+            noteError(sender, "You don't have permission to infuse items with Nightmare Fuel.");
             return;
         }
 
@@ -58,7 +61,7 @@ public class CommandNightmare implements CommandExecutor {
             }
         }
         if (nightmareFuel == null) {
-            sender.sendMessage(ChatColor.RED + "You don't have Nightmare Fuel to infuse this item with.");
+            noteError(sender, "You don't have Nightmare Fuel to infuse this item with.");
             return;
         }
 
@@ -70,11 +73,11 @@ public class CommandNightmare implements CommandExecutor {
         if (mainItemMeta == null) {
 
             if (player.getPersistentDataContainer().has(ItemKeys.nightmare)) {
-                sender.sendMessage(ChatColor.RED + "Your corpse has already been infused with Nightmare Fuel.");
+                noteError(sender, "Your corpse has already been infused with Nightmare Fuel.");
             } else {
-                sender.sendMessage(ChatColor.RED + "Do you want to infuse this item with Nightmare Fuel?");
-                sender.sendMessage(ChatColor.RED + "This will use " + ChatColor.YELLOW + "1x Nightmare Fuel" + ChatColor.RED + " from your inventory.");
-                sender.sendMessage(ChatColor.RED + "If you're sure, type " + ChatColor.YELLOW + "/nightmare confirm" + ChatColor.RED + " to confirm.");
+                noteInfo(sender, "Do you want to infuse this item with Nightmare Fuel?");
+                noteInfo(sender, "This will use 1x Nightmare Fuel from your inventory.");
+                noteInfo(sender, "If you're sure, type /nightmare confirm to confirm.");
             }
 
         }
@@ -82,13 +85,13 @@ public class CommandNightmare implements CommandExecutor {
         else {
 
             if (mainItemMeta.getPersistentDataContainer().has(ItemKeys.nightmare)) {
-                sender.sendMessage(ChatColor.RED + "This item has already been infused with Nightmare Fuel.");
+                noteError(sender, "This item has already been infused with Nightmare Fuel.");
             } else {
-                sender.sendMessage(ChatColor.RED + "Do you want to infuse your corpse with Nightmare Fuel?");
-                sender.sendMessage(ChatColor.RED + "Infusing an item with Nightmare Fuel that already possesses high-level enchantments may cause");
-                sender.sendMessage(ChatColor.RED + "some enchantments to become corrupted or unstable; great power always comes with a risk.");
-                sender.sendMessage(ChatColor.RED + "This will use " + ChatColor.YELLOW + "1x Nightmare Fuel" + ChatColor.RED + " from your inventory.");
-                sender.sendMessage(ChatColor.RED + "If you're sure, type " + ChatColor.YELLOW + "/nightmare confirm" + ChatColor.RED + " to confirm.");
+                noteInfo(sender, "Do you want to infuse your corpse with Nightmare Fuel?");
+                noteInfo(sender, "Infusing an item with Nightmare Fuel that already possesses high-level enchantments may cause");
+                noteInfo(sender, "some enchantments to become corrupted or unstable; great power always comes with a risk.");
+                noteInfo(sender, "This will use 1x Nightmare Fuel from your inventory.");
+                noteInfo(sender, "If you're sure, type /nightmare confirm  to confirm.");
             }
 
         }
@@ -104,7 +107,7 @@ public class CommandNightmare implements CommandExecutor {
 
         // Check if sender has the required permissions
         if (!player.hasPermission(AdventureExpansion.permissionPrefix + "nightmare")) {
-            sender.sendMessage(ChatColor.RED + "You don't have permission to infuse items with Nightmare Fuel.");
+            noteError(player, "You don't have permission to infuse items with Nightmare Fuel.");
             return;
         }
 
@@ -122,7 +125,7 @@ public class CommandNightmare implements CommandExecutor {
         }
 
         if (nightmareFuel == null) {
-            sender.sendMessage(ChatColor.RED + "You don't have Nightmare Fuel to infuse this item with.");
+            noteError(player, "You don't have Nightmare Fuel to infuse this item with.");
             return;
         }
 
@@ -134,7 +137,7 @@ public class CommandNightmare implements CommandExecutor {
         if (mainItemMeta == null) {
 
             if (player.getPersistentDataContainer().has(ItemKeys.nightmare)) {
-                sender.sendMessage(ChatColor.RED + "Your corpse has already been infused with Nightmare Fuel.");
+                noteError(player, "Your corpse has already been infused with Nightmare Fuel.");
                 return;
             } else {
                 player.getAttribute(Attribute.GENERIC_MAX_HEALTH).addModifier(new AttributeModifier("nightmare_fuel", 1, AttributeModifier.Operation.MULTIPLY_SCALAR_1));
@@ -143,7 +146,7 @@ public class CommandNightmare implements CommandExecutor {
 
                 player.getPersistentDataContainer().set(ItemKeys.nightmare, PersistentDataType.STRING, "1");
 
-                sender.sendMessage(ChatColor.GREEN + "The winds of the night howl as you enchant your corpse.");
+                noteSuccess(sender, "The winds of the night howl as you enchant your corpse.");
             }
 
         }
@@ -151,7 +154,7 @@ public class CommandNightmare implements CommandExecutor {
         else {
 
             if (mainItemMeta.getPersistentDataContainer().has(ItemKeys.nightmare)) {
-                sender.sendMessage(ChatColor.RED + "This item has already been infused with Nightmare Fuel.");
+                noteError(player, "This item has already been infused with Nightmare Fuel.");
                 return;
             } else {
                 mainItemMeta.getEnchants()
@@ -168,7 +171,7 @@ public class CommandNightmare implements CommandExecutor {
 
                 NightmareItem.playCreateEffect(player);
 
-                sender.sendMessage(ChatColor.GREEN + "The winds of the night howl as you enchant your piece.");
+                noteSuccess(player, "The winds of the night howl as you enchant your piece.");
             }
 
         }
