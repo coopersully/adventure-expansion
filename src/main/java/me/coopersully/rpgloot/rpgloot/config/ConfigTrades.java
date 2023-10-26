@@ -18,16 +18,18 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
+import static me.coopersully.rpgloot.rpgloot.AdventureExpansion.getPlugin;
+
 public class ConfigTrades {
 
     private static List<MerchantRecipe> merchantTrades = new ArrayList<>();
 
     public static void load() {
 
-        var trades = AdventureExpansion.getPlugin().getTradesConfig().getConfigurationSection("trades");
+        var trades = getPlugin().getTradesConfig().getConfigurationSection("trades");
 
         if (trades == null) {
-            System.out.println("No trades were provided in overworld.yml for RPG Loot.");
+            getPlugin().getLogger().severe("No trades were provided in overworld.yml for RPG Loot.");
             return;
         }
 
@@ -37,7 +39,7 @@ public class ConfigTrades {
 
             var trade = trades.getConfigurationSection(tradeKey);
             if (trade == null) {
-                if (AdventureExpansion.debug) System.out.println("Invalid trade for " + tradeKey);
+                if (AdventureExpansion.debug) getPlugin().getLogger().warning("Invalid trade for " + tradeKey);
                 continue;
             }
 
@@ -49,7 +51,7 @@ public class ConfigTrades {
                 var sell_data = sell.getConfigurationSection("data");
                 sell_item = getItemStack(sell_id, sell_amount, sell_data);
             } else {
-                System.out.println(tradeKey + " was deemed invalid because it lacks a sell item; skipping this trade.");
+                getPlugin().getLogger().warning(tradeKey + " was deemed invalid because it lacks a sell item; skipping this trade.");
                 continue;
             }
 
@@ -64,7 +66,7 @@ public class ConfigTrades {
                 buy01_item = getItemStack(buy01_id, buy01_amount, buy01_data);
                 recipe.addIngredient(buy01_item);
             } else {
-                System.out.println(tradeKey + " was deemed invalid because it lacks a buy item; skipping this trade.");
+                getPlugin().getLogger().warning(tradeKey + " was deemed invalid because it lacks a buy item; skipping this trade.");
                 continue;
             }
 
@@ -87,7 +89,7 @@ public class ConfigTrades {
 
     private static @NotNull ItemStack getItemStack(@NotNull Object id, int amount, ConfigurationSection data) {
 
-        if (AdventureExpansion.debug) System.out.println("Attempting to parse " + id.getClass().getSimpleName() + " as an item...");
+        if (AdventureExpansion.debug) getPlugin().getLogger().fine("Attempting to parse " + id.getClass().getSimpleName() + " as an item...");
 
         Material material = null;
         if (id instanceof ArrayList) {
@@ -123,7 +125,7 @@ public class ConfigTrades {
             var persistents = data.getStringList("persistents");
             if (!persistents.isEmpty()) {
                 for (var line : persistents) {
-                    NamespacedKey key = new NamespacedKey(AdventureExpansion.getPlugin(), line);
+                    NamespacedKey key = new NamespacedKey(getPlugin(), line);
                     itemMeta.getPersistentDataContainer().set(key, PersistentDataType.STRING, "1");
                 }
             }

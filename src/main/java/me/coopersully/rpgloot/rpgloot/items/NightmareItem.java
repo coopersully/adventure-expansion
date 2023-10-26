@@ -13,6 +13,8 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
+import static me.coopersully.rpgloot.rpgloot.AdventureExpansion.getPlugin;
+
 public class NightmareItem {
 
     public static @NotNull List<Component> makeLore(@Nullable List<Component> lore) {
@@ -37,7 +39,7 @@ public class NightmareItem {
             }
 
             String text = component.content();
-            System.out.println(text);
+            getPlugin().getLogger().fine(text);
 
             if (text.startsWith(" ")) {
                 onIndentedLine = true;

@@ -13,10 +13,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import static me.coopersully.rpgloot.rpgloot.AdventureExpansion.getPlugin;
+
 public class CaveTraders {
 
     static {
-        Bukkit.getServer().getScheduler().runTaskLaterAsynchronously(AdventureExpansion.getPlugin(), CaveTraders::randomlySpawnVillager, 1200);
+        Bukkit.getServer().getScheduler().runTaskLaterAsynchronously(getPlugin(), CaveTraders::randomlySpawnVillager, 1200);
     }
 
     public static List<Player> cavePlayers = new ArrayList<>();
@@ -44,12 +46,12 @@ public class CaveTraders {
         refreshCavePlayers();
         if (cavePlayers.isEmpty()) {
             var tryAgainTime = 20 * (60 * 10);
-            if (AdventureExpansion.debug) System.out.println("A cave trader attempted to spawn but no players were found in caves; trying again in " + CoreUtils.getPrettyTimeFromTicks(1200));
-            Bukkit.getServer().getScheduler().runTaskLaterAsynchronously(AdventureExpansion.getPlugin(), CaveTraders::randomlySpawnVillager, tryAgainTime);
+            if (AdventureExpansion.debug) getPlugin().getLogger().fine("A cave trader attempted to spawn but no players were found in caves; trying again in " + CoreUtils.getPrettyTimeFromTicks(1200));
+            Bukkit.getServer().getScheduler().runTaskLaterAsynchronously(getPlugin(), CaveTraders::randomlySpawnVillager, tryAgainTime);
             return;
         }
 
-        Bukkit.getServer().getScheduler().runTask(AdventureExpansion.getPlugin(), CaveTraders::spawnVillager);
+        Bukkit.getServer().getScheduler().runTask(getPlugin(), CaveTraders::spawnVillager);
     }
 
     public static void spawnVillager() {
@@ -64,8 +66,8 @@ public class CaveTraders {
 
         // Schedule next spawn
         var runtime = calculateRuntime();
-        Bukkit.getServer().getScheduler().runTaskLaterAsynchronously(AdventureExpansion.getPlugin(), CaveTraders::randomlySpawnVillager, runtime);
-        if (AdventureExpansion.debug) System.out.println("A cave trader spawned near " + player.getName() + ". Another one will spawn in " + CoreUtils.getPrettyTimeFromTicks(runtime) + " seconds near a random cave player.");
+        Bukkit.getServer().getScheduler().runTaskLaterAsynchronously(getPlugin(), CaveTraders::randomlySpawnVillager, runtime);
+        if (AdventureExpansion.debug) getPlugin().getLogger().fine("A cave trader spawned near " + player.getName() + ". Another one will spawn in " + CoreUtils.getPrettyTimeFromTicks(runtime) + " seconds near a random cave player.");
     }
 
     private static int calculateRuntime() {

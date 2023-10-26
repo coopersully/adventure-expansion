@@ -3,11 +3,14 @@ package me.coopersully.rpgloot.rpgloot.items;
 import com.google.common.collect.Lists;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;
+import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.ChatColor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
+
+import static me.coopersully.rpgloot.rpgloot.AdventureExpansion.getPlugin;
 
 
 public class TreasureItem {
@@ -33,7 +36,7 @@ public class TreasureItem {
             }
 
             String text = component.content();
-            System.out.println(text);
+            getPlugin().getLogger().fine(text);
 
             if (text.startsWith(" ")) {
                 onIndentedLine = true;

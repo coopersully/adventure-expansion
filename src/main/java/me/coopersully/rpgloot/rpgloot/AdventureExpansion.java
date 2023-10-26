@@ -62,7 +62,7 @@ public final class AdventureExpansion extends JavaPlugin {
             getCommand("nightmare").setExecutor(new CommandNightmare());
             getCommand("trades").setExecutor(new CommandTrades());
         } catch (NullPointerException e) {
-            System.out.println(ChatColor.RED + "Failed to register command(s); please contact the developer.");
+            getLogger().severe("Failed to register command(s); please contact the developer.");
         }
 
         // Entity spawn controllers
