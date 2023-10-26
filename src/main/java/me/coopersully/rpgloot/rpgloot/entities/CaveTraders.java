@@ -17,10 +17,6 @@ import static me.coopersully.rpgloot.rpgloot.AdventureExpansion.getPlugin;
 
 public class CaveTraders {
 
-    static {
-        Bukkit.getServer().getScheduler().runTaskLaterAsynchronously(getPlugin(), CaveTraders::randomlySpawnVillager, 1200);
-    }
-
     public static List<Player> cavePlayers = new ArrayList<>();
 
     private static void refreshCavePlayers() {
@@ -42,7 +38,7 @@ public class CaveTraders {
         }
     }
 
-    private static void randomlySpawnVillager() {
+    public static void randomlySpawnVillager() {
         refreshCavePlayers();
         if (cavePlayers.isEmpty()) {
             var tryAgainTime = 20 * (60 * 10);

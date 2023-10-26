@@ -9,6 +9,7 @@ import me.coopersully.rpgloot.rpgloot.entities.CaveTraders;
 import me.coopersully.rpgloot.rpgloot.listeners.*;
 import me.coopersully.rpgloot.rpgloot.loot_tables.LootGenerated;
 import me.coopersully.rpgloot.rpgloot.loot_tables.LootTableLoader;
+import org.bukkit.Bukkit;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -64,11 +65,12 @@ public final class AdventureExpansion extends JavaPlugin {
             getLogger().severe("Failed to register command(s); please contact the developer.");
         }
 
-        // Entity spawn controllers
-        new CaveTraders();
+        // Schedule runtime tasks
+        Bukkit.getServer().getScheduler().runTaskLaterAsynchronously(getPlugin(), CaveTraders::randomlySpawnVillager, 1200);
 
-        //
-        new LootTableLoader(getPlugin());
+        // Load & prepare custom loot tables
+        // !! EXPERIMENTAL !!
+        LootTableLoader.loadLootTables();
     }
 
     @Override
@@ -91,6 +93,7 @@ public final class AdventureExpansion extends JavaPlugin {
         try {
             tradesConfig.load(trades);
         } catch (IOException | InvalidConfigurationException e) {
+            getPlugin().getLogger().severe("Failed to load trades config: " + tradesConfig.getName());
             e.printStackTrace();
         }
     }

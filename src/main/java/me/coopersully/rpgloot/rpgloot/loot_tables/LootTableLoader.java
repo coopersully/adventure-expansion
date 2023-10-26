@@ -9,22 +9,19 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
+import static me.coopersully.rpgloot.rpgloot.AdventureExpansion.getPlugin;
+
 public class LootTableLoader {
 
-    private final JavaPlugin plugin;
-    private final Gson gson = new Gson();
+    private static final Gson gson = new Gson();
 
     public static LootTable calamity, dragonhide, greed, health, noble, spawn_eggs, stew, awakened, eternal, raider, traveler;
 
-    public LootTableLoader(JavaPlugin plugin) {
-        this.plugin = plugin;
-        loadLootTables();
-    }
 
-    public void loadLootTables() {
-        File lootTablesDir = new File(plugin.getDataFolder(), "loot_tables");
+    public static void loadLootTables() {
+        File lootTablesDir = new File(getPlugin().getDataFolder(), "loot_tables");
         if (!lootTablesDir.exists() || !lootTablesDir.isDirectory()) {
-            plugin.getLogger().severe("Loot tables directory not found!");
+            getPlugin().getLogger().severe("Loot tables directory not found!");
             return;
         }
 
@@ -42,17 +39,17 @@ public class LootTableLoader {
         traveler = loadLootTable(lootTablesDir, "quests/traveler.json");
     }
 
-    private @Nullable LootTable loadLootTable(File directory, String fileName) {
+    private static @Nullable LootTable loadLootTable(File directory, String fileName) {
         File lootTableFile = new File(directory, fileName);
         if (!lootTableFile.exists()) {
-            plugin.getLogger().severe("Loot table file not found: " + fileName);
+            getPlugin().getLogger().severe("Loot table file not found: " + fileName);
             return null;
         }
 
         try (FileReader reader = new FileReader(lootTableFile)) {
             return gson.fromJson(reader, LootTable.class);
         } catch (IOException e) {
-            plugin.getLogger().severe("Failed to load loot table: " + fileName);
+            getPlugin().getLogger().severe("Failed to load loot table: " + fileName);
             e.printStackTrace();
             return null;
         }
