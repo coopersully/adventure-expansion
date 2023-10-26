@@ -9,7 +9,6 @@ import me.coopersully.rpgloot.rpgloot.entities.CaveTraders;
 import me.coopersully.rpgloot.rpgloot.listeners.*;
 import me.coopersully.rpgloot.rpgloot.loot_tables.LootGenerated;
 import me.coopersully.rpgloot.rpgloot.loot_tables.LootTableLoader;
-import org.bukkit.ChatColor;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;

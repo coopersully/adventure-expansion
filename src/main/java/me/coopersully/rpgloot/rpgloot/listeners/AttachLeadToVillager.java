@@ -1,7 +1,6 @@
 package me.coopersully.rpgloot.rpgloot.listeners;
 
 import me.coopersully.rpgloot.rpgloot.AdventureExpansion;
-import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;

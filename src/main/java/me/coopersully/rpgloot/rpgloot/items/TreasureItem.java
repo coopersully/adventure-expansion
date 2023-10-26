@@ -4,7 +4,6 @@ import com.google.common.collect.Lists;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;
 import net.kyori.adventure.text.format.NamedTextColor;
-import org.bukkit.ChatColor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -19,9 +18,9 @@ public class TreasureItem {
         if (lore == null) {
             lore = Lists.newArrayList(
                     Component.translatable(""),
-                    Component.translatable(ChatColor.GRAY + "Statistics:"),
-                    Component.translatable(ChatColor.DARK_GREEN + " Living Source"),
-                    Component.translatable(ChatColor.DARK_GREEN + " Rare Treasure Item")
+                    Component.translatable("Statistics:", NamedTextColor.GRAY),
+                    Component.translatable(" Living Source", NamedTextColor.DARK_GREEN),
+                    Component.translatable(" Rare Treasure Item", NamedTextColor.DARK_GREEN)
             );
             return lore;
         }
@@ -43,13 +42,13 @@ public class TreasureItem {
             } else if (onIndentedLine) {
                 insertIndex = i;
                 insertedLine = true;
-                lore.add(insertIndex, Component.translatable(ChatColor.DARK_GREEN + " Rare Treasure Item"));
+                lore.add(insertIndex, Component.translatable(" Rare Treasure Item", NamedTextColor.DARK_GREEN));
                 break;
             }
         }
 
         if (!insertedLine) {
-            lore.add(Component.translatable(ChatColor.DARK_GREEN + " Nightmare Infused"));
+            lore.add(Component.translatable(" Nightmare Infused", NamedTextColor.DARK_GREEN));
         }
 
         return lore;

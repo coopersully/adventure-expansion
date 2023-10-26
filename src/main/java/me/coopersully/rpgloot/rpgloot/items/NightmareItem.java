@@ -3,6 +3,7 @@ package me.coopersully.rpgloot.rpgloot.items;
 import com.google.common.collect.Lists;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;
+import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.*;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
@@ -21,10 +22,10 @@ public class NightmareItem {
         if (lore == null) {
             lore = Lists.newArrayList(
                     Component.translatable(""),
-                    Component.translatable(ChatColor.GRAY + "Statistics:"),
-                    Component.translatable(ChatColor.DARK_GREEN + " Living Source"),
-                    Component.translatable(ChatColor.DARK_GREEN + " Rare Treasure Item"),
-                    Component.translatable(ChatColor.DARK_GREEN + " Nightmare Infused")
+                    Component.translatable("Statistics:", NamedTextColor.GRAY),
+                    Component.translatable(" Living Source", NamedTextColor.DARK_GREEN),
+                    Component.translatable(" Rare Treasure Item", NamedTextColor.DARK_GREEN),
+                    Component.translatable(" Nightmare Infused", NamedTextColor.DARK_GREEN)
             );
             return lore;
         }
@@ -46,13 +47,13 @@ public class NightmareItem {
             } else if (onIndentedLine) {
                 insertIndex = i;
                 insertedLine = true;
-                lore.add(insertIndex, Component.translatable(ChatColor.DARK_GREEN + " Nightmare Infused"));
+                lore.add(insertIndex, Component.translatable(" Nightmare Infused", NamedTextColor.DARK_GREEN));
                 break;
             }
         }
 
         if (!insertedLine) {
-            lore.add(Component.translatable(ChatColor.DARK_GREEN + " Nightmare Infused"));
+            lore.add(Component.translatable(" Nightmare Infused", NamedTextColor.DARK_GREEN));
         }
 
         return lore;

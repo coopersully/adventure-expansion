@@ -1,8 +1,6 @@
 package me.coopersully.rpgloot.rpgloot.items;
 
 import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.TextComponent;
-import org.bukkit.ChatColor;
 import org.bukkit.entity.EnderPearl;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;

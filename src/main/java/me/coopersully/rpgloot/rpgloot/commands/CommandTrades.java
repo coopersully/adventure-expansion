@@ -1,9 +1,8 @@
 package me.coopersully.rpgloot.rpgloot.commands;
 
-import me.coopersully.rpgloot.rpgloot.CoreUtils;
 import me.coopersully.rpgloot.rpgloot.AdventureExpansion;
+import me.coopersully.rpgloot.rpgloot.CoreUtils;
 import me.coopersully.rpgloot.rpgloot.config.ConfigTrades;
-import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.command.Command;
