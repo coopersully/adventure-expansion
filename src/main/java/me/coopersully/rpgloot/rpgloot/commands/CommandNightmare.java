@@ -1,10 +1,9 @@
 package me.coopersully.rpgloot.rpgloot.commands;
 
+import me.coopersully.rpgloot.rpgloot.AdventureExpansion;
 import me.coopersully.rpgloot.rpgloot.CoreUtils;
 import me.coopersully.rpgloot.rpgloot.ItemKeys;
-import me.coopersully.rpgloot.rpgloot.AdventureExpansion;
 import me.coopersully.rpgloot.rpgloot.items.NightmareItem;
-import org.bukkit.*;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.command.Command;
@@ -17,13 +16,12 @@ import org.bukkit.persistence.PersistentDataType;
 import org.jetbrains.annotations.NotNull;
 
 import static me.coopersully.rpgloot.rpgloot.CoreUtils.*;
-import static me.coopersully.rpgloot.rpgloot.CoreUtils.noteSuccess;
 
 public class CommandNightmare implements CommandExecutor {
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
-        if (args.length <= 0) {
+        if (args.length == 0) {
             commandMain(sender);
             return false;
         }
@@ -140,7 +138,9 @@ public class CommandNightmare implements CommandExecutor {
                 noteError(player, "Your corpse has already been infused with Nightmare Fuel.");
                 return;
             } else {
-                player.getAttribute(Attribute.GENERIC_MAX_HEALTH).addModifier(new AttributeModifier("nightmare_fuel", 1, AttributeModifier.Operation.MULTIPLY_SCALAR_1));
+                player.getAttribute(Attribute.GENERIC_MAX_HEALTH).addModifier(
+                        new AttributeModifier("nightmare_fuel", 1, AttributeModifier.Operation.MULTIPLY_SCALAR_1)
+                );
 
                 NightmareItem.playCreateEffectPlayer(player);
 

@@ -25,7 +25,7 @@ public class TreasureItem {
             return lore;
         }
 
-        int insertIndex = 0;
+        int insertIndex;
         boolean onIndentedLine = false;
         boolean insertedLine = false;
         for (int i = 0; i < lore.size(); i++) {

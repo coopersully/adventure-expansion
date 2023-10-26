@@ -25,7 +25,7 @@ public class CommandTrades implements CommandExecutor {
             return false;
         }
 
-        if (args.length <= 0) {
+        if (args.length == 0) {
             noteError(sender, "Usage: /trades <reload|spawn>");
             return false;
         }

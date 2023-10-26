@@ -2,7 +2,6 @@ package me.coopersully.rpgloot.rpgloot.listeners;
 
 import me.coopersully.rpgloot.rpgloot.ItemKeys;
 import me.coopersully.rpgloot.rpgloot.items.EnderSword;
-import org.bukkit.entity.EnderPearl;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

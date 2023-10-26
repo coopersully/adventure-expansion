@@ -26,8 +26,6 @@ public class Armor implements Listener {
         ItemStack oldItem = event.getOldItem();
         ItemStack item = event.getNewItem();
 
-        if (item == null) return;
-
         ItemMeta itemMeta = item.getItemMeta();
 
         if (itemMeta == null) return;
@@ -38,13 +36,11 @@ public class Armor implements Listener {
 
             /* Don't play equip effect on every damage, update,
             etc. only play it on equip from non-Eternal armor. */
-            if (oldItem != null) {
-                ItemMeta oldItemMeta = oldItem.getItemMeta();
-                if (oldItemMeta != null) {
+            ItemMeta oldItemMeta = oldItem.getItemMeta();
+            if (oldItemMeta != null) {
 
-                    PersistentDataContainer oldItemPDC = oldItemMeta.getPersistentDataContainer();
-                    if (oldItemPDC.has(ItemKeys.eternal)) return;
-                }
+                PersistentDataContainer oldItemPDC = oldItemMeta.getPersistentDataContainer();
+                if (oldItemPDC.has(ItemKeys.eternal)) return;
             }
 
             EternalArmor.playEquipEffect(player);

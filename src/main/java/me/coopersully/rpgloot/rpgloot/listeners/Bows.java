@@ -3,15 +3,15 @@ package me.coopersully.rpgloot.rpgloot.listeners;
 import me.coopersully.rpgloot.rpgloot.CoreUtils;
 import me.coopersully.rpgloot.rpgloot.ItemKeys;
 import org.bukkit.Material;
-import org.bukkit.entity.*;
+import org.bukkit.entity.LivingEntity;
+import org.bukkit.entity.Snowball;
+import org.bukkit.entity.WitherSkull;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityShootBowEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataType;
-import org.bukkit.potion.PotionEffect;
-import org.bukkit.potion.PotionEffectType;
 import org.jetbrains.annotations.NotNull;
 
 public class Bows implements Listener {

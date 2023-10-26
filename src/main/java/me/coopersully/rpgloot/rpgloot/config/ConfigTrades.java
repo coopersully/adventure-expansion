@@ -47,6 +47,11 @@ public class ConfigTrades {
             ItemStack sell_item;
             if (sell != null) {
                 var sell_id = sell.get("id");
+                if (sell_id == null) {
+                    getPlugin().getLogger().warning(tradeKey + " was deemed invalid because the sell item lacks an id.");
+                    continue;
+                }
+
                 var sell_amount = sell.getInt("amount");
                 var sell_data = sell.getConfigurationSection("data");
                 sell_item = getItemStack(sell_id, sell_amount, sell_data);
@@ -61,6 +66,11 @@ public class ConfigTrades {
             ItemStack buy01_item;
             if (buy01 != null) {
                 var buy01_id = buy01.get("id");
+                if (buy01_id == null) {
+                    getPlugin().getLogger().warning(tradeKey + " was deemed invalid because the buy item lacks an id.");
+                    continue;
+                }
+
                 var buy01_amount = buy01.getInt("amount");
                 var buy01_data = buy01.getConfigurationSection("data");
                 buy01_item = getItemStack(buy01_id, buy01_amount, buy01_data);
@@ -89,7 +99,8 @@ public class ConfigTrades {
 
     private static @NotNull ItemStack getItemStack(@NotNull Object id, int amount, ConfigurationSection data) {
 
-        if (AdventureExpansion.debug) getPlugin().getLogger().fine("Attempting to parse " + id.getClass().getSimpleName() + " as an item...");
+        if (AdventureExpansion.debug)
+            getPlugin().getLogger().fine("Attempting to parse " + id.getClass().getSimpleName() + " as an item...");
 
         Material material = null;
         if (id instanceof ArrayList) {

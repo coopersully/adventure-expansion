@@ -76,7 +76,7 @@ public class CaveTraders {
 
         // Calculate divisor for players
         int divisor = (cavePlayers.size() / 2);
-        if (divisor <= 0) divisor = 1;
+        if (divisor == 0) divisor = 1;
 
         // Divide runtime by divisor
         runtime = runtime / divisor;

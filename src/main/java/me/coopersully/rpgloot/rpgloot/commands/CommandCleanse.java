@@ -44,7 +44,9 @@ public class CommandCleanse implements CommandExecutor {
             return false;
         }
 
-        mainItemItemMeta.getAttributeModifiers().forEach((attribute, attributeModifier) -> mainItemItemMeta.removeAttributeModifier(attribute));
+        mainItemItemMeta.getAttributeModifiers().forEach(
+                (attribute, attributeModifier) -> mainItemItemMeta.removeAttributeModifier(attribute)
+        );
         persistentDataContainer.set(ItemKeys.cleansed, PersistentDataType.STRING, "1");
         mainItem.setItemMeta(mainItemItemMeta);
         noteSuccess(sender, "You cleansed this item.");
