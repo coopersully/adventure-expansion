@@ -32,5 +32,6 @@ public class ItemKeys {
     public static NamespacedKey evokerBow = new NamespacedKey(AdventureExpansion.getPlugin(), "evoker_bow");
     public static NamespacedKey minersHat = new NamespacedKey(AdventureExpansion.getPlugin(), "miners_hat");
     public static NamespacedKey shadowCrown = new NamespacedKey(AdventureExpansion.getPlugin(), "crown_of_shadows");
+    public static NamespacedKey wandOfIndecision = new NamespacedKey(AdventureExpansion.getPlugin(), "wand_of_indecision");
 
 }

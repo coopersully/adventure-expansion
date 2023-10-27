@@ -2,7 +2,6 @@ name: AdventureExpansion
 version: '${version}'
 main: me.coopersully.rpgloot.rpgloot.AdventureExpansion
 api-version: 1.20
-prefix: aex
 authors: [ coopersully ]
 description: A plugin that adds roleplay-themed items, blocks, and game mechanics.
 website: https://coopersully.me/projects/curses-rp-addon/

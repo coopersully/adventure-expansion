@@ -36,7 +36,7 @@ public final class AdventureExpansion extends JavaPlugin {
         // Instance for accessing main class
         plugin = this;
 
-        // Configuration files
+        // Load all configuration files
         createTradesConfiguration();
         ConfigTrades.load();
 
@@ -54,6 +54,7 @@ public final class AdventureExpansion extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new MinersHat(), this);
         getServer().getPluginManager().registerEvents(new LootGenerated(), this);
         getServer().getPluginManager().registerEvents(new AttachLeadToVillager(), this);
+        getServer().getPluginManager().registerEvents(new UseWandOfIndecision(), this);
 
         // Register all commands
         try {

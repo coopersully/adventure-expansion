@@ -3,6 +3,7 @@ package me.coopersully.rpgloot.rpgloot.commands;
 import me.coopersully.rpgloot.rpgloot.AdventureExpansion;
 import me.coopersully.rpgloot.rpgloot.CoreUtils;
 import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.event.HoverEvent;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.NamespacedKey;
 import org.bukkit.command.Command;
@@ -13,6 +14,8 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.Iterator;
 
 import static me.coopersully.rpgloot.rpgloot.CoreUtils.noteError;
 
@@ -49,24 +52,34 @@ public class CommandMeta implements CommandExecutor {
             return false;
         }
 
-        StringBuilder metaKeys = new StringBuilder();
-        for (NamespacedKey key : PDC.getKeys()) {
+        Component metaKeys = Component.empty();
+        for (Iterator<NamespacedKey> iterator = PDC.getKeys().iterator(); iterator.hasNext(); ) {
+            NamespacedKey key = iterator.next();
             if (key == null) {
-                sender.sendMessage(Component.text("? = ", NamedTextColor.YELLOW)
-                        .append(Component.text("?", NamedTextColor.AQUA)));
+                sender.sendMessage(Component.text("? = ", NamedTextColor.GRAY)
+                        .append(Component.text("?", NamedTextColor.GREEN)));
                 continue;
             }
-            metaKeys.append(key.value()).append(", ");
-        }
-        if (metaKeys.length() > 2) {
-            metaKeys.deleteCharAt(metaKeys.length() - 1);
-            metaKeys.deleteCharAt(metaKeys.length() - 1);
+            Component hoverInfo = Component.text("Namespace: ", NamedTextColor.GRAY)
+                    .append(Component.text(key.getNamespace(), NamedTextColor.WHITE))
+                    .append(Component.text("\nKey: ", NamedTextColor.GRAY))
+                    .append(Component.text(key.getKey(), NamedTextColor.WHITE ))
+                    .append(Component.text("\nHashcode: ", NamedTextColor.GRAY))
+                    .append(Component.text(String.valueOf(key.hashCode()), NamedTextColor.WHITE));
+
+            Component keyComponent = Component.text(key.value(), NamedTextColor.GREEN)
+                    .hoverEvent(HoverEvent.showText(hoverInfo));
+
+            metaKeys = metaKeys.append(keyComponent);
+            if (iterator.hasNext()) {
+                metaKeys = metaKeys.append(Component.text(", ", NamedTextColor.GRAY));
+            }
         }
 
-        Component message = Component.text("The current ", NamedTextColor.YELLOW)
-                .append(Component.text(object, NamedTextColor.AQUA))
-                .append(Component.text(" has the following meta: ", NamedTextColor.YELLOW))
-                .append(Component.text(metaKeys.toString(), NamedTextColor.AQUA));
+        Component message = Component.text("The current ", NamedTextColor.GRAY)
+                .append(Component.text(object, NamedTextColor.GREEN))
+                .append(Component.text(" has the following meta: ", NamedTextColor.GRAY))
+                .append(metaKeys);
 
         sender.sendMessage(message);
         return true;
