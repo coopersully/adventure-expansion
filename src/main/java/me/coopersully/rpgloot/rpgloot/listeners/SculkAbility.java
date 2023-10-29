@@ -1,7 +1,7 @@
 package me.coopersully.rpgloot.rpgloot.listeners;
 
 import com.destroystokyo.paper.event.player.PlayerJumpEvent;
-import me.coopersully.rpgloot.rpgloot.ItemKeys;
+import me.coopersully.rpgloot.rpgloot.items.treasure_items.TreasureItemKeys;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Location;
 import org.bukkit.Sound;
@@ -25,7 +25,7 @@ public class SculkAbility implements Listener {
     public void onJump(@NotNull PlayerJumpEvent event) {
 
         Player player = event.getPlayer();
-        if (!player.getPersistentDataContainer().has(ItemKeys.sculkBoots)) return;
+        if (!player.getPersistentDataContainer().has(TreasureItemKeys.sculkBoots)) return;
 
         if (!player.isSneaking()) return;
 

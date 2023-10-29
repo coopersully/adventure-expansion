@@ -1,7 +1,7 @@
 package me.coopersully.rpgloot.rpgloot.listeners;
 
 import com.destroystokyo.paper.event.player.PlayerArmorChangeEvent;
-import me.coopersully.rpgloot.rpgloot.ItemKeys;
+import me.coopersully.rpgloot.rpgloot.items.treasure_items.TreasureItemKeys;
 import me.coopersully.rpgloot.rpgloot.AdventureExpansion;
 import me.coopersully.rpgloot.rpgloot.items.EternalArmor;
 import org.bukkit.Bukkit;
@@ -32,7 +32,7 @@ public class Armor implements Listener {
         PersistentDataContainer itemPDC = itemMeta.getPersistentDataContainer();
 
         // Play eternal equip effect
-        if (itemPDC.has(ItemKeys.eternal)) {
+        if (itemPDC.has(TreasureItemKeys.eternal)) {
 
             /* Don't play equip effect on every damage, update,
             etc. only play it on equip from non-Eternal armor. */
@@ -40,7 +40,7 @@ public class Armor implements Listener {
             if (oldItemMeta != null) {
 
                 PersistentDataContainer oldItemPDC = oldItemMeta.getPersistentDataContainer();
-                if (oldItemPDC.has(ItemKeys.eternal)) return;
+                if (oldItemPDC.has(TreasureItemKeys.eternal)) return;
             }
 
             EternalArmor.playEquipEffect(player);
@@ -63,21 +63,21 @@ public class Armor implements Listener {
 
             if (itemMeta == null) continue;
 
-            if (itemMeta.getPersistentDataContainer().has(ItemKeys.grimsteel)) {
+            if (itemMeta.getPersistentDataContainer().has(TreasureItemKeys.grimsteel)) {
                 hasGrimsteel = true;
                 break;
             }
         }
 
         if (hasGrimsteel) {
-            player.getPersistentDataContainer().set(ItemKeys.grimsteel, PersistentDataType.STRING, "1");
+            player.getPersistentDataContainer().set(TreasureItemKeys.grimsteel, PersistentDataType.STRING, "1");
         } else {
-            player.getPersistentDataContainer().remove(ItemKeys.grimsteel);
+            player.getPersistentDataContainer().remove(TreasureItemKeys.grimsteel);
         }
 
-        giveIfEquippedArmor(player, ItemKeys.sculkBoots, 0);
-        giveIfEquippedArmor(player, ItemKeys.minersHat, 3);
-        giveIfEquippedArmor(player, ItemKeys.shadowCrown, 3);
+        giveIfEquippedArmor(player, TreasureItemKeys.sculkBoots, 0);
+        giveIfEquippedArmor(player, TreasureItemKeys.minersHat, 3);
+        giveIfEquippedArmor(player, TreasureItemKeys.shadowCrown, 3);
 
     }
 
@@ -88,7 +88,7 @@ public class Armor implements Listener {
         var item = playerArmor[slot];
 
         // Remove the given NamespacedKey from the player
-        playerPDC.remove(ItemKeys.minersHat);
+        playerPDC.remove(TreasureItemKeys.minersHat);
 
         if (item == null) return;
 

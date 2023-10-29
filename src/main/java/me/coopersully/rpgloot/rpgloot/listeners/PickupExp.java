@@ -1,7 +1,7 @@
 package me.coopersully.rpgloot.rpgloot.listeners;
 
 import com.destroystokyo.paper.event.player.PlayerPickupExperienceEvent;
-import me.coopersully.rpgloot.rpgloot.ItemKeys;
+import me.coopersully.rpgloot.rpgloot.items.treasure_items.TreasureItemKeys;
 import me.coopersully.rpgloot.rpgloot.items.GrimsteelArmor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -14,7 +14,7 @@ public class PickupExp implements Listener {
     public void onPickupExp(@NotNull PlayerPickupExperienceEvent event) {
 
         Player player = event.getPlayer();
-        if (player.getPersistentDataContainer().has(ItemKeys.grimsteel)) GrimsteelArmor.gainedExperience(event);
+        if (player.getPersistentDataContainer().has(TreasureItemKeys.grimsteel)) GrimsteelArmor.gainedExperience(event);
 
     }
 

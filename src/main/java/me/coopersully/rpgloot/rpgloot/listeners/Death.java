@@ -1,7 +1,7 @@
 package me.coopersully.rpgloot.rpgloot.listeners;
 
 import me.coopersully.rpgloot.rpgloot.AdventureExpansion;
-import me.coopersully.rpgloot.rpgloot.ItemKeys;
+import me.coopersully.rpgloot.rpgloot.items.treasure_items.TreasureItemKeys;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
@@ -15,7 +15,7 @@ public class Death implements Listener {
     public void onDeath(@NotNull PlayerDeathEvent event) {
 
         Player player = event.getPlayer();
-        if (!player.getPersistentDataContainer().has(ItemKeys.shadowCrown)) return;
+        if (!player.getPersistentDataContainer().has(TreasureItemKeys.shadowCrown)) return;
 
         Bukkit.getScheduler().runTaskLaterAsynchronously(AdventureExpansion.getPlugin(), () -> {
             player.addPotionEffect(new PotionEffect(PotionEffectType.WEAKNESS, (60 * (20 * 120)), 9));

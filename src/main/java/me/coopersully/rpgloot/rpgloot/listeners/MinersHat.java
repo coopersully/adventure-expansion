@@ -1,6 +1,6 @@
 package me.coopersully.rpgloot.rpgloot.listeners;
 
-import me.coopersully.rpgloot.rpgloot.ItemKeys;
+import me.coopersully.rpgloot.rpgloot.items.treasure_items.TreasureItemKeys;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.event.EventHandler;
@@ -22,7 +22,7 @@ public class MinersHat implements Listener {
             previous.getBlock().setType(Material.AIR);
         }
 
-        if (event.getPlayer().getPersistentDataContainer().has(ItemKeys.minersHat)) {
+        if (event.getPlayer().getPersistentDataContainer().has(TreasureItemKeys.minersHat)) {
             if (current.getBlock().getType() == Material.AIR || current.getBlock().getType() == Material.CAVE_AIR) {
                 current.getBlock().setType(Material.LIGHT);
             }

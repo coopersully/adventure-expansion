@@ -2,7 +2,7 @@ package me.coopersully.rpgloot.rpgloot.commands;
 
 import me.coopersully.rpgloot.rpgloot.AdventureExpansion;
 import me.coopersully.rpgloot.rpgloot.CoreUtils;
-import me.coopersully.rpgloot.rpgloot.ItemKeys;
+import me.coopersully.rpgloot.rpgloot.items.treasure_items.TreasureItemKeys;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -39,7 +39,7 @@ public class CommandCleanse implements CommandExecutor {
         PersistentDataContainer persistentDataContainer = mainItemItemMeta.getPersistentDataContainer();
         var attributeModifiers = mainItem.getItemMeta().getAttributeModifiers();
 
-        if (persistentDataContainer.has(ItemKeys.cleansed) || attributeModifiers == null) {
+        if (persistentDataContainer.has(TreasureItemKeys.cleansed) || attributeModifiers == null) {
             noteError(sender, "You cannot cleanse this item.");
             return false;
         }
@@ -47,7 +47,7 @@ public class CommandCleanse implements CommandExecutor {
         mainItemItemMeta.getAttributeModifiers().forEach(
                 (attribute, attributeModifier) -> mainItemItemMeta.removeAttributeModifier(attribute)
         );
-        persistentDataContainer.set(ItemKeys.cleansed, PersistentDataType.STRING, "1");
+        persistentDataContainer.set(TreasureItemKeys.cleansed, PersistentDataType.STRING, "1");
         mainItem.setItemMeta(mainItemItemMeta);
         noteSuccess(sender, "You cleansed this item.");
         return true;

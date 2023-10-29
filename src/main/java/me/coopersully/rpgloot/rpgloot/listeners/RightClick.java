@@ -1,6 +1,6 @@
 package me.coopersully.rpgloot.rpgloot.listeners;
 
-import me.coopersully.rpgloot.rpgloot.ItemKeys;
+import me.coopersully.rpgloot.rpgloot.items.treasure_items.TreasureItemKeys;
 import me.coopersully.rpgloot.rpgloot.items.EnderSword;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -27,7 +27,7 @@ public class RightClick implements Listener {
         PersistentDataContainer persistentDataContainer = itemMeta.getPersistentDataContainer();
         if (persistentDataContainer.isEmpty()) return;
 
-        if (!itemMeta.getPersistentDataContainer().has(ItemKeys.enderSword)) return;
+        if (!itemMeta.getPersistentDataContainer().has(TreasureItemKeys.enderSword)) return;
         EnderSword.attemptTeleport(player);
 
     }

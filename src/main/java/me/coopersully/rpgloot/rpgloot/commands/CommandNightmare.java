@@ -2,7 +2,7 @@ package me.coopersully.rpgloot.rpgloot.commands;
 
 import me.coopersully.rpgloot.rpgloot.AdventureExpansion;
 import me.coopersully.rpgloot.rpgloot.CoreUtils;
-import me.coopersully.rpgloot.rpgloot.ItemKeys;
+import me.coopersully.rpgloot.rpgloot.items.treasure_items.TreasureItemKeys;
 import me.coopersully.rpgloot.rpgloot.items.NightmareItem;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;
@@ -53,7 +53,7 @@ public class CommandNightmare implements CommandExecutor {
             if (item == null) continue;
             if (item.getItemMeta() == null) continue;
 
-            if (item.getItemMeta().getPersistentDataContainer().has(ItemKeys.nightmareFuel)) {
+            if (item.getItemMeta().getPersistentDataContainer().has(TreasureItemKeys.nightmareFuel)) {
                 nightmareFuel = item;
                 break;
             }
@@ -70,7 +70,7 @@ public class CommandNightmare implements CommandExecutor {
         // If the player is not holding any items
         if (mainItemMeta == null) {
 
-            if (player.getPersistentDataContainer().has(ItemKeys.nightmare)) {
+            if (player.getPersistentDataContainer().has(TreasureItemKeys.nightmare)) {
                 noteError(sender, "Your corpse has already been infused with Nightmare Fuel.");
             } else {
                 noteInfo(sender, "Do you want to infuse this item with Nightmare Fuel?");
@@ -82,7 +82,7 @@ public class CommandNightmare implements CommandExecutor {
         // If the player is holding an item
         else {
 
-            if (mainItemMeta.getPersistentDataContainer().has(ItemKeys.nightmare)) {
+            if (mainItemMeta.getPersistentDataContainer().has(TreasureItemKeys.nightmare)) {
                 noteError(sender, "This item has already been infused with Nightmare Fuel.");
             } else {
                 noteInfo(sender, "Do you want to infuse your corpse with Nightmare Fuel?");
@@ -116,7 +116,7 @@ public class CommandNightmare implements CommandExecutor {
             if (item == null) continue;
             if (item.getItemMeta() == null) continue;
 
-            if (item.getItemMeta().getPersistentDataContainer().has(ItemKeys.nightmareFuel)) {
+            if (item.getItemMeta().getPersistentDataContainer().has(TreasureItemKeys.nightmareFuel)) {
                 nightmareFuel = item;
                 break;
             }
@@ -134,7 +134,7 @@ public class CommandNightmare implements CommandExecutor {
         // If the player is not holding any items
         if (mainItemMeta == null) {
 
-            if (player.getPersistentDataContainer().has(ItemKeys.nightmare)) {
+            if (player.getPersistentDataContainer().has(TreasureItemKeys.nightmare)) {
                 noteError(player, "Your corpse has already been infused with Nightmare Fuel.");
                 return;
             } else {
@@ -144,7 +144,7 @@ public class CommandNightmare implements CommandExecutor {
 
                 NightmareItem.playCreateEffectPlayer(player);
 
-                player.getPersistentDataContainer().set(ItemKeys.nightmare, PersistentDataType.STRING, "1");
+                player.getPersistentDataContainer().set(TreasureItemKeys.nightmare, PersistentDataType.STRING, "1");
 
                 noteSuccess(sender, "The winds of the night howl as you enchant your corpse.");
             }
@@ -153,7 +153,7 @@ public class CommandNightmare implements CommandExecutor {
         // If the player is holding an item
         else {
 
-            if (mainItemMeta.getPersistentDataContainer().has(ItemKeys.nightmare)) {
+            if (mainItemMeta.getPersistentDataContainer().has(TreasureItemKeys.nightmare)) {
                 noteError(player, "This item has already been infused with Nightmare Fuel.");
                 return;
             } else {
@@ -163,7 +163,7 @@ public class CommandNightmare implements CommandExecutor {
                 mainItemMeta = player.getInventory().getItemInMainHand().getItemMeta();
 
                 mainItemMeta.getPersistentDataContainer()
-                        .set(ItemKeys.nightmare, PersistentDataType.STRING, "1");
+                        .set(TreasureItemKeys.nightmare, PersistentDataType.STRING, "1");
 
                 mainItemMeta.lore(NightmareItem.makeLore(mainItem.lore()));
 

@@ -1,7 +1,7 @@
 package me.coopersully.rpgloot.rpgloot.listeners;
 
 import me.coopersully.rpgloot.rpgloot.CoreUtils;
-import me.coopersully.rpgloot.rpgloot.ItemKeys;
+import me.coopersully.rpgloot.rpgloot.items.treasure_items.TreasureItemKeys;
 import org.bukkit.Material;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Snowball;
@@ -27,17 +27,17 @@ public class Bows implements Listener {
         ItemMeta bowMeta = event.getBow().getItemMeta();
         if (bowMeta == null) return;
 
-        if (bowMeta.getPersistentDataContainer().has(ItemKeys.witherBow)) {
+        if (bowMeta.getPersistentDataContainer().has(TreasureItemKeys.witherBow)) {
             CoreUtils.killProjectile(event.getProjectile());
             entity.launchProjectile(WitherSkull.class).setVelocity(event.getProjectile().getVelocity().multiply(0.45));
         }
 
-        if (bowMeta.getPersistentDataContainer().has(ItemKeys.evokerBow)) {
+        if (bowMeta.getPersistentDataContainer().has(TreasureItemKeys.evokerBow)) {
             CoreUtils.killProjectile(event.getProjectile());
             Snowball projectile = entity.launchProjectile(Snowball.class);
             projectile.setVelocity(event.getProjectile().getVelocity());
             projectile.setItem(new ItemStack(Material.GHAST_TEAR, 1));
-            projectile.getPersistentDataContainer().set(ItemKeys.evokerBow, PersistentDataType.STRING, "1");
+            projectile.getPersistentDataContainer().set(TreasureItemKeys.evokerBow, PersistentDataType.STRING, "1");
         }
 
     }

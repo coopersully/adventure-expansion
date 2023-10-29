@@ -55,6 +55,7 @@ public final class AdventureExpansion extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new LootGenerated(), this);
         getServer().getPluginManager().registerEvents(new AttachLeadToVillager(), this);
         getServer().getPluginManager().registerEvents(new UseWandOfIndecision(), this);
+        getServer().getPluginManager().registerEvents(new ArmorStandConvert(), this);
 
         // Register all commands
         try {

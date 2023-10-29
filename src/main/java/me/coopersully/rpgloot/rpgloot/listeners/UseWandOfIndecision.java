@@ -1,10 +1,7 @@
 package me.coopersully.rpgloot.rpgloot.listeners;
 
-import me.coopersully.rpgloot.rpgloot.AdventureExpansion;
-import me.coopersully.rpgloot.rpgloot.ItemKeys;
-import me.coopersully.rpgloot.rpgloot.items.EnderSword;
+import me.coopersully.rpgloot.rpgloot.items.treasure_items.TreasureItemKeys;
 import me.coopersully.rpgloot.rpgloot.items.WandOfIndecision;
-import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Villager;
@@ -15,8 +12,6 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.jetbrains.annotations.NotNull;
-
-import static me.coopersully.rpgloot.rpgloot.CoreUtils.noteError;
 
 public class UseWandOfIndecision implements Listener {
 
@@ -40,7 +35,7 @@ public class UseWandOfIndecision implements Listener {
         PersistentDataContainer persistentDataContainer = itemMeta.getPersistentDataContainer();
         if (persistentDataContainer.isEmpty()) return;
 
-        if (!itemMeta.getPersistentDataContainer().has(ItemKeys.enderSword)) return;
+        if (!itemMeta.getPersistentDataContainer().has(TreasureItemKeys.enderSword)) return;
         WandOfIndecision.refreshTrades(villager);
     }
 }

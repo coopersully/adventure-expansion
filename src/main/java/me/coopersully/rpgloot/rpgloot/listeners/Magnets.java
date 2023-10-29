@@ -1,6 +1,6 @@
 package me.coopersully.rpgloot.rpgloot.listeners;
 
-import me.coopersully.rpgloot.rpgloot.ItemKeys;
+import me.coopersully.rpgloot.rpgloot.items.treasure_items.TreasureItemKeys;
 import me.coopersully.rpgloot.rpgloot.AdventureExpansion;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -45,50 +45,50 @@ public class Magnets implements Listener {
 
         // Remove the tag from the player
         itemMagnetWielders.remove(player);
-        player.getPersistentDataContainer().remove(ItemKeys.itemMagnet);
+        player.getPersistentDataContainer().remove(TreasureItemKeys.itemMagnet);
 
         // If the player has an item in their mainhand
         if (mainhandMeta != null) {
             itemPDC = mainhandMeta.getPersistentDataContainer();
             // If the item has the specified ItemKey tag
-            if (itemPDC.has(ItemKeys.itemMagnet)) equipMagnetItem(player, playerPDC);
+            if (itemPDC.has(TreasureItemKeys.itemMagnet)) equipMagnetItem(player, playerPDC);
         }
 
         // If the player has an item in their offhand
         if (offhandMeta != null) {
             itemPDC = offhandMeta.getPersistentDataContainer();
             // If the item has the specified ItemKey tag
-            if (itemPDC.has(ItemKeys.itemMagnet)) equipMagnetItem(player, playerPDC);
+            if (itemPDC.has(TreasureItemKeys.itemMagnet)) equipMagnetItem(player, playerPDC);
         }
 
         // Remove the tag from the player
         expMagnetWielders.remove(player);
-        player.getPersistentDataContainer().remove(ItemKeys.expMagnet);
+        player.getPersistentDataContainer().remove(TreasureItemKeys.expMagnet);
 
         // If the player has an item in their mainhand
         if (mainhandMeta != null) {
             itemPDC = mainhandMeta.getPersistentDataContainer();
             // If the item has the specified ItemKey tag
-            if (itemPDC.has(ItemKeys.expMagnet)) equipMagnetExp(player, playerPDC);
+            if (itemPDC.has(TreasureItemKeys.expMagnet)) equipMagnetExp(player, playerPDC);
         }
 
         // If the player has an item in their offhand
         if (offhandMeta != null) {
             itemPDC = offhandMeta.getPersistentDataContainer();
             // If the item has the specified ItemKey tag
-            if (itemPDC.has(ItemKeys.expMagnet)) equipMagnetExp(player, playerPDC);
+            if (itemPDC.has(TreasureItemKeys.expMagnet)) equipMagnetExp(player, playerPDC);
         }
 
     }
 
     private void equipMagnetItem(Player player, @NotNull PersistentDataContainer playerPDC) {
         itemMagnetWielders.add(player);
-        playerPDC.set(ItemKeys.itemMagnet, PersistentDataType.STRING, "1");
+        playerPDC.set(TreasureItemKeys.itemMagnet, PersistentDataType.STRING, "1");
     }
 
     private void equipMagnetExp(Player player, @NotNull PersistentDataContainer playerPDC) {
         expMagnetWielders.add(player);
-        playerPDC.set(ItemKeys.expMagnet, PersistentDataType.STRING, "1");
+        playerPDC.set(TreasureItemKeys.expMagnet, PersistentDataType.STRING, "1");
     }
 
     private static void performAbilities() {

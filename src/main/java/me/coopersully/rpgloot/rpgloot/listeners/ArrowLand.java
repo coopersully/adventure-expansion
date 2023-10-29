@@ -1,7 +1,7 @@
 package me.coopersully.rpgloot.rpgloot.listeners;
 
 import me.coopersully.rpgloot.rpgloot.CoreUtils;
-import me.coopersully.rpgloot.rpgloot.ItemKeys;
+import me.coopersully.rpgloot.rpgloot.items.treasure_items.TreasureItemKeys;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.entity.*;
@@ -20,7 +20,7 @@ public class ArrowLand implements Listener {
 
         Projectile entity = event.getEntity();
 
-        if (entity.getPersistentDataContainer().has(ItemKeys.evokerBow)) {
+        if (entity.getPersistentDataContainer().has(TreasureItemKeys.evokerBow)) {
 
             Entity hit = event.getHitEntity();
             World world = entity.getWorld();
