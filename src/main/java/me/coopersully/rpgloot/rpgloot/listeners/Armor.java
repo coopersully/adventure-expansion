@@ -45,7 +45,6 @@ public class Armor implements Listener {
 
             EternalArmor.playEquipEffect(player);
         }
-
     }
 
     public void updateArmorTags(@NotNull PlayerArmorChangeEvent event) {

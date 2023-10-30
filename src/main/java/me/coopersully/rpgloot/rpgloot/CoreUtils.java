@@ -11,6 +11,8 @@ import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Random;
+
 public class CoreUtils {
 
     public static void noteInfo(@NotNull CommandSender sender, String message) {
@@ -55,5 +57,10 @@ public class CoreUtils {
         var minutesLeft = seconds / 60;
         var secondsLeft = seconds % 60;
         return minutesLeft + "m " + secondsLeft + "s";
+    }
+
+    public static boolean rollChances(int possibility) {
+        Random random = new Random();
+        return random.nextInt(100) <= possibility;
     }
 }

@@ -104,11 +104,16 @@ public class ConfigTrades {
 
         Material material = null;
         if (id instanceof ArrayList) {
+            @SuppressWarnings("unchecked")
+            ArrayList<String> idList = (ArrayList<String>) id;
+            if (idList.isEmpty()) {
+                throw new RuntimeException("Empty id list provided.");
+            }
             Random random = new Random();
-            String mat = (String) ((List<?>) id).get(random.nextInt(((List<?>) id).size()));
-            material = Material.getMaterial(mat);
+            String selectedId = idList.get(random.nextInt(idList.size()));
+            material = Material.getMaterial(selectedId);
         } else if (id instanceof String) {
-            material = Material.getMaterial(id.toString());
+            material = Material.getMaterial((String) id);
         }
 
         if (material == null) {

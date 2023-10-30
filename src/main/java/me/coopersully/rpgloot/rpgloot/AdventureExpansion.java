@@ -8,7 +8,6 @@ import me.coopersully.rpgloot.rpgloot.config.ConfigTrades;
 import me.coopersully.rpgloot.rpgloot.entities.CaveTraders;
 import me.coopersully.rpgloot.rpgloot.listeners.*;
 import me.coopersully.rpgloot.rpgloot.loot_tables.LootGenerated;
-import me.coopersully.rpgloot.rpgloot.loot_tables.LootTableLoader;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -17,6 +16,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
 import java.io.IOException;
+
+import static me.coopersully.rpgloot.rpgloot.items.treasure_items.TreasureItem.loadTreasureItems;
 
 public final class AdventureExpansion extends JavaPlugin {
 
@@ -43,6 +44,9 @@ public final class AdventureExpansion extends JavaPlugin {
         saveDefaultConfig();
         reloadDefaultConfig();
 
+        // Load all treasure items
+        loadTreasureItems();
+
         // Register all event listeners
         getServer().getPluginManager().registerEvents(new Armor(), this);
         getServer().getPluginManager().registerEvents(new PickupExp(), this);
@@ -56,6 +60,7 @@ public final class AdventureExpansion extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new AttachLeadToVillager(), this);
         getServer().getPluginManager().registerEvents(new UseWandOfIndecision(), this);
         getServer().getPluginManager().registerEvents(new ArmorStandConvert(), this);
+        getServer().getPluginManager().registerEvents(new WanderingTraderKilled(), this);
 
         // Register all commands
         try {
@@ -69,10 +74,6 @@ public final class AdventureExpansion extends JavaPlugin {
 
         // Schedule runtime tasks
         Bukkit.getServer().getScheduler().runTaskLaterAsynchronously(getPlugin(), CaveTraders::randomlySpawnVillager, 1200);
-
-        // Load & prepare custom loot tables
-        // !! EXPERIMENTAL !!
-        LootTableLoader.loadLootTables();
     }
 
     @Override
