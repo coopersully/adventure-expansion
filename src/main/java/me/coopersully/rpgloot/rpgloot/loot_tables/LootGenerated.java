@@ -21,30 +21,11 @@ public class LootGenerated implements Listener {
         List<ItemStack> loot = new ArrayList<>(event.getLoot());
 
         switch (lootTable) {
-            case "minecraft:chests/abandoned_mineshaft" -> {
-            }
-            case "minecraft:chests/bastion_bridge" -> {
-            }
-            case "minecraft:chests/bastion_hoglin_stable" -> {
-                rollTraveler(loot);
-            }
-            case "minecraft:chests/bastion_other" -> {
-            }
-            case "minecraft:chests/bastion_treasure" -> {
-                rollTraveler(loot);
-            }
-            case "minecraft:chests/desert_pyramid" -> {
-            }
-            case "minecraft:chests/jungle_temple" -> {
-            }
-            case "minecraft:chests/pillager_outpost" -> {
-                rollWandofIndecision(loot);
-            }
-            case "minecraft:chests/simple_dungeon" -> {
-            }
-            case "minecraft:chests/woodland_mansion" -> {
-                rollWandofIndecision(loot);
-            }
+            case "minecraft:chests/bastion_hoglin_stable" -> rollTraveler(loot);
+            case "minecraft:chests/bastion_treasure" -> rollTraveler(loot);
+            case "minecraft:chests/pillager_outpost" -> rollWandofIndecision(loot);
+            case "minecraft:chests/woodland_mansion" -> rollWandofIndecision(loot);
+            case "minecraft:chests/nether_bridge" -> rollCalamity(loot);
         }
         event.setLoot(loot);
     }
@@ -67,6 +48,12 @@ public class LootGenerated implements Listener {
         if (!CoreUtils.rollChances(10)) return;
 
         loot.add(TreasureItem.WAND_OF_INDECISION);
+    }
+
+    private void rollCalamity(@NotNull List<ItemStack> loot) {
+        if (!CoreUtils.rollChances(5)) return;
+
+        loot.add(TreasureItem.CALAMITY_SWORD);
     }
 
 }

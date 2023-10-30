@@ -29,6 +29,7 @@ public class TreasureItem {
         }
         itemStack.setItemMeta(itemMeta);
     }
+
     public static void addDescription(@NotNull ItemStack itemStack, String description) {
         ItemMeta meta = itemStack.getItemMeta();
 
@@ -45,6 +46,7 @@ public class TreasureItem {
             itemStack.setItemMeta(meta);
         }
     }
+
     public static void addStatistics(@NotNull ItemStack itemStack, String name, TreasureItemSource source, @NotNull TreasureItemRarity rarity) {
         ItemMeta meta = itemStack.getItemMeta();
         meta.displayName(Component.text(name, rarity.getColor()).decoration(TextDecoration.ITALIC, false));
@@ -66,6 +68,7 @@ public class TreasureItem {
             itemStack.setItemMeta(meta);
         }
     }
+
     public static void addAbilities(ItemStack itemStack, String @NotNull ... abilities) {
         if (abilities.length % 2 != 0) {
             throw new IllegalArgumentException("Abilities must be provided in pairs: type, description");
@@ -92,6 +95,7 @@ public class TreasureItem {
             itemStack.setItemMeta(meta);
         }
     }
+
     public static void addEnchantments(@NotNull ItemStack item, Object @NotNull ... enchantments) {
         ItemMeta meta = item.getItemMeta();
         for (int i = 0; i < enchantments.length; i += 2) {
@@ -132,6 +136,8 @@ public class TreasureItem {
     public static ItemStack ETERNAL_CHESTPLATE;
     public static ItemStack ETERNAL_LEGGINGS;
     public static ItemStack ETERNAL_BOOTS;
+    public static ItemStack CALAMITY_SWORD;
+
     public static List<ItemStack> TREASURE_ITEMS = new ArrayList<>();
 
     public static void loadTreasureItems() {
@@ -360,6 +366,14 @@ public class TreasureItem {
         addStatistics(ETERNAL_BOOTS, "Eternal Boots", TreasureItemSource.MAGIC, TreasureItemRarity.MYTHICAL);
         addEnchantments(ETERNAL_BOOTS, Enchantment.DURABILITY, 4, Enchantment.PROTECTION_ENVIRONMENTAL, 8, Enchantment.PROTECTION_FALL, 4, Enchantment.DEPTH_STRIDER, 3, Enchantment.SOUL_SPEED, 3, Enchantment.MENDING, 1);
         TREASURE_ITEMS.add(ETERNAL_BOOTS);
+
+        CALAMITY_SWORD = new ItemStack(Material.GOLDEN_SWORD, 1);
+        addKeys(CALAMITY_SWORD, TreasureItemKeys.calamity, TreasureItemKeys.calamitySword);
+        addDescription(CALAMITY_SWORD, "It hums a lullaby of impending chaos.");
+        addStatistics(CALAMITY_SWORD, "Midas' Cataclysm", TreasureItemSource.MAGIC, TreasureItemRarity.UNCOMMON);
+        addAbilities(CALAMITY_SWORD, "PASSIVE", "May explode during combat");
+        addEnchantments(CALAMITY_SWORD, Enchantment.KNOCKBACK, 10);
+        TREASURE_ITEMS.add(CALAMITY_SWORD);
     }
 
     public static void checkTreasureItems() {

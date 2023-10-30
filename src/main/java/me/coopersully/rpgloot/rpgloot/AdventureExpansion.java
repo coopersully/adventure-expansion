@@ -60,6 +60,7 @@ public final class AdventureExpansion extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new UseWandOfIndecision(), this);
         getServer().getPluginManager().registerEvents(new ArmorStandConvert(), this);
         getServer().getPluginManager().registerEvents(new WanderingTraderKilled(), this);
+        getServer().getPluginManager().registerEvents(new UseCalamitySword(), this);
 
         // Register all commands
         try {
