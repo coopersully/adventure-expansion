@@ -35,7 +35,7 @@ public class UseWandOfIndecision implements Listener {
         PersistentDataContainer persistentDataContainer = itemMeta.getPersistentDataContainer();
         if (persistentDataContainer.isEmpty()) return;
 
-        if (!itemMeta.getPersistentDataContainer().has(TreasureItemKeys.enderSword)) return;
+        if (!itemMeta.getPersistentDataContainer().has(TreasureItemKeys.wandOfIndecision)) return;
         WandOfIndecision.refreshTrades(villager);
     }
 }

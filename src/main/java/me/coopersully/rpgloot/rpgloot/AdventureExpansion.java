@@ -1,9 +1,6 @@
 package me.coopersully.rpgloot.rpgloot;
 
-import me.coopersully.rpgloot.rpgloot.commands.CommandCleanse;
-import me.coopersully.rpgloot.rpgloot.commands.CommandMeta;
-import me.coopersully.rpgloot.rpgloot.commands.CommandNightmare;
-import me.coopersully.rpgloot.rpgloot.commands.CommandTrades;
+import me.coopersully.rpgloot.rpgloot.commands.*;
 import me.coopersully.rpgloot.rpgloot.config.ConfigTrades;
 import me.coopersully.rpgloot.rpgloot.entities.CaveTraders;
 import me.coopersully.rpgloot.rpgloot.listeners.*;
@@ -17,6 +14,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import java.io.File;
 import java.io.IOException;
 
+import static me.coopersully.rpgloot.rpgloot.items.treasure_items.TreasureItem.checkTreasureItems;
 import static me.coopersully.rpgloot.rpgloot.items.treasure_items.TreasureItem.loadTreasureItems;
 
 public final class AdventureExpansion extends JavaPlugin {
@@ -46,6 +44,7 @@ public final class AdventureExpansion extends JavaPlugin {
 
         // Load all treasure items
         loadTreasureItems();
+        checkTreasureItems();
 
         // Register all event listeners
         getServer().getPluginManager().registerEvents(new Armor(), this);
@@ -68,6 +67,8 @@ public final class AdventureExpansion extends JavaPlugin {
             getCommand("meta").setExecutor(new CommandMeta());
             getCommand("nightmare").setExecutor(new CommandNightmare());
             getCommand("trades").setExecutor(new CommandTrades());
+            getCommand("givetreasure").setExecutor(new CommandGive());
+            getCommand("listtreasure").setExecutor(new CommandList());
         } catch (NullPointerException e) {
             getLogger().severe("Failed to register command(s); please contact the developer.");
         }

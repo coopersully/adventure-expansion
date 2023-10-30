@@ -4,7 +4,7 @@ main: me.coopersully.rpgloot.rpgloot.AdventureExpansion
 api-version: 1.20
 authors: [ coopersully ]
 description: A plugin that adds roleplay-themed items, blocks, and game mechanics.
-website: https://coopersully.me/projects/curses-rp-addon/
+website: https://github.com/coopersully/adventure-expansion/
 
 commands:
   meta:
@@ -15,7 +15,13 @@ commands:
     #aliases: []
   nightmare:
     description: Infuse the held item with Nightmare Fuel if applicable.
-    aliases: ["nightmarify"]
+    aliases: [ "nightmarify" ]
   trades:
     description: Access all trades-related data.
     #aliases: []
+  givetreasure:
+    description: Gives the player a specified treasure item.
+    aliases: [ "givetreasureitem", "givet", "gt" ]
+  listtreasure:
+    description: Lists all defined treasure items.
+    aliases: [ "listtreasureitems", "listtreasureitem", "listt", "lt" ]

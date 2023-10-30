@@ -1,5 +1,7 @@
 package me.coopersully.rpgloot.rpgloot.items;
 
+import com.destroystokyo.paper.entity.villager.Reputation;
+import me.coopersully.rpgloot.rpgloot.CoreUtils;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Location;
 import org.bukkit.Particle;
@@ -12,6 +14,7 @@ import org.bukkit.entity.Villager;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 import java.util.UUID;
 
@@ -28,33 +31,32 @@ public class WandOfIndecision {
             return;
         }
 
+        // Store previous stats
         int level = villager.getVillagerLevel();
-        Villager.@NotNull Type type = villager.getVillagerType();
-        int exp = villager.getVillagerExperience();
-        boolean isBaby = !villager.isAdult();
+        int experience = villager.getVillagerExperience();
+        Map<UUID, Reputation> reputation = villager.getReputations();
 
-        // Remove the original villager
-        villager.remove();
+        // Reset offers
+        villager.resetOffers();
 
-        // Spawn a new villager with the same attributes but new trades
-        Villager newVillager = (Villager) location.getWorld().spawnEntity(location, EntityType.VILLAGER);
-        newVillager.setVillagerType(type);
-        newVillager.setProfession(profession);
-        newVillager.setVillagerLevel(level);
-        newVillager.setVillagerExperience(exp);
-        newVillager.setAge(isBaby ? -24000 : 0);  // Set age to keep the baby/adult state
+        // Set previous stats
+        villager.setVillagerLevel(level);
+        villager.setVillagerExperience(experience);
+        villager.setReputations(reputation);
 
-        // Play sound and particle effects
+        // Play sound
         location.getWorld().playSound(location, Sound.ENTITY_ILLUSIONER_CAST_SPELL, SoundCategory.MASTER, 4.0f, 1.0f);
         location.getWorld().playSound(location, Sound.ENTITY_VILLAGER_TRADE, SoundCategory.MASTER, 4.0f, 1.0f);
-        location.getWorld().spawnParticle(Particle.SPELL, location.add(0, newVillager.getHeight(), 0), 50, 0.2, 0.5, 0.2, 0);
-        location.getWorld().spawnParticle(Particle.VILLAGER_HAPPY, location.add(0, newVillager.getHeight(), 0), 50, 0.2, 0.5, 0.2, 0);
 
-        Random random = new Random();
-        if (random.nextInt(100) == 99) {
-            newVillager.setProfession(Villager.Profession.NITWIT);
-            location.getWorld().spawnParticle(Particle.VILLAGER_ANGRY, location.add(0, newVillager.getHeight(), 0), 50, 0.2, 0.5, 0.2, 0);
-        }
+        // Play particle effects
+        location.getWorld().spawnParticle(Particle.CLOUD, location.add(0, villager.getHeight() / 2, 0), 50, 0.2, 0.5, 0.2, 0);
+        location.getWorld().spawnParticle(Particle.VILLAGER_HAPPY, location.add(0, villager.getHeight() / 2, 0), 50, 0.2, 0.5, 0.2, 0);
+
+        // Random chance to become a nitwit
+        if (!CoreUtils.rollChances(1)) return;
+
+        villager.setProfession(Villager.Profession.NITWIT);
+        location.getWorld().spawnParticle(Particle.VILLAGER_ANGRY, location.add(0, villager.getHeight() / 2, 0), 50, 0.2, 0.5, 0.2, 0);
     }
 
 
