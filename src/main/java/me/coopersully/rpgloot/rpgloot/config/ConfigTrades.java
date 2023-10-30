@@ -142,7 +142,7 @@ public class ConfigTrades {
             if (!persistents.isEmpty()) {
                 for (var line : persistents) {
                     NamespacedKey key = new NamespacedKey(getPlugin(), line);
-                    itemMeta.getPersistentDataContainer().set(key, PersistentDataType.STRING, "1");
+                    itemMeta.getPersistentDataContainer().set(key, PersistentDataType.BOOLEAN, Boolean.TRUE);
                 }
             }
 
