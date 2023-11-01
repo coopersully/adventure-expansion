@@ -26,22 +26,27 @@ public class CommandGive implements CommandExecutor {
         }
 
         if (args.length != 1) {
-            noteError(player, "Usage: /givetreasure <item-name>");
+            noteError(player, "Usage: /givetreasure <item-id>");
             return true;
         }
 
-        String itemName = args[0].toLowerCase();
-        for (ItemStack item : TreasureItem.TREASURE_ITEMS) {
-            if (item == null) continue;
-            String displayName = ((TextComponent) item.getItemMeta().displayName()).content().toLowerCase();
-            if (displayName.contains(itemName)) {
-                player.getInventory().addItem(item);
-                noteSuccess(player, "You received " + item.getAmount() + "x " + displayName + ".");
-                return true;
-            }
+        int itemId;
+        try {
+            itemId = Integer.parseInt(args[0].toLowerCase());
+        } catch (NumberFormatException e) {
+            noteError(player, "That's not an item id. Try /listtreasure for all item ids.");
+            return true;
+        }
+        ItemStack itemStack;
+        try {
+            itemStack = TreasureItem.TREASURE_ITEMS.get(itemId);
+        } catch (IndexOutOfBoundsException e) {
+            noteError(player, "That's not an item id. Try /listtreasure for all item ids.");
+            return true;
         }
 
-        noteError(player, "Treasure item not found!");
+        player.getInventory().addItem(itemStack);
+        noteSuccess(player, "You received " + itemStack.getAmount() + "x " + itemStack.displayName() + ".");
         return true;
     }
 }

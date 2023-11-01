@@ -56,6 +56,6 @@ public class TreasureItemKeys {
     public static NamespacedKey eternalBoots = new NamespacedKey(AdventureExpansion.getPlugin(), "eternal_boots");
     public static NamespacedKey calamity = new NamespacedKey(AdventureExpansion.getPlugin(), "calamity");
     public static NamespacedKey calamitySword = new NamespacedKey(AdventureExpansion.getPlugin(), "calamity_sword");
-
+    public static NamespacedKey mobSpawner = new NamespacedKey(AdventureExpansion.getPlugin(), "mob_spawner");
 
 }

@@ -61,6 +61,8 @@ public final class AdventureExpansion extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new ArmorStandConvert(), this);
         getServer().getPluginManager().registerEvents(new WanderingTraderKilled(), this);
         getServer().getPluginManager().registerEvents(new UseCalamitySword(), this);
+        getServer().getPluginManager().registerEvents(new SilkTouchSpawner(), this);
+        getServer().getPluginManager().registerEvents(new PlaceSpawner(), this);
 
         // Register all commands
         try {
