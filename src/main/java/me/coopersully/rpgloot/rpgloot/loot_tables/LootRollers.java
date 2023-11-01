@@ -2,36 +2,15 @@ package me.coopersully.rpgloot.rpgloot.loot_tables;
 
 import me.coopersully.rpgloot.rpgloot.CoreUtils;
 import me.coopersully.rpgloot.rpgloot.items.treasure_items.TreasureItem;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.Listener;
-import org.bukkit.event.world.LootGenerateEvent;
 import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
-public class LootGenerated implements Listener {
+public class LootRollers {
 
-    @EventHandler
-    public void onLootGenerate(@NotNull LootGenerateEvent event) {
-        String lootTable = event.getLootTable().toString();
-        List<ItemStack> loot = new ArrayList<>(event.getLoot());
-
-        switch (lootTable) {
-            case "minecraft:chests/bastion_hoglin_stable" -> rollTraveler(loot);
-            case "minecraft:chests/bastion_treasure" -> rollTraveler(loot);
-            case "minecraft:chests/pillager_outpost" -> rollWandofIndecision(loot);
-            case "minecraft:chests/woodland_mansion" -> rollWandofIndecision(loot);
-            case "minecraft:chests/nether_bridge" -> rollCalamity(loot);
-            case "minecraft:chests/simple_dungeon" -> rollSpawnEggs(loot);
-        }
-        event.setLoot(loot);
-    }
-
-    private void rollTraveler(@NotNull List<ItemStack> loot) {
+    public static void rollTraveler(@NotNull List<ItemStack> loot) {
         if (!CoreUtils.rollChances(20)) return;
 
         Random random = new Random();
@@ -45,19 +24,25 @@ public class LootGenerated implements Listener {
         }
     }
 
-    private void rollWandofIndecision(@NotNull List<ItemStack> loot) {
+    public static void rollTraderHat(@NotNull List<ItemStack> loot) {
+        if (!CoreUtils.rollChances(20)) return;
+
+        loot.add(TreasureItem.TRADER_HAT);
+    }
+
+    public static void rollWandofIndecision(@NotNull List<ItemStack> loot) {
         if (!CoreUtils.rollChances(10)) return;
 
         loot.add(TreasureItem.WAND_OF_INDECISION);
     }
 
-    private void rollCalamity(@NotNull List<ItemStack> loot) {
+    public static void rollCalamity(@NotNull List<ItemStack> loot) {
         if (!CoreUtils.rollChances(5)) return;
 
         loot.add(TreasureItem.CALAMITY_SWORD);
     }
 
-    private void rollSpawnEggs(@NotNull List<ItemStack> loot) {
+    public static void rollSpawnEggs(@NotNull List<ItemStack> loot) {
         if (!CoreUtils.rollChances(0.01)) return;
 
         Random random = new Random();
@@ -120,5 +105,4 @@ public class LootGenerated implements Listener {
             case 55 -> loot.add(TreasureItem.AXOLOTL_EGG);
         }
     }
-
 }
