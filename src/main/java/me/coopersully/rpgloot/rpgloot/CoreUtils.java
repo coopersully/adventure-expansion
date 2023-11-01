@@ -63,4 +63,9 @@ public class CoreUtils {
         Random random = new Random();
         return random.nextInt(100) <= possibility;
     }
+
+    public static boolean rollChances(double possibility) {
+        Random random = new Random();
+        return random.nextDouble(100) <= possibility;
+    }
 }
