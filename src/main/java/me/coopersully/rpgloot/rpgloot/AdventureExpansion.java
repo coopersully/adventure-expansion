@@ -4,6 +4,7 @@ import me.coopersully.rpgloot.rpgloot.commands.*;
 import me.coopersully.rpgloot.rpgloot.config.ConfigTrades;
 import me.coopersully.rpgloot.rpgloot.entities.CaveTraders;
 import me.coopersully.rpgloot.rpgloot.listeners.*;
+import me.coopersully.rpgloot.rpgloot.loot_tables.EntityLootGenerated;
 import me.coopersully.rpgloot.rpgloot.loot_tables.InventoryLootGenerated;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.InvalidConfigurationException;
@@ -55,13 +56,14 @@ public final class AdventureExpansion extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new Bows(), this);
         getServer().getPluginManager().registerEvents(new ArrowLand(), this);
         getServer().getPluginManager().registerEvents(new MinersHat(), this);
-        getServer().getPluginManager().registerEvents(new InventoryLootGenerated(), this);
         getServer().getPluginManager().registerEvents(new AttachLeadToVillager(), this);
         getServer().getPluginManager().registerEvents(new UseWandOfIndecision(), this);
         getServer().getPluginManager().registerEvents(new ArmorStandConvert(), this);
         getServer().getPluginManager().registerEvents(new UseCalamitySword(), this);
         getServer().getPluginManager().registerEvents(new SilkTouchSpawner(), this);
         getServer().getPluginManager().registerEvents(new PlaceSpawner(), this);
+        getServer().getPluginManager().registerEvents(new InventoryLootGenerated(), this);
+        getServer().getPluginManager().registerEvents(new EntityLootGenerated(), this);
 
         // Register all commands
         try {

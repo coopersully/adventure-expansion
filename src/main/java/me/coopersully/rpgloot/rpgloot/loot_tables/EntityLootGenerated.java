@@ -21,6 +21,8 @@ public class EntityLootGenerated implements Listener {
         switch (entityType) {
             case WANDERING_TRADER -> LootRollers.rollTraderHat(loot);
             case WITCH -> LootRollers.rollSpawnEggs(loot);
+            case EVOKER -> LootRollers.rollEvokerBow(loot);
+            case WARDEN -> LootRollers.rollSculkGear(loot);
         }
 
         // Drop items at entity's death location

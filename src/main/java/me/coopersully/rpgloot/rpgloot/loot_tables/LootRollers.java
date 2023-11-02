@@ -11,10 +11,10 @@ import java.util.Random;
 public class LootRollers {
 
     public static void rollTraveler(@NotNull List<ItemStack> loot) {
-        if (!CoreUtils.rollChances(20)) return;
+        if (!CoreUtils.rollChances(2)) return;
 
         Random random = new Random();
-        switch (random.nextInt(6)) {
+        switch (random.nextInt(5)) {
             case 0 -> loot.add(TreasureItem.TRAVELERS_HELMET);
             case 1 -> loot.add(TreasureItem.TRAVELERS_CHESTPLATE);
             case 2 -> loot.add(TreasureItem.TRAVELERS_LEGGINGS);
@@ -24,10 +24,32 @@ public class LootRollers {
         }
     }
 
+    public static void rollMagnets(@NotNull List<ItemStack> loot) {
+        if (!CoreUtils.rollChances(5)) return;
+
+        Random random = new Random();
+        switch (random.nextInt(2)) {
+            case 0 -> loot.add(TreasureItem.ITEM_MAGNET);
+            case 1 -> loot.add(TreasureItem.EXP_MAGNET);
+        }
+    }
+
     public static void rollTraderHat(@NotNull List<ItemStack> loot) {
         if (!CoreUtils.rollChances(20)) return;
 
         loot.add(TreasureItem.TRADER_HAT);
+    }
+
+    public static void rollEvokerBow(@NotNull List<ItemStack> loot) {
+        if (!CoreUtils.rollChances(5)) return;
+
+        loot.add(TreasureItem.EVOKER_BOW);
+    }
+
+    public static void rollBountyBow(@NotNull List<ItemStack> loot) {
+        if (!CoreUtils.rollChances(0.1)) return;
+
+        loot.add(TreasureItem.BOUNTY_BOW);
     }
 
     public static void rollWandofIndecision(@NotNull List<ItemStack> loot) {
@@ -104,5 +126,11 @@ public class LootRollers {
             case 54 -> loot.add(TreasureItem.ZOMBIE_VILLAGER_EGG);
             case 55 -> loot.add(TreasureItem.AXOLOTL_EGG);
         }
+    }
+
+    public static void rollSculkGear(@NotNull List<ItemStack> loot) {
+        if (!CoreUtils.rollChances(25)) return;
+
+        loot.add(TreasureItem.SCULK_BOOTS);
     }
 }
