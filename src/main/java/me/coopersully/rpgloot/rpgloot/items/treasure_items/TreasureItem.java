@@ -203,6 +203,7 @@ public class TreasureItem {
         addKeys(BOUNTY_BOW, TreasureItemKeys.bountyBow);
         addDescription(BOUNTY_BOW, "Unbeatable in genetic perfection.");
         addStatistics(BOUNTY_BOW, "Bow of the Bounty", TreasureItemSource.MAGIC, TreasureItemRarity.EPIC);
+        addEnchantments(BOUNTY_BOW, Enchantment.ARROW_INFINITE, 1, Enchantment.MENDING, 1);
         TREASURE_ITEMS.add(BOUNTY_BOW);
 
         WAND_OF_INDECISION = new ItemStack(Material.REPEATING_COMMAND_BLOCK, 1);
