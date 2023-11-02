@@ -34,6 +34,12 @@ public class LootRollers {
         }
     }
 
+    public static void rollNightmareFuel(@NotNull List<ItemStack> loot) {
+        if (!CoreUtils.rollChances(0.00000000001)) return;
+
+        loot.add(TreasureItem.NIGHTMARE_FUEL);
+    }
+
     public static void rollTraderHat(@NotNull List<ItemStack> loot) {
         if (!CoreUtils.rollChances(20)) return;
 

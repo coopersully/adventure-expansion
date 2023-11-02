@@ -23,6 +23,7 @@ public class EntityLootGenerated implements Listener {
             case WITCH -> LootRollers.rollSpawnEggs(loot);
             case EVOKER -> LootRollers.rollEvokerBow(loot);
             case WARDEN -> LootRollers.rollSculkGear(loot);
+            case VEX -> LootRollers.rollNightmareFuel(loot);
         }
 
         // Drop items at entity's death location
