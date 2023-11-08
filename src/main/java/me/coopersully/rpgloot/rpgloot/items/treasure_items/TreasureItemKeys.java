@@ -57,5 +57,8 @@ public class TreasureItemKeys {
     public static NamespacedKey calamity = new NamespacedKey(AdventureExpansion.getPlugin(), "calamity");
     public static NamespacedKey calamitySword = new NamespacedKey(AdventureExpansion.getPlugin(), "calamity_sword");
     public static NamespacedKey mobSpawner = new NamespacedKey(AdventureExpansion.getPlugin(), "mob_spawner");
-
+    public static NamespacedKey dragonhideHelmet = new NamespacedKey(AdventureExpansion.getPlugin(), "dragonhide_helmet");
+    public static NamespacedKey dragonhideChestplate = new NamespacedKey(AdventureExpansion.getPlugin(), "dragonhide_chestplate");
+    public static NamespacedKey dragonhideLeggings = new NamespacedKey(AdventureExpansion.getPlugin(), "dragonhide_leggings");
+    public static NamespacedKey dragonhideBoots = new NamespacedKey(AdventureExpansion.getPlugin(), "dragonhide_boots");
 }

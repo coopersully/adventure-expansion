@@ -1,7 +1,5 @@
 package me.coopersully.rpgloot.rpgloot.loot_tables;
 
-import me.coopersully.rpgloot.rpgloot.CoreUtils;
-import me.coopersully.rpgloot.rpgloot.items.treasure_items.TreasureItem;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.world.LootGenerateEvent;
@@ -10,7 +8,6 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 public class InventoryLootGenerated implements Listener {
 
@@ -36,6 +33,9 @@ public class InventoryLootGenerated implements Listener {
             }
             case "minecraft:chests/abandoned_mineshaft" -> {
                 LootRollers.rollMagnets(loot);
+            }
+            case "minecraft:chests/end_city_treasure" -> {
+                LootRollers.rollDragonhide(loot);
             }
 
         }

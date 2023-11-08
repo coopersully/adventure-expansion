@@ -14,7 +14,7 @@ public class LootRollers {
         if (!CoreUtils.rollChances(2)) return;
 
         Random random = new Random();
-        switch (random.nextInt(5)) {
+        switch (random.nextInt(6)) {
             case 0 -> loot.add(TreasureItem.TRAVELERS_HELMET);
             case 1 -> loot.add(TreasureItem.TRAVELERS_CHESTPLATE);
             case 2 -> loot.add(TreasureItem.TRAVELERS_LEGGINGS);
@@ -138,5 +138,17 @@ public class LootRollers {
         if (!CoreUtils.rollChances(25)) return;
 
         loot.add(TreasureItem.SCULK_BOOTS);
+    }
+
+    public static void rollDragonhide(@NotNull List<ItemStack> loot) {
+        if (!CoreUtils.rollChances(10)) return;
+
+        Random random = new Random();
+        switch (random.nextInt(5)) {
+            case 0 -> loot.add(TreasureItem.DRAGONHIDE_HELMET);
+            case 1 -> loot.add(TreasureItem.DRAGONHIDE_CHESTPLATE);
+            case 2 -> loot.add(TreasureItem.DRAGONHIDE_LEGGINGS);
+            case 3 -> loot.add(TreasureItem.DRAGONHIDE_BOOTS);
+        }
     }
 }

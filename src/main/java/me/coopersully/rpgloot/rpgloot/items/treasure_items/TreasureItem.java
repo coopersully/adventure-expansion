@@ -51,22 +51,22 @@ public class TreasureItem {
         ItemMeta meta = itemStack.getItemMeta();
         meta.displayName(Component.text(name, rarity.getColor()).decoration(TextDecoration.ITALIC, false));
 
-        if (meta != null) {
-            List<Component> lore = meta.hasLore() ? meta.lore() : new ArrayList<>();
-            assert lore != null;
+        if (meta == null) return;
 
-            lore.add(Component.empty());
-            Component statisticsLine = Component.text("Statistics:", NamedTextColor.GRAY).decoration(TextDecoration.ITALIC, false);
-            Component sourceLine = Component.text(" " + source.toString() + " Source", NamedTextColor.DARK_GREEN).decoration(TextDecoration.ITALIC, false);
-            Component rarityLine = Component.text(" " + rarity.toString() + " Treasure Item", NamedTextColor.DARK_GREEN).decoration(TextDecoration.ITALIC, false);
+        List<Component> lore = meta.hasLore() ? meta.lore() : new ArrayList<>();
+        assert lore != null;
 
-            lore.add(statisticsLine);
-            lore.add(sourceLine);
-            lore.add(rarityLine);
+        lore.add(Component.empty());
+        Component statisticsLine = Component.text("Statistics:", NamedTextColor.GRAY).decoration(TextDecoration.ITALIC, false);
+        Component sourceLine = Component.text(" " + source.toString() + " Source", NamedTextColor.DARK_GREEN).decoration(TextDecoration.ITALIC, false);
+        Component rarityLine = Component.text(" " + rarity.toString() + " Treasure Item", NamedTextColor.DARK_GREEN).decoration(TextDecoration.ITALIC, false);
 
-            meta.lore(lore);
-            itemStack.setItemMeta(meta);
-        }
+        lore.add(statisticsLine);
+        lore.add(sourceLine);
+        lore.add(rarityLine);
+
+        meta.lore(lore);
+        itemStack.setItemMeta(meta);
     }
 
     public static void addAbilities(ItemStack itemStack, String @NotNull ... abilities) {
@@ -193,6 +193,10 @@ public class TreasureItem {
     public static ItemStack ZOGLIN_EGG;
     public static ItemStack ZOMBIE_EGG;
     public static ItemStack ZOMBIE_VILLAGER_EGG;
+    public static ItemStack DRAGONHIDE_HELMET;
+    public static ItemStack DRAGONHIDE_CHESTPLATE;
+    public static ItemStack DRAGONHIDE_LEGGINGS;
+    public static ItemStack DRAGONHIDE_BOOTS;
 
 
     public static List<ItemStack> TREASURE_ITEMS = new ArrayList<>();
@@ -717,6 +721,34 @@ public class TreasureItem {
         addDescription(ZOMBIE_VILLAGER_EGG, "A twisted fate, a humble merchant now a ghastly fiend.");
         addStatistics(ZOMBIE_VILLAGER_EGG, "Zombie Villager Egg", TreasureItemSource.MAGIC, TreasureItemRarity.MYTHICAL);
         TREASURE_ITEMS.add(ZOMBIE_VILLAGER_EGG);
+
+        DRAGONHIDE_HELMET = new ItemStack(Material.LEATHER_HELMET, 1);
+        addKeys(DRAGONHIDE_HELMET, TreasureItemKeys.dragonhide, TreasureItemKeys.dragonhideHelmet);
+        addDescription(DRAGONHIDE_HELMET, "Formed from the skin of a beast.");
+        addStatistics(DRAGONHIDE_HELMET, "Dragonhide Helmet", TreasureItemSource.MAGIC, TreasureItemRarity.EPIC);
+        addEnchantments(DRAGONHIDE_HELMET, Enchantment.DURABILITY, 4);
+        TREASURE_ITEMS.add(DRAGONHIDE_HELMET);
+
+        DRAGONHIDE_CHESTPLATE = new ItemStack(Material.LEATHER_CHESTPLATE, 1);
+        addKeys(DRAGONHIDE_CHESTPLATE, TreasureItemKeys.dragonhide, TreasureItemKeys.dragonhideChestplate);
+        addDescription(DRAGONHIDE_CHESTPLATE, "Formed from the skin of a beast.");
+        addStatistics(DRAGONHIDE_CHESTPLATE, "Dragonhide Chestplate", TreasureItemSource.MAGIC, TreasureItemRarity.EPIC);
+        addEnchantments(DRAGONHIDE_CHESTPLATE, Enchantment.DURABILITY, 4);
+        TREASURE_ITEMS.add(DRAGONHIDE_CHESTPLATE);
+
+        DRAGONHIDE_LEGGINGS = new ItemStack(Material.LEATHER_LEGGINGS, 1);
+        addKeys(DRAGONHIDE_LEGGINGS, TreasureItemKeys.dragonhide, TreasureItemKeys.dragonhideLeggings);
+        addDescription(DRAGONHIDE_LEGGINGS, "Formed from the skin of a beast.");
+        addStatistics(DRAGONHIDE_LEGGINGS, "Dragonhide Leggings", TreasureItemSource.MAGIC, TreasureItemRarity.EPIC);
+        addEnchantments(DRAGONHIDE_LEGGINGS, Enchantment.DURABILITY, 4);
+        TREASURE_ITEMS.add(DRAGONHIDE_LEGGINGS);
+
+        DRAGONHIDE_BOOTS = new ItemStack(Material.LEATHER_BOOTS, 1);
+        addKeys(DRAGONHIDE_BOOTS, TreasureItemKeys.dragonhide, TreasureItemKeys.dragonhideBoots);
+        addDescription(DRAGONHIDE_BOOTS, "Formed from the skin of a beast.");
+        addStatistics(DRAGONHIDE_BOOTS, "Dragonhide Boots", TreasureItemSource.MAGIC, TreasureItemRarity.EPIC);
+        addEnchantments(DRAGONHIDE_BOOTS, Enchantment.DURABILITY, 4);
+        TREASURE_ITEMS.add(DRAGONHIDE_BOOTS);
     }
 
     public static void checkTreasureItems() {

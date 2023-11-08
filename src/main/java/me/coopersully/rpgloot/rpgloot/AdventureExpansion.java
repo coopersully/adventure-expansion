@@ -64,6 +64,7 @@ public final class AdventureExpansion extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new PlaceSpawner(), this);
         getServer().getPluginManager().registerEvents(new InventoryLootGenerated(), this);
         getServer().getPluginManager().registerEvents(new EntityLootGenerated(), this);
+        getServer().getPluginManager().registerEvents(new DragonhideArmor(), this);
 
         // Register all commands
         try {
