@@ -36,6 +36,7 @@ public class InventoryLootGenerated implements Listener {
             }
             case "minecraft:chests/end_city_treasure" -> {
                 LootRollers.rollDragonhide(loot);
+                LootRollers.rollGonk(loot);
             }
 
         }

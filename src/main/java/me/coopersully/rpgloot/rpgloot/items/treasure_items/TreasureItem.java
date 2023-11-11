@@ -7,7 +7,11 @@ import net.kyori.adventure.text.format.TextDecoration;
 import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
+import org.bukkit.attribute.Attribute;
+import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.enchantments.Enchantment;
+import org.bukkit.event.inventory.InventoryType;
+import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
@@ -16,6 +20,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import static me.coopersully.rpgloot.rpgloot.AdventureExpansion.getPlugin;
 
@@ -103,6 +108,21 @@ public class TreasureItem {
         }
         item.setItemMeta(meta);
     }
+
+    public static void setModelData(@NotNull ItemStack item, int customModelData) {
+        ItemMeta meta = item.getItemMeta();
+        meta.setCustomModelData(customModelData);
+        item.setItemMeta(meta);
+    }
+
+    public static void setAttributeModifier(@NotNull ItemStack item, Attribute attribute, AttributeModifier modifier) {
+        ItemMeta meta = item.getItemMeta();
+        if (meta != null) {
+            meta.addAttributeModifier(attribute, modifier);
+            item.setItemMeta(meta);
+        }
+    }
+
 
     public static ItemStack BOUNTY_BOW;
     public static ItemStack WAND_OF_INDECISION;
@@ -197,7 +217,9 @@ public class TreasureItem {
     public static ItemStack DRAGONHIDE_CHESTPLATE;
     public static ItemStack DRAGONHIDE_LEGGINGS;
     public static ItemStack DRAGONHIDE_BOOTS;
-
+    public static ItemStack PITY_TROPHY;
+    public static ItemStack GONK;
+    public static ItemStack ENDERS_WAKE;
 
     public static List<ItemStack> TREASURE_ITEMS = new ArrayList<>();
 
@@ -211,6 +233,7 @@ public class TreasureItem {
         TREASURE_ITEMS.add(BOUNTY_BOW);
 
         WAND_OF_INDECISION = new ItemStack(Material.REPEATING_COMMAND_BLOCK, 1);
+        setModelData(WAND_OF_INDECISION, 6605);
         addKeys(WAND_OF_INDECISION, TreasureItemKeys.wandOfIndecision);
         addDescription(WAND_OF_INDECISION, "Rattles the minds of villagers.");
         addStatistics(WAND_OF_INDECISION, "Wand of Indecision", TreasureItemSource.MAGIC, TreasureItemRarity.EPIC);
@@ -232,6 +255,7 @@ public class TreasureItem {
         TREASURE_ITEMS.add(SCULK_BOOTS);
 
         NIGHTMARE_FUEL = new ItemStack(Material.REPEATING_COMMAND_BLOCK, 1);
+        setModelData(NIGHTMARE_FUEL, 6602);
         addKeys(NIGHTMARE_FUEL, TreasureItemKeys.nightmareFuel);
         addDescription(NIGHTMARE_FUEL, "It whispers and glows with rage.");
         addStatistics(NIGHTMARE_FUEL, "Nightmare Fuel", TreasureItemSource.MAGIC, TreasureItemRarity.MYTHICAL);
@@ -245,6 +269,7 @@ public class TreasureItem {
         TREASURE_ITEMS.add(MINERS_HAT);
 
         ITEM_MAGNET = new ItemStack(Material.REPEATING_COMMAND_BLOCK, 1);
+        setModelData(ITEM_MAGNET, 6603);
         addKeys(ITEM_MAGNET, TreasureItemKeys.itemMagnet);
         addDescription(ITEM_MAGNET, "Material goods attract the soul.");
         addStatistics(ITEM_MAGNET, "Item Magnet Mk.I", TreasureItemSource.LIVING, TreasureItemRarity.EPIC);
@@ -252,6 +277,7 @@ public class TreasureItem {
         TREASURE_ITEMS.add(ITEM_MAGNET);
 
         EXP_MAGNET = new ItemStack(Material.REPEATING_COMMAND_BLOCK, 1);
+        setModelData(EXP_MAGNET, 6603);
         addKeys(EXP_MAGNET, TreasureItemKeys.expMagnet);
         addDescription(EXP_MAGNET, "Ooh, shiny!");
         addStatistics(EXP_MAGNET, "Experience Magnet Mk.I", TreasureItemSource.LIVING, TreasureItemRarity.EPIC);
@@ -723,32 +749,70 @@ public class TreasureItem {
         TREASURE_ITEMS.add(ZOMBIE_VILLAGER_EGG);
 
         DRAGONHIDE_HELMET = new ItemStack(Material.LEATHER_HELMET, 1);
+        LeatherArmorMeta DRAGONHIDE_HELMET_META = (LeatherArmorMeta) DRAGONHIDE_HELMET.getItemMeta();
+        DRAGONHIDE_HELMET_META.setColor(Color.fromRGB(0, 0, 0));
+        DRAGONHIDE_HELMET.setItemMeta(DRAGONHIDE_HELMET_META);
         addKeys(DRAGONHIDE_HELMET, TreasureItemKeys.dragonhide, TreasureItemKeys.dragonhideHelmet);
         addDescription(DRAGONHIDE_HELMET, "Formed from the skin of a beast.");
         addStatistics(DRAGONHIDE_HELMET, "Dragonhide Helmet", TreasureItemSource.MAGIC, TreasureItemRarity.EPIC);
-        addEnchantments(DRAGONHIDE_HELMET, Enchantment.DURABILITY, 4);
+        addAbilities(SCULK_BOOTS, "PASSIVE", "Full immunity to explosion damage.");
         TREASURE_ITEMS.add(DRAGONHIDE_HELMET);
 
         DRAGONHIDE_CHESTPLATE = new ItemStack(Material.LEATHER_CHESTPLATE, 1);
+        LeatherArmorMeta DRAGONHIDE_CHESTPLATE_META = (LeatherArmorMeta) DRAGONHIDE_CHESTPLATE.getItemMeta();
+        DRAGONHIDE_CHESTPLATE_META.setColor(Color.fromRGB(0, 0, 0));
+        DRAGONHIDE_CHESTPLATE.setItemMeta(DRAGONHIDE_CHESTPLATE_META);
         addKeys(DRAGONHIDE_CHESTPLATE, TreasureItemKeys.dragonhide, TreasureItemKeys.dragonhideChestplate);
         addDescription(DRAGONHIDE_CHESTPLATE, "Formed from the skin of a beast.");
         addStatistics(DRAGONHIDE_CHESTPLATE, "Dragonhide Chestplate", TreasureItemSource.MAGIC, TreasureItemRarity.EPIC);
-        addEnchantments(DRAGONHIDE_CHESTPLATE, Enchantment.DURABILITY, 4);
+        addAbilities(SCULK_BOOTS, "PASSIVE", "Full immunity to explosion damage.");
         TREASURE_ITEMS.add(DRAGONHIDE_CHESTPLATE);
 
         DRAGONHIDE_LEGGINGS = new ItemStack(Material.LEATHER_LEGGINGS, 1);
+        LeatherArmorMeta DRAGONHIDE_LEGGINGS_META = (LeatherArmorMeta) DRAGONHIDE_LEGGINGS.getItemMeta();
+        DRAGONHIDE_LEGGINGS_META.setColor(Color.fromRGB(0, 0, 0));
+        DRAGONHIDE_LEGGINGS.setItemMeta(DRAGONHIDE_LEGGINGS_META);
         addKeys(DRAGONHIDE_LEGGINGS, TreasureItemKeys.dragonhide, TreasureItemKeys.dragonhideLeggings);
         addDescription(DRAGONHIDE_LEGGINGS, "Formed from the skin of a beast.");
         addStatistics(DRAGONHIDE_LEGGINGS, "Dragonhide Leggings", TreasureItemSource.MAGIC, TreasureItemRarity.EPIC);
-        addEnchantments(DRAGONHIDE_LEGGINGS, Enchantment.DURABILITY, 4);
+        addAbilities(SCULK_BOOTS, "PASSIVE", "Full immunity to explosion damage.");
         TREASURE_ITEMS.add(DRAGONHIDE_LEGGINGS);
 
         DRAGONHIDE_BOOTS = new ItemStack(Material.LEATHER_BOOTS, 1);
+        LeatherArmorMeta DRAGONHIDE_BOOTS_META = (LeatherArmorMeta) DRAGONHIDE_BOOTS.getItemMeta();
+        DRAGONHIDE_BOOTS_META.setColor(Color.fromRGB(0, 0, 0));
+        DRAGONHIDE_BOOTS.setItemMeta(DRAGONHIDE_BOOTS_META);
         addKeys(DRAGONHIDE_BOOTS, TreasureItemKeys.dragonhide, TreasureItemKeys.dragonhideBoots);
         addDescription(DRAGONHIDE_BOOTS, "Formed from the skin of a beast.");
         addStatistics(DRAGONHIDE_BOOTS, "Dragonhide Boots", TreasureItemSource.MAGIC, TreasureItemRarity.EPIC);
-        addEnchantments(DRAGONHIDE_BOOTS, Enchantment.DURABILITY, 4);
+        addAbilities(SCULK_BOOTS, "PASSIVE", "Full immunity to explosion damage.");
         TREASURE_ITEMS.add(DRAGONHIDE_BOOTS);
+
+        PITY_TROPHY = new ItemStack(Material.REPEATING_COMMAND_BLOCK, 1);
+        setModelData(PITY_TROPHY, 6604);
+        addDescription(PITY_TROPHY, "Gee, thanks?");
+        addStatistics(PITY_TROPHY, "Pity Trophy", TreasureItemSource.LIVING, TreasureItemRarity.MYTHICAL);
+        addEnchantments(PITY_TROPHY, Enchantment.KNOCKBACK, 10);
+        addKeys(PITY_TROPHY, TreasureItemKeys.pityTrophy);
+        TREASURE_ITEMS.add(PITY_TROPHY);
+
+        ENDERS_WAKE = new ItemStack(Material.REPEATING_COMMAND_BLOCK, 1);
+        setModelData(ENDERS_WAKE, 6606);
+        addDescription(ENDERS_WAKE, "It hums with the spirit of the void.");
+        addStatistics(ENDERS_WAKE, "Ender's Wake", TreasureItemSource.MAGIC, TreasureItemRarity.MYTHICAL);
+        addAbilities(ENDERS_WAKE, "USE ITEM", "Throw a teleportation pearl");
+        addKeys(ENDERS_WAKE, TreasureItemKeys.endersWake);
+        TREASURE_ITEMS.add(ENDERS_WAKE);
+
+        GONK = new ItemStack(Material.IRON_AXE, 1);
+        setModelData(GONK, 6601);
+        addDescription(GONK, "The earth cowers as its commander approaches.");
+        addStatistics(GONK, "Gonk the B.F.H.", TreasureItemSource.LIVING, TreasureItemRarity.MYTHICAL);
+        setAttributeModifier(GONK, Attribute.GENERIC_ATTACK_SPEED, new AttributeModifier(UUID.randomUUID(), "gonk_attack_speed", -2.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.HAND));
+        setAttributeModifier(GONK, Attribute.GENERIC_MOVEMENT_SPEED, new AttributeModifier(UUID.randomUUID(), "gonk_movement_speed", -0.025, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.HAND));
+        addEnchantments(GONK, Enchantment.DAMAGE_ALL, 40);
+        addKeys(GONK, TreasureItemKeys.gonk);
+        TREASURE_ITEMS.add(GONK);
     }
 
     public static void checkTreasureItems() {

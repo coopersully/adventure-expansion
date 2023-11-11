@@ -151,4 +151,14 @@ public class LootRollers {
             case 3 -> loot.add(TreasureItem.DRAGONHIDE_BOOTS);
         }
     }
+
+    public static void rollGonk(@NotNull List<ItemStack> loot) {
+        if (!CoreUtils.rollChances(0.5)) return;
+
+        loot.add(TreasureItem.GONK);
+    }
+
+    public static void rollEndersMagic(@NotNull List<ItemStack> loot) {
+        loot.add(TreasureItem.ENDERS_WAKE);
+    }
 }

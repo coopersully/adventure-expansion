@@ -20,7 +20,7 @@ public class TreasureItemKeys {
     public static NamespacedKey stew = new NamespacedKey(AdventureExpansion.getPlugin(), "stew");
     public static NamespacedKey ender = new NamespacedKey(AdventureExpansion.getPlugin(), "ender");
     public static NamespacedKey enderShield = new NamespacedKey(AdventureExpansion.getPlugin(), "ender_shield");
-    public static NamespacedKey enderSword = new NamespacedKey(AdventureExpansion.getPlugin(), "ender_sword");
+    public static NamespacedKey endersWake = new NamespacedKey(AdventureExpansion.getPlugin(), "enders_wake");
     public static NamespacedKey wolfHead = new NamespacedKey(AdventureExpansion.getPlugin(), "wolf_head");
     public static NamespacedKey sculkBoots = new NamespacedKey(AdventureExpansion.getPlugin(), "sculk_boots");
     public static NamespacedKey itemMagnet = new NamespacedKey(AdventureExpansion.getPlugin(), "item_magnet");
@@ -61,4 +61,6 @@ public class TreasureItemKeys {
     public static NamespacedKey dragonhideChestplate = new NamespacedKey(AdventureExpansion.getPlugin(), "dragonhide_chestplate");
     public static NamespacedKey dragonhideLeggings = new NamespacedKey(AdventureExpansion.getPlugin(), "dragonhide_leggings");
     public static NamespacedKey dragonhideBoots = new NamespacedKey(AdventureExpansion.getPlugin(), "dragonhide_boots");
+    public static NamespacedKey pityTrophy = new NamespacedKey(AdventureExpansion.getPlugin(), "pity_trophy");
+    public static NamespacedKey gonk = new NamespacedKey(AdventureExpansion.getPlugin(), "gonk");
 }

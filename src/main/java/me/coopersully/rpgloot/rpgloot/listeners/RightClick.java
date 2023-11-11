@@ -27,7 +27,7 @@ public class RightClick implements Listener {
         PersistentDataContainer persistentDataContainer = itemMeta.getPersistentDataContainer();
         if (persistentDataContainer.isEmpty()) return;
 
-        if (!itemMeta.getPersistentDataContainer().has(TreasureItemKeys.enderSword)) return;
+        if (!itemMeta.getPersistentDataContainer().has(TreasureItemKeys.endersWake)) return;
         EnderSword.attemptTeleport(player);
 
     }
