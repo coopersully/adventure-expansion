@@ -11,7 +11,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.jetbrains.annotations.NotNull;
 
-public class RightClick implements Listener {
+public class EndersWakeTeleport implements Listener {
 
     @EventHandler
     public void onRightClick(@NotNull PlayerInteractEvent event) {

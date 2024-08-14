@@ -24,6 +24,42 @@ public class LootRollers {
         }
     }
 
+    public static void rollLightrender(@NotNull List<ItemStack> loot) {
+        if (!CoreUtils.rollChances(6)) return;
+
+        Random random = new Random();
+        switch (random.nextInt(4)) {
+            case 0 -> loot.add(TreasureItem.LIGHTRENDER_HELMET);
+            case 1 -> loot.add(TreasureItem.LIGHTRENDER_CHESTPLATE);
+            case 2 -> loot.add(TreasureItem.LIGHTRENDER_LEGGINGS);
+            case 3 -> loot.add(TreasureItem.LIGHTRENDER_BOOTS);
+        }
+    }
+
+    public static void rollCryrush(@NotNull List<ItemStack> loot) {
+        if (!CoreUtils.rollChances(2)) return;
+
+        Random random = new Random();
+        switch (random.nextInt(4)) {
+            case 0 -> loot.add(TreasureItem.CRYRUSH_HELMET);
+            case 1 -> loot.add(TreasureItem.CRYRUSH_CHESTPLATE);
+            case 2 -> loot.add(TreasureItem.CRYRUSH_LEGGINGS);
+            case 3 -> loot.add(TreasureItem.CRYRUSH_BOOTS);
+        }
+    }
+
+    public static void rollVelocity(@NotNull List<ItemStack> loot) {
+        if (!CoreUtils.rollChances(0.25)) return;
+
+        Random random = new Random();
+        switch (random.nextInt(4)) {
+            case 0 -> loot.add(TreasureItem.VELOCITY_HELMET);
+            case 1 -> loot.add(TreasureItem.VELOCITY_CHESTPLATE);
+            case 2 -> loot.add(TreasureItem.VELOCITY_LEGGINGS);
+            case 3 -> loot.add(TreasureItem.VELOCITY_BOOTS);
+        }
+    }
+
     public static void rollMagnets(@NotNull List<ItemStack> loot) {
         if (!CoreUtils.rollChances(5)) return;
 
@@ -31,6 +67,50 @@ public class LootRollers {
         switch (random.nextInt(2)) {
             case 0 -> loot.add(TreasureItem.ITEM_MAGNET);
             case 1 -> loot.add(TreasureItem.EXP_MAGNET);
+        }
+    }
+
+    public static void rollCommonSwiftstrikeSwords(@NotNull List<ItemStack> loot) {
+        if (!CoreUtils.rollChances(10)) return;
+
+        Random random = new Random();
+        switch (random.nextInt(4)) {
+            case 0 -> loot.add(TreasureItem.SWIFTSTRIKE_WOODEN_SWORD);
+            case 1 -> loot.add(TreasureItem.SWIFTSTRIKE_STONE_SWORD);
+            case 2 -> loot.add(TreasureItem.SWIFTSTRIKE_GOLDEN_SWORD);
+            case 3 -> loot.add(TreasureItem.SWIFTSTRIKE_IRON_SWORD);
+        }
+    }
+
+    public static void rollRareSwiftstrikeSwords(@NotNull List<ItemStack> loot) {
+        if (!CoreUtils.rollChances(0.025)) return;
+
+        Random random = new Random();
+        switch (random.nextInt(2)) {
+            case 0 -> loot.add(TreasureItem.SWIFTSTRIKE_DIAMOND_SWORD);
+            case 1 -> loot.add(TreasureItem.SWIFTSTRIKE_NETHERITE_SWORD);
+        }
+    }
+
+    public static void rollCommonTomahawks(@NotNull List<ItemStack> loot) {
+        if (!CoreUtils.rollChances(5)) return;
+
+        Random random = new Random();
+        switch (random.nextInt(4)) {
+            case 0 -> loot.add(TreasureItem.WOODEN_TOMAHAWK);
+            case 1 -> loot.add(TreasureItem.STONE_TOMAHAWK);
+            case 2 -> loot.add(TreasureItem.GOLDEN_TOMAHAWK);
+            case 3 -> loot.add(TreasureItem.IRON_TOMAHAWK);
+        }
+    }
+
+    public static void rollRareTomahawks(@NotNull List<ItemStack> loot) {
+        if (!CoreUtils.rollChances(0.05)) return;
+
+        Random random = new Random();
+        switch (random.nextInt(2)) {
+            case 0 -> loot.add(TreasureItem.DIAMOND_TOMAHAWK);
+            case 1 -> loot.add(TreasureItem.NETHERITE_TOMAHAWK);
         }
     }
 

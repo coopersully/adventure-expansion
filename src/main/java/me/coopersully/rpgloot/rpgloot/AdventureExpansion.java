@@ -50,7 +50,7 @@ public final class AdventureExpansion extends JavaPlugin {
         // Register all event listeners
         getServer().getPluginManager().registerEvents(new Armor(), this);
         getServer().getPluginManager().registerEvents(new PickupExp(), this);
-        getServer().getPluginManager().registerEvents(new RightClick(), this);
+        getServer().getPluginManager().registerEvents(new EndersWakeTeleport(), this);
         getServer().getPluginManager().registerEvents(new SculkAbility(), this);
         getServer().getPluginManager().registerEvents(new Magnets(), this);
         getServer().getPluginManager().registerEvents(new Bows(), this);
@@ -66,15 +66,22 @@ public final class AdventureExpansion extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new EntityLootGenerated(), this);
         getServer().getPluginManager().registerEvents(new DragonhideArmor(), this);
         getServer().getPluginManager().registerEvents(new UseGonk(), this);
+        getServer().getPluginManager().registerEvents(new TreasureView(), this);
+        getServer().getPluginManager().registerEvents(new GroveGuardianBoots(), this);
+        getServer().getPluginManager().registerEvents(new EventHorizonHarness(), this);
+        getServer().getPluginManager().registerEvents(new SwiftstrikeSwords(), this);
+        getServer().getPluginManager().registerEvents(new Tomahawks(), this);
+        getServer().getPluginManager().registerEvents(new EXPBlaster(), this);
+        getServer().getPluginManager().registerEvents(new Flamethrower(), this);
 
         // Register all commands
         try {
+            getCommand("adventureexpansion").setExecutor(new CommandAdventureExpansion());
+            getCommand("treasure").setExecutor(new CommandTreasure());
             getCommand("cleanse").setExecutor(new CommandCleanse());
             getCommand("meta").setExecutor(new CommandMeta());
             getCommand("nightmare").setExecutor(new CommandNightmare());
             getCommand("trades").setExecutor(new CommandTrades());
-            getCommand("givetreasure").setExecutor(new CommandGive());
-            getCommand("listtreasure").setExecutor(new CommandList());
         } catch (NullPointerException e) {
             getLogger().severe("Failed to register command(s); please contact the developer.");
         }

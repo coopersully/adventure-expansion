@@ -7,6 +7,9 @@ description: A plugin that adds roleplay-themed items, blocks, and game mechanic
 website: https://github.com/coopersully/adventure-expansion/
 
 commands:
+  adventureexpansion:
+    description: Base command for Adventure Expansion
+    aliases: [ "ae" ]
   meta:
     description: Get the meta-data of the held treasure item.
     #aliases: []
@@ -19,9 +22,6 @@ commands:
   trades:
     description: Access all trades-related data.
     #aliases: []
-  givetreasure:
-    description: Gives the player a specified treasure item.
-    aliases: [ "givetreasureitem", "givet", "gt" ]
-  listtreasure:
-    description: Lists all defined treasure items.
-    aliases: [ "listtreasureitems", "listtreasureitem", "listt", "lt" ]
+  treasure:
+    description: All things treasure-related.
+    aliases: [ "tr", "t" ]
